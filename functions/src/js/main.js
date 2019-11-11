@@ -1,9 +1,18 @@
 import "../index.html";
 import "../scss/style.scss";
+
 import { MDCDialog } from "@material/dialog";
 import { MDCTextField } from "@material/textfield";
 import { MDCFloatingLabel } from "@material/floating-label";
 import { MDCSnackbar } from "@material/snackbar";
+import {MDCRipple} from '@material/ripple';
+
+const username = new MDCTextField(document.querySelector('.username'));
+const password = new MDCTextField(document.querySelector('.password'));
+
+new MDCRipple(document.querySelector('.cancel'));
+new MDCRipple(document.querySelector('.next'));
+
 const author = new MDCTextField(document.querySelector(".author"));
 const title = new MDCTextField(document.querySelector(".title"));
 const content = new MDCTextField(document.querySelector(".content"));
