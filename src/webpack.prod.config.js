@@ -26,28 +26,28 @@ module.exports = [
   {
     entry: './scss/login.scss',
     output: {
-      path: path.resolve(__dirname, "../public/css/"),
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-login.js',
     },
     module: {
       rules: [{
         test: /login.scss$/,
-        use: getStyleUse('css/bundle-login.css')
+        use: getStyleUse('bundle-login.css')
       }]
     },
   },
   {
     entry: './scss/home.scss',
     output: {
-      path: path.resolve(__dirname, "../public/css/"),
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-home.js',
     },
     module: {
       rules: [{
         test: /home.scss$/,
-        use: getStyleUse('css/bundle-home.css')
+        use: getStyleUse('bundle-home.css')
       }]
     },
   },
