@@ -15,7 +15,7 @@
   },
   "author": "Alex Trujillo",
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "dependencies": {
     "@material/drawer": "^1.0.1",

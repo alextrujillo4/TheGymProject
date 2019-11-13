@@ -3,13 +3,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   context: path.resolve(__dirname, "../src"),
   entry: {
-    main: ["./js/main.js"]
+    main: ["./js/main.js"],
+    login: './src/login.js'
+
   },
   mode: "development",
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../../public/"),
-    publicPath: "/"
   },
   devServer: {
     contentBase: path.resolve(__dirname, "../src"),

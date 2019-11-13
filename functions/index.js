@@ -6,7 +6,7 @@ const cors = require('cors')({origin: true});
 //
 exports.helloWorld = functions.https.onRequest( (request, response) => {
     cors(request, response, () => {
-        /*if (!request.body.queryResult) {
+        /*if (!request.body.queryResult){
         console.log('Invalid Request');
         return response.status(400).end('Invalid Request.');
     } else {*/
