@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
 const cors = require('cors')({origin: true});
-var admin = require("firebase-admin");
+const admin = require("firebase-admin");
 admin.initializeApp({
     apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
     authDomain: "gymproject-9f46b.firebaseapp.com",

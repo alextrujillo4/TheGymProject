@@ -103,6 +103,13 @@ module.exports = [
       path: path.resolve(__dirname, "../public/"),
       filename: 'style-bundle-register.js',
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'register.html',
+        filename: 'register.html' //relative to root of the application
+      })
+    ],
     module: {
       rules: [{
         test: /register.scss$/,
@@ -116,13 +123,6 @@ module.exports = [
       path: path.resolve(__dirname, "../public/"),
       filename: "bundle-register.js"
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        hash: true,
-        template: 'register.html',
-        filename: 'register.html' //relative to root of the application
-      })
-    ],
     module: {
       loaders: [{
         test: /register.js$/,

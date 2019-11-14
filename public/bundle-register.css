@@ -1757,24 +1757,30 @@ svg.mdc-button__icon {
 .shrine-logo {
   width: 100px;
   height: 100px;
-  padding-top: 80px;
+  padding-top: 60px;
   fill: currentColor;
 }
 
 .username,
-.password {
+.email,
+.password,
+.confirmPassword {
   display: block;
   width: 300px;
   margin: 20px auto;
 }
 .username:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
-.password:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label {
+.email:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
+.password:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
+.confirmPassword:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label {
   color: #442C2E;
   /* @alternate */
   color: var(--mdc-theme-on-primary, #442C2E);
 }
 .username.mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
-.password.mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label {
+.email.mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
+.password.mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label,
+.confirmPassword.mdc-text-field--focused:not(.mdc-text-field--invalid):not(.mdc-text-field--disabled) .mdc-floating-label {
   color: #442C2E;
   /* @alternate */
   color: var(--mdc-theme-on-primary, #442C2E);

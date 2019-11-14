@@ -1,10 +1,18 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
-
-
+var admin = require("firebase-admin");
+admin.initializeApp({
+    apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
+    authDomain: "gymproject-9f46b.firebaseapp.com",
+    databaseURL: "https://gymproject-9f46b.firebaseio.com",
+    projectId: "gymproject-9f46b",
+    storageBucket: "gymproject-9f46b.appspot.com",
+    messagingSenderId: "585009595190",
+    appId: "1:585009595190:web:cad18d95185a486bf1e997",
+    measurementId: "G-TSWB8RLHM9"
+});
 
 const URL = " https://us-central1-gymproject-9f46b.cloudfunctions.net";
-
 const username = new MDCTextField(document.querySelector('.username'));
 const mail = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));
@@ -23,7 +31,7 @@ function registerAction() {
 
 }
 
-function registerUser() {
+/*function registerUser() {
     $.ajax({
         url: URL + "/register",
         method: "POST",
@@ -43,5 +51,5 @@ function registerUser() {
             console.log(err)
         }
     });
-}
+}*/
 registerAction();
