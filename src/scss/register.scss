@@ -1,20 +1,22 @@
 @import "./common";
 @import "@material/textfield/mdc-text-field";
 @import "@material/button/mdc-button";
-
 .header {
   text-align: center;
 }
 
+
 .shrine-logo {
   width: 100px;
   height: 100px;
-  padding-top: 80px;
+  padding-top: 60px;
   fill: currentColor;
 }
 
 .username,
-.password {
+.email,
+.password,
+.confirmPassword{
   &:not(.mdc-text-field--invalid) {
     @include mdc-text-field-label-color(on-primary);
   }

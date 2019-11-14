@@ -94,5 +94,33 @@ module.exports = [
         query: {presets: ['env']}
       }]
     },
+  },
+
+  {
+    entry: './scss/register.scss',
+    output: {
+      path: path.resolve(__dirname, "../public/"),
+      filename: 'style-bundle-register.js',
+    },
+    module: {
+      rules: [{
+        test: /register.scss$/,
+        use: getStyleUse('bundle-register.css')
+      }]
+    },
+  },
+  {
+    entry: "./js/register.js",
+    output: {
+      path: path.resolve(__dirname, "../public/"),
+      filename: "bundle-register.js"
+    },
+    module: {
+      loaders: [{
+        test: /register.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
   }
 ];

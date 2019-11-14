@@ -21,7 +21,7 @@ function getStyleUse(bundleFilename) {
 
 module.exports = [
   {
-    entry: './login.scss',
+    entry: './scss/login.scss',
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-login.js',
@@ -34,7 +34,7 @@ module.exports = [
     },
   },
   {
-    entry: './home.scss',
+    entry: './scss/home.scss',
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-home.js',
@@ -47,7 +47,7 @@ module.exports = [
     },
   },
   {
-    entry: "./login.js",
+    entry: "./js/login.js",
     output: {
       filename: "bundle-login.js"
     },
@@ -60,13 +60,41 @@ module.exports = [
     },
   },
   {
-    entry: "./home.js",
+    entry: "./js/home.js",
     output: {
       filename: "bundle-home.js"
     },
     module: {
       loaders: [{
         test: /home.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  },
+
+
+  {
+    entry: './scss/register.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-register.js',
+    },
+    module: {
+      rules: [{
+        test: /register.scss$/,
+        use: getStyleUse('bundle-register.css')
+      }]
+    },
+  },
+  {
+    entry: "./js/register.js",
+    output: {
+      filename: "bundle-register.js"
+    },
+    module: {
+      loaders: [{
+        test: /register.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
