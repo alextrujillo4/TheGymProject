@@ -96,6 +96,7 @@ module.exports = [
     },
   },
 
+  //=================================== ADD REGISTER FOR PRODUCTION
   {
     entry: './scss/register.scss',
     output: {
@@ -115,6 +116,13 @@ module.exports = [
       path: path.resolve(__dirname, "../public/"),
       filename: "bundle-register.js"
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'register.html',
+        filename: 'register.html' //relative to root of the application
+      })
+    ],
     module: {
       loaders: [{
         test: /register.js$/,
@@ -123,4 +131,6 @@ module.exports = [
       }]
     },
   }
+  //=================================== END REGISTER FOR PRODUCTION
+
 ];
