@@ -1,5 +1,3 @@
-import "../home.html"
-
 import {MDCTextField} from '@material/textfield';
 import {MDCRipple} from '@material/ripple';
 

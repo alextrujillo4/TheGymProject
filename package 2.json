@@ -1,0 +1,21 @@
+{
+  "name": "thegymproject",
+  "version": "1.0.0",
+  "description": "### Para iniciar el proyecto (*Dentro de la carpeta de Functions)) ##### 1. npm install",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alextrujillo4/TheGymProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alextrujillo4/TheGymProject/issues"
+  },
+  "homepage": "https://github.com/alextrujillo4/TheGymProject#readme"
+}
