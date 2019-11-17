@@ -1,6 +1,7 @@
 @import "./common";
 @import "@material/textfield/mdc-text-field";
 @import "@material/button/mdc-button";
+@import "@material/snackbar/mdc-snackbar";
 
 .header {
   text-align: center;
@@ -13,7 +14,13 @@
   fill: currentColor;
 }
 
-.username,
+@media (max-width: $mdc-snackbar-mobile-breakpoint) {
+  .my-snackbar {
+    @include mdc-snackbar-layout-stacked;
+  }
+}
+
+.email,
 .password {
   &:not(.mdc-text-field--invalid) {
     @include mdc-text-field-label-color(on-primary);

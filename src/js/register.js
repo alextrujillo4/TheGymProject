@@ -1,7 +1,6 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCDialog} from '@material/dialog';
 import { auth } from './firebase/index.js'
-
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 import {MDCRipple} from '@material/ripple';
 import { MDCLinearProgress } from '@material/linear-progress';
@@ -15,6 +14,16 @@ const password = new MDCTextField(document.querySelector('.password'));
 const confirmPassword = new MDCTextField(document.querySelector('.confirmPassword'));
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 linearProgress.close();
+
+window.onload = function verifyUser() {
+    auth.onAuthStateChanged(function(user) {
+        auth.onAuthStateChanged(function(user) {
+            if (user) {
+                window.location.href='/home.html';
+            }
+        });
+    });
+};
 
 function dialogAction(){
     console.log("dialogAction()");
@@ -78,6 +87,5 @@ function registerUser() {
             linearProgress.close();
         });
 }
-
 registerAction();
 dialogAction();

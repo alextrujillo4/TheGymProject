@@ -29,6 +29,7 @@
     "@material/linear-progress": "^4.0.0",
     "@material/list": "^1.0.1",
     "@material/ripple": "^1.0.1",
+    "@material/snackbar": "^4.0.0",
     "@material/textfield": "^1.0.1",
     "@material/typography": "^1.0.0",
     "firebase": "^7.4.0",
