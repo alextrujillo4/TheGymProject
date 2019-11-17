@@ -2577,33 +2577,49 @@ var _textfield = __webpack_require__(20);
 var _ripple = __webpack_require__(38);
 
 var URL = " https://us-central1-gymproject-9f46b.cloudfunctions.net";
-
 var username = new _textfield.MDCTextField(document.querySelector('.username'));
-var mail = new _textfield.MDCTextField(document.querySelector('.email'));
+var email = new _textfield.MDCTextField(document.querySelector('.email'));
 var password = new _textfield.MDCTextField(document.querySelector('.password'));
 var confirmPassword = new _textfield.MDCTextField(document.querySelector('.confirmPassword'));
-var registerbutton = new _ripple.MDCRipple(document.querySelector('#next'));
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
+    authDomain: "gymproject-9f46b.firebaseapp.com",
+    databaseURL: "https://gymproject-9f46b.firebaseio.com",
+    projectId: "gymproject-9f46b",
+    storageBucket: "gymproject-9f46b.appspot.com",
+    messagingSenderId: "585009595190",
+    appId: "1:585009595190:web:cad18d95185a486bf1e997",
+    measurementId: "G-TSWB8RLHM9"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+var auth = firebase.auth();
 
 function registerAction() {
     console.log("registerAction()");
     var registerBtn = document.getElementById('next');
     registerBtn.addEventListener('click', function (event) {
         event.preventDefault();
-        if (username.valid && mail.valid && password.valid && confirmPassword.valid) {
+        if (username.valid && email.valid && password.valid && confirmPassword.valid) {
             registerUser();
         }
     });
 }
 
-function registerUser() {
+function registerUserInDatabase(uid) {
     $.ajax({
         url: URL + "/register",
         method: "POST",
         dataType: "json",
         data: {
-            username: username.value,
-            mail: mail.value,
-            password: password.value
+            user: {
+                uid: uid,
+                username: username.value,
+                mail: email.value,
+                password: password.value
+            }
         },
         success: function success(responseJSON) {
             console.log("Connexión Exitosa");
@@ -2613,6 +2629,17 @@ function registerUser() {
             console.log("Connexión Error");
             console.log(err);
         }
+    });
+}
+function registerUser() {
+    auth.createUserWithEmailAndPassword(email.value, password.value).then(function (firebaseUser) {
+        console.log("User " + firebaseUser.uid + " created successfully!");
+        registerUserInDatabase(firebaseUser.uid);
+    }).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
     });
 }
 registerAction();

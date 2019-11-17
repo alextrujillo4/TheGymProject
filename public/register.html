@@ -30,15 +30,14 @@
 </section>
 
 <form>
-
+    <div class="mdc-text-field email">
+        <input class="mdc-text-field__input" id="email-input" name="email" required type="email">
+        <label class="mdc-floating-label" for="email-input">email</label>
+        <div class="mdc-line-ripple"></div>
+    </div>
     <div class="mdc-text-field username">
         <input class="mdc-text-field__input" id="username-input" name="username" required type="text">
         <label class="mdc-floating-label" for="username-input">Username</label>
-        <div class="mdc-line-ripple"></div>
-    </div>
-    <div class="mdc-text-field email">
-        <input class="mdc-text-field__input" id="email-input" name="email" required type="text">
-        <label class="mdc-floating-label" for="email-input">email</label>
         <div class="mdc-line-ripple"></div>
     </div>
     <div class="mdc-text-field password">
@@ -66,6 +65,9 @@
     </div>
 </form>
 <script async src="bundle-register.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+<script src = "https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"> </script>
 
-<script type="text/javascript" src="style-bundle-register.js?ec300cbe14be6ef9bc7d"></script></body>
+<script type="text/javascript" src="style-bundle-register.js?60c29959765e6a1eb289"></script></body>
 </html>

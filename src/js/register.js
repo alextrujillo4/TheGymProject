@@ -1,11 +1,13 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCDialog} from '@material/dialog';
+import { auth } from './firebase/index.js'
+
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 import {MDCRipple} from '@material/ripple';
 import { MDCLinearProgress } from '@material/linear-progress';
 
 //const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-const URL = "http://localhost:5000/gymproject-9f46b/us-central1"
+const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 
 const username = new MDCTextField(document.querySelector('.username'));
 const email = new MDCTextField(document.querySelector('.email'));
@@ -13,20 +15,6 @@ const password = new MDCTextField(document.querySelector('.password'));
 const confirmPassword = new MDCTextField(document.querySelector('.confirmPassword'));
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 linearProgress.close();
-const firebaseConfig = {
-    apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
-    authDomain: "gymproject-9f46b.firebaseapp.com",
-    databaseURL: "https://gymproject-9f46b.firebaseio.com",
-    projectId: "gymproject-9f46b",
-    storageBucket: "gymproject-9f46b.appspot.com",
-    messagingSenderId: "585009595190",
-    appId: "1:585009595190:web:cad18d95185a486bf1e997",
-    measurementId: "G-TSWB8RLHM9"
-};
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-const auth  = firebase.auth();
 
 function dialogAction(){
     console.log("dialogAction()");
@@ -66,21 +54,21 @@ function registerUserInDatabase(uid) {
             if (responseJSON.status === 200){
                 dialog.open()
             } else{
-                alert("Error... user is already registered!")
+                alert("Error... user is already registered!");
             }
+            linearProgress.close();
         },
         error: function(err) {
-
             console.log("User Not registered");
-            alert("Error... user Not registered :(")
+            alert("Error... user Not registered :(");
+            linearProgress.close();
         }
     });
-    linearProgress.close();
 }
 function registerUser() {
     linearProgress.open();
     linearProgress.determinate = false;
-    auth.createUserWithEmailAndPassword(email.value, password.value)
+    return auth.createUserWithEmailAndPassword(email.value, password.value)
         .then(function(firebaseUser) {
             console.log("User: " + firebaseUser.user.uid+ "Created successfully!");
             registerUserInDatabase(firebaseUser.user.uid);
