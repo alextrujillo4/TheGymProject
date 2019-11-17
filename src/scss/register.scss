@@ -1,16 +1,15 @@
 @import "./common";
 @import "@material/textfield/mdc-text-field";
 @import "@material/button/mdc-button";
-
+@import "@material/dialog/mdc-dialog";
+@import "@material/linear-progress/mdc-linear-progress";
 .header {
   text-align: center;
 }
-
-
 .shrine-logo {
   width: 100px;
   height: 100px;
-  padding-top: 60px;
+  padding-top: 50px;
   fill: currentColor;
 }
 
@@ -49,7 +48,10 @@
 .cancel {
   @include mdc-button-ink-color(on-primary);
 }
-
+.progress-section{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 .forgot-password{
   display: flex;
   justify-content: center;

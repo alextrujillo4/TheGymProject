@@ -4,7 +4,7 @@
     <!-- Config -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Shrine (MDC Web Example App)</title>
+    <title>E | Register</title>
     <!-- Google -->
     <link href="https://material.io/favicon.ico" rel="shortcut icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
@@ -50,6 +50,18 @@
         <label class="mdc-floating-label" for="password-confirm-input">Confirm Password</label>
         <div class="mdc-line-ripple"></div>
     </div>
+    <div class="button-container progress-section">
+        <div role="progressbar" class="mdc-linear-progress">
+            <div class="mdc-linear-progress__buffering-dots"></div>
+            <div class="mdc-linear-progress__buffer"></div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                <span class="mdc-linear-progress__bar-inner"></span>
+            </div>
+        </div>
+    </div>
     <div class="button-container">
         <button class="mdc-button cancel" type="button"  onclick="window.location.href='/'">
         <span class="mdc-button__label">
@@ -61,13 +73,33 @@
           Register
         </span>
         </button>
-
     </div>
 </form>
+<div class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+            <h2 class="mdc-dialog__title" id="my-dialog-title">
+                User created!</h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+                Your user has been created successfully. Please login.
+            </div>
+            <footer class="mdc-dialog__actions">
+                <button id="dialog_ok" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                    <span class="mdc-button__label">Ok</span>
+                </button>
+            </footer>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>
+
 <script async src="bundle-register.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
 <script src = "https://www.gstatic.com/firebasejs/6.5.0/firebase-auth.js"> </script>
-
 </body>
 </html>
