@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- JQuery -->
-    <script src="jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="bundle-home.css">
 </head>
@@ -138,6 +137,33 @@
             </div>
         </div>
     </div>
+    <!-- DIALOG SECTION FOT LOGOUT -->
+    <div id="mdc-logout-dialog"
+         class="mdc-dialog"
+         role="alertdialog"
+         aria-modal="true"
+         aria-labelledby="my-dialog-title"
+         aria-describedby="my-dialog-content">
+        <div class="mdc-dialog__container">
+            <div class="mdc-dialog__surface">
+                <h2 class="mdc-dialog__title" id="my-dialog-title">
+                    Log out?</h2>
+                <div class="mdc-dialog__content" id="my-dialog-content">
+                    Are you sure you want to log out?
+                </div>
+                <footer class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                        <span class="mdc-button__label">Cancel</span>
+                    </button>
+                    <button id="logoutConfirm" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                        <span class="mdc-button__label">Logout</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+    <!-- END DIALOG SECTION FOT LOGOUT -->
     <button class="mdc-fab create" aria-label="Favorite" id="createbtn">
         <div class="mdc-fab__ripple"></div>
         <span class="mdc-fab__icon material-icons">add</span>
