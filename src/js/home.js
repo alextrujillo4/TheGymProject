@@ -4,8 +4,8 @@ new MDCList(document.querySelector('.mdc-list'));
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
         auth.onAuthStateChanged(function (user) {
-            if (!user) {
-                window.location.href = '/';
+            if (!user.uid) {
+                window.location.href='/home.html';
             }
         });
     });
