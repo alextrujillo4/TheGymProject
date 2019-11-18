@@ -21,22 +21,15 @@
     "webpack-dev-server": "^2.11.5"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@material/button": "^1.1.1",
     "@material/card": "^4.0.0",
-=======
     "@material/button": "^1.0.1",
     "@material/dialog": "^4.0.0",
->>>>>>> 1ded00a04df195fdac260dc264bf8cc3b6e235d0
     "@material/drawer": "^1.0.1",
     "@material/elevation": "^1.0.0",
     "@material/fab": "^1.1.1",
     "@material/image-list": "^1.0.0",
-<<<<<<< HEAD
     "@material/layout-grid": "^4.0.0",
-=======
     "@material/linear-progress": "^4.0.0",
->>>>>>> 1ded00a04df195fdac260dc264bf8cc3b6e235d0
     "@material/list": "^1.0.1",
     "@material/ripple": "^1.0.1",
     "@material/snackbar": "^4.0.0",

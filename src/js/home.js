@@ -1,4 +1,4 @@
-import {auth} from "./firebase";
+import {auth, firestore} from "./firebase";
 new MDCList(document.querySelector('.mdc-list'));
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function(user) {
@@ -54,3 +54,17 @@ listEl.addEventListener('click', (event) => {
 document.body.addEventListener('MDCDrawer:closed', () => {
   mainContentEl.querySelector('input, button').focus();
 });
+
+
+let excerciseRef = firestore.collection('Excercises').doc('0npiQehggfuPgF3X6Z6y');
+let getDoc = excerciseRef.get()
+  .then(doc => {
+    if (!doc.exists) {
+      console.log('No such document!');
+    } else {
+      console.log('Document data:', doc.data());
+    }
+  })
+  .catch(err => {
+    console.log('Error getting document', err);
+  });

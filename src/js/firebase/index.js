@@ -12,24 +12,10 @@ const firebase = initializeApp({
 });
 const analytics = firebase.analytics();
 const auth  = firebase.auth();
-/*
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        loggegUser = {
-        displayName : user.displayName,
-        email : user.email,
-        emailVerified : user.emailVerified,
-        photoURL : user.photoURL,
-        isAnonymous : user.isAnonymous,
-        uid : user.uid,
-        providerData : user.providerData
-        }
-    } else {
-        loggegUser = null;
-    }
-});
-*/
+const firestore = firebase.firestore();
+
 export {
     auth,
+    firestore,
     analytics
 };
