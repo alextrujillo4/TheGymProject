@@ -3,6 +3,7 @@ import {MDCDialog} from '@material/dialog';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
+
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
@@ -27,15 +28,13 @@ document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
 
-
-
 function addRoutine() {
     console.log("addRoutine()");
     $("#createbtn").on("click", function (event) {
         event.preventDefault();
-//window.location.href='/create.html';
+        //window.location.href='/create.html';
         $("#cardRoutine").append(`
-        <div class="mdc-card routine">
+        <div class="mdc-card routine mdc-card--outlined">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
@@ -96,8 +95,6 @@ function logoutAction() {
         });
     });
 }
-
-
 
 logoutAction();
 addRoutine();

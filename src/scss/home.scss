@@ -13,10 +13,11 @@
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
-
+@import "@material/list/mdc-list";
 body {
   display: flex;
   height: 100vh;
+
 }
 .header {
   text-align: center;
@@ -31,10 +32,17 @@ body {
 .main-content {
   overflow: auto;
   height: 100%;
+  background-color: $mdc-theme-background;
+}
+.secondary-content{
+  margin: 24px;
 }
 
 .app-bar {
-  position: absolute;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
 }
 
 // only apply this style if below top app bar
@@ -128,6 +136,7 @@ body {
 
 
 .my-card-content {
+  padding-top: 16px;
   padding-right: 24px;
   padding-left: 24px;
 
@@ -141,7 +150,35 @@ body {
 }
 
 .hide{
+  display: none;
   visibility: hidden;
+}
+
+.profile-header {
+  background-image: url(https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2019/03/11/15523046827096.jpg);
+  height: 280px;
+  padding: 0; /* remove any pre-existing padding, just in case */
+  background-position: center center;
+  background-size: 100%;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+}
+.profile-text-header{
+  position: absolute;
+  top: 100px;
+  height: 280px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.muscle-card {
+  height: 200px;
+  width: 350px;
 }
 
 

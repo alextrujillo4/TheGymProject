@@ -19,7 +19,7 @@
 </head>
 <body class="home">
 <!--APP BAR -->
-<header class="mdc-top-app-bar app-bar" id="app-bar">
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <a id="menu" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
@@ -64,11 +64,10 @@
             <!-- OPTION CERO SELECTED -->
             <div id="first" >
                 <!---GRID-->
-                <div class="mdc-layout-grid">
-                    <div class="mdc-layout-grid__inner">
+                <div class="mdc-grid-list">
                         <div class="mdc-layout-grid__cell" id="cardRoutine">
                             <!-- LIST OF ROUTINES -->
-                            <div class="mdc-card routine">
+                            <div class="mdc-card routine mdc-card--outlined">
                                 <div class="mdc-card__primary-action demo-card__primary-action my-card-content"
                                      tabindex="0">
                                     <div class="demo-card__primary">
@@ -106,13 +105,62 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
             <!--END OPTION CERO SELECTED -->
             <!-- OPTION ONE SELECTED -->
-            <div  id="second">
+            <div  id="second" class="hide secondary-content">
+                <section class="mbr-section">
+                    <div class="profile-header">
+                    </div>
+                    <div class="container profile-text-header">
+                        <div class="media-container-row">
+                            <div class="title col-12">
+                                <h1 class="" style="">Hello! Username</h1>
+                                <h5 class="mbr-section-subtitle" >
+                                    Total of Excertices: 0
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mbr-section">
+                    <div class="container">
+                        <h1  style="">My Muscles</h1>
+                        <ul class="mdc-list" id="muscle-list"></ul>
+                            <div class="mdc-layout-grid">
+                                <div class="mdc-layout-grid__inner">
+                                    <div class="mdc-layout-grid__cell">
+                                        <div class="mdc-card mdc-card--outlined muscle-card">
+                                            <div class="mdc-card__primary-action" tabindex="0">
+                                                <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="background-image: url(https://www.kingofthegym.com/wp-content/uploads/2012/11/leg-anatomy.jpg)">
+                                                    <div class="mdc-card__media-content">Pierna</div>
+                                                </div>
+                                            </div>
+                                            <div class="mdc-card__actions">
+                                                <div class="mdc-card__action-buttons">
+                                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                        <span class="mdc-button__label">Agregar</span>
+                                                    </button>
+                                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                        <span class="mdc-button__label">Quitar</span>
+                                                    </button>
+                                                </div>
+                                                <div class="mdc-card__action-icons">
+                                                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                                                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="mdc-layout-grid__cell"></div>
+                                    <div class="mdc-layout-grid__cell"></div>
+                                </div>
+                            </div>
+                    </div>
+                </section>
 
             </div>
             <!--END OPTION TWO SELECTED -->
