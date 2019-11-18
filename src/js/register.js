@@ -1,13 +1,20 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCDialog} from '@material/dialog';
 import { auth } from './firebase/index.js'
+window.onload = function verifyUser() {
+    auth.onAuthStateChanged(function(user) {
+        auth.onAuthStateChanged(function(user) {
+            if (user.uid) {
+                window.location.href='/home.html';
+            }
+        });
+    });
+};
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 import {MDCRipple} from '@material/ripple';
 import { MDCLinearProgress } from '@material/linear-progress';
-
 //const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
-
 const username = new MDCTextField(document.querySelector('.username'));
 const email = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));
@@ -15,15 +22,7 @@ const confirmPassword = new MDCTextField(document.querySelector('.confirmPasswor
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 linearProgress.close();
 
-window.onload = function verifyUser() {
-    auth.onAuthStateChanged(function(user) {
-        auth.onAuthStateChanged(function(user) {
-            if (user) {
-                window.location.href='/home.html';
-            }
-        });
-    });
-};
+
 
 function dialogAction(){
     console.log("dialogAction()");
@@ -38,9 +37,9 @@ function registerAction() {
     let registerBtn = document.getElementById('next');
     registerBtn.addEventListener('click', function(event) {
         event.preventDefault();
-      if(username.valid && email.valid && password.valid && confirmPassword.valid){
-         registerUser();
-      }
+        if(username.valid && email.valid && password.valid && confirmPassword.valid){
+            registerUser();
+        }
     });
 }
 

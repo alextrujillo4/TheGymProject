@@ -3,7 +3,7 @@ import { auth } from './firebase/index.js'
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function(user) {
         auth.onAuthStateChanged(function(user) {
-            if (user) {
+            if (user.uid) {
                 window.location.href='/home.html';
             }
         });
