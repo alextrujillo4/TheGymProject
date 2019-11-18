@@ -1,19 +1,22 @@
 
+
 import {auth, firestore} from "./firebase";
+
+import {MDCList} from '@material/list';
+import {MDCRipple} from '@material/ripple';
+import {MDCDialog} from '@material/dialog';
+const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
+const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
+
 
 new MDCList(document.querySelector('.mdc-list'));
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
-        auth.onAuthStateChanged(function (user) {
-            if (!user.uid) {
-                window.location.href='/home.html';
+            if (!user) {
+                window.location.href='/';
             }
-        });
     });
 };
-import {MDCList} from '@material/list';
-import {MDCRipple} from '@material/ripple';
-const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 
 $("#createbtn").on("click", function (event) {
 event.preventDefault();
@@ -73,10 +76,29 @@ let getDoc = excerciseRef.get()
     console.log('Error getting document', err);
   });
 
+function logoutAction() {
+    console.log("logoutAction()");
+    $("#logoutConfirm").on("click", function (event) {
+        event.preventDefault();
+        auth.signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+        });
+    });
+}
+
+
 function logoutBtnAction() {
+    console.log("logoutBtnAction()");
     $("#logoutBtn").on("click", function (event) {
         event.preventDefault();
+        dialog.open()
     });
 }
 
 logoutBtnAction();
+
+
+logoutAction();
+
