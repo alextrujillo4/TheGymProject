@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shrine (MDC Web Example App)</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
+  <link rel="stylesheet" href="bundle-login.css">
+</head>
+<body class="shrine-login">
+  <section class="header">
+    <svg class="shrine-logo"  enable-background="new 0 0 24 24" xml:space="preserve" fill="#000000"
+         focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 259.18 272.74">
+      <g>
+        <g>
+            <polygon class="cls-1" points="67.29 0.5 258.54 0.5 244.85 56.73 53.25 56.73 67.29 0.5"/>
+          <path d="M238.2,119.49H46.67l-39.52,161H199.74l13-54.95-137.74-.26q6.51-26.9,13-53.8H225.94Z"></path>
+        </g>
+        <rect fill="none" width="24" height="24"/>
+      </g>
+    </svg>
+    <h1>ENERGY GYM</h1>
+  </section>
+
+  <form action="home.html">
+    <div class="mdc-text-field username">
+      <input type="text" class="mdc-text-field__input" id="username-input" name="username" required>
+      <label class="mdc-floating-label" for="username-input">Username</label>
+      <div class="mdc-line-ripple"></div>
+    </div>
+    <div class="mdc-text-field password">
+      <input type="password" class="mdc-text-field__input" id="password-input" name="password" required minlength="8">
+      <label class="mdc-floating-label" for="password-input">Password</label>
+      <div class="mdc-line-ripple"></div>
+    </div>
+    <div class="button-container">
+      <button class="mdc-button cancel" type="button"  onclick="window.location.href='/register.html'">
+        <span class="mdc-button__label">
+          Forgot password
+        </span>
+      </button>
+
+      <button class="mdc-button mdc-button--raised next">
+        <span class="mdc-button__label">
+          Login
+        </span>
+      </button>
+    </div>
+  </form>
+  <script src="bundle-login.js" async></script>
+</body>
+</html>
