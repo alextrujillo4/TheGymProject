@@ -72,8 +72,7 @@ module.exports = [
       }]
     },
   },
-
-
+  //=================================== REGISTER ADDED
   {
     entry: './scss/register.scss',
     output: {
@@ -100,4 +99,6 @@ module.exports = [
       }]
     },
   }
+  //=================================== REGISTER ADDED
+
 ];
