@@ -38,9 +38,9 @@ function registerAction() {
     let registerBtn = document.getElementById('next');
     registerBtn.addEventListener('click', function(event) {
         event.preventDefault();
-      if(username.valid && email.valid && password.valid && confirmPassword.valid){
-         registerUser();
-      }
+        if(username.valid && email.valid && password.valid && confirmPassword.valid){
+            registerUser();
+        }
     });
 }
 

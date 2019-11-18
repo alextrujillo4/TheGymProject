@@ -1,26 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Config -->
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Shrine (MDC Web Example App)</title>
-  <!-- Google -->
-  <link href="https://material.io/favicon.ico" rel="shortcut icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- JQuery -->
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="bundle-home.css">
+    <!-- Config -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>E | Home</title>
+    <!-- Google -->
+    <link href="https://material.io/favicon.ico" rel="shortcut icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- JQuery -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bundle-home.css">
 </head>
 <body class="home">
-  
-  <aside class="mdc-drawer shrine-drawer">
+
+<aside class="mdc-drawer shrine-drawer">
     <div class="mdc-drawer__header">
         <svg class="shrine-logo" enable-background="new 0 0 24 24" fill="#000000" focusable="false"
-        viewBox="0 0 259.18 272.74" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+             viewBox="0 0 259.18 272.74" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
      <g>
        <g>
            <polygon class="cls-1" points="67.29 0.5 258.54 0.5 244.85 56.73 53.25 56.73 67.29 0.5"/>
@@ -29,135 +29,123 @@
          <rect fill="none" height="24" width="24"/>
      </g>
    </svg>
-      <h1 class="shrine-title">SHRINE</h1>
+        <h1 class="shrine-title">SHRINE</h1>
     </div>
     <div class="mdc-drawer__content">
-      <nav class="mdc-list">
-        <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
-          <span class="mdc-list-item__text">Routines</span>
-        </a>
-        <div class="shrine-select-item-divider mdc-list-divider" role="separator"></div>
-        <a class="mdc-list-item" href="#">
-          <span class="mdc-list-item__text">My Account</span>
-        </a>
-        <a class="mdc-list-item" href="#">
-          <span class="mdc-list-item__text">Log Out</span>
-        </a>
-       
-      </nav>
-    </div>
-  </aside>
-  <div class="shrine-body">
+        <nav class="mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
+                <span class="mdc-list-item__text">Routines</span>
+            </a>
+            <div class="shrine-select-item-divider mdc-list-divider" role="separator"></div>
+            <a class="mdc-list-item" href="#">
+                <span class="mdc-list-item__text">My Account</span>
+            </a>
+            <a class="mdc-list-item" href="#">
+                <span class="mdc-list-item__text">Log Out</span>
+            </a>
 
+        </nav>
+    </div>
+</aside>
+<div class="shrine-body">
     <div class="mdc-card mdc-card--outlined">
         <div class="mdc-card__primary-action" tabindex="0">
             <!-- content within actionable area -->
-          </div>
-      <!-- ... content ... -->
+        </div>
+        <!-- ... content ... -->
     </div>
-
-<!---GRID-->
-
-<div class="mdc-layout-grid" >
-    <div class="mdc-layout-grid__inner" id = "cardRoutine">
-
-      <div class="mdc-layout-grid__cell">
-          <div class="mdc-card routine">
-              <div class="mdc-card__primary-action">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content">Title</div>
+    <!---GRID-->
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner" id="cardRoutine">
+            <div class="mdc-layout-grid__cell">
+                <div class="mdc-card routine">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square">
+                            <div class="mdc-card__media-content">Title</div>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <div class="mdc-card__action-buttons">
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Ver</span>
+                            </button>
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Editar</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <!-- ... additional primary action content ... -->
-              </div>
-              <div class="mdc-card__actions">
-                <div class="mdc-card__action-buttons">
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Ver</span>
-                  </button>
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Editar</span>
-                  </button>
-                </div>
-               
-              </div>
             </div>
+            <div class="mdc-layout-grid__cell">
+                <div class="mdc-card routine">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square">
+                            <div class="mdc-card__media-content">Title</div>
+                        </div>
+                        <!-- ... additional primary action content ... -->
+                    </div>
+                    <div class="mdc-card__actions">
+                        <div class="mdc-card__action-buttons">
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Ver</span>
+                            </button>
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Editar</span>
+                            </button>
+                        </div>
 
-      </div>
-      <div class="mdc-layout-grid__cell">
-          <div class="mdc-card routine">
-              <div class="mdc-card__primary-action">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content">Title</div>
+                    </div>
                 </div>
-                <!-- ... additional primary action content ... -->
-              </div>
-              <div class="mdc-card__actions">
-                <div class="mdc-card__action-buttons">
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Ver</span>
-                  </button>
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Editar</span>
-                  </button>
-                </div>
-               
-              </div>
             </div>
-      </div>
-      <div class="mdc-layout-grid__cell">
-          <div class="mdc-card routine">
-              <div class="mdc-card__primary-action">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content">Title</div>
+            <div class="mdc-layout-grid__cell">
+                <div class="mdc-card routine">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square">
+                            <div class="mdc-card__media-content">Title</div>
+                        </div>
+                        <!-- ... additional primary action content ... -->
+                    </div>
+                    <div class="mdc-card__actions">
+                        <div class="mdc-card__action-buttons">
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Ver</span>
+                            </button>
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Editar</span>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
-                <!-- ... additional primary action content ... -->
-              </div>
-              <div class="mdc-card__actions">
-                <div class="mdc-card__action-buttons">
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Ver</span>
-                  </button>
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Editar</span>
-                  </button>
-                </div>
-               
-              </div>
             </div>
-      </div>
-      <div class="mdc-layout-grid__cell">
-          <div class="mdc-card routine">
-              <div class="mdc-card__primary-action">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content">Title</div>
+            <div class="mdc-layout-grid__cell">
+                <div class="mdc-card routine">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square">
+                            <div class="mdc-card__media-content">Title</div>
+                        </div>
+                        <!-- ... additional primary action content ... -->
+                    </div>
+                    <div class="mdc-card__actions">
+                        <div class="mdc-card__action-buttons">
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Ver</span>
+                            </button>
+                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                <span class="mdc-button__label">Editar</span>
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
-                <!-- ... additional primary action content ... -->
-              </div>
-              <div class="mdc-card__actions">
-                <div class="mdc-card__action-buttons">
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Ver</span>
-                  </button>
-                  <button class="mdc-button mdc-card__action mdc-card__action--button">
-                    <span class="mdc-button__label">Editar</span>
-                  </button>
-                </div>
-               
-              </div>
             </div>
-      </div>
+        </div>
     </div>
-  </div>
-
-
-
-        <button class="mdc-fab create" aria-label="Favorite" id="createbtn">
-            <div class="mdc-fab__ripple"></div>
-            <span class="mdc-fab__icon material-icons">add</span>
-          </button>
-
-
-
-  <script src="bundle-home.js" async></script>
+    <button class="mdc-fab create" aria-label="Favorite" id="createbtn">
+        <div class="mdc-fab__ripple"></div>
+        <span class="mdc-fab__icon material-icons">add</span>
+    </button>
+</div>
+    <script src="bundle-home.js" async></script>
 </body>
 </html>
