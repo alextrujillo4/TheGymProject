@@ -54,3 +54,29 @@ function processRequest(request, response) {
         resolve();
     })
 }
+
+
+
+exports.home = functions.https.onRequest((request, response) => {
+    console.log("BODY => ");
+    console.log(request.body);
+    console.log("QUERY => ");
+    console.log(request.query);
+    console.log("PARAMS => ");
+    console.log(request.params);
+    cors(request, response, () => {
+        if ((request.body || request.query || request.params)) {
+            return processHomeRequest(request, response);
+        } else {
+            console.log('Invalid Request');
+            return response.status(400).end('Invalid Request.');
+        }
+    });
+});
+
+function processHomeRequest(request, response) {
+    return response.status(200).send({
+        statusMessage: 'Hola',
+        status: 200
+    });
+}

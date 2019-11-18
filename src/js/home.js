@@ -12,13 +12,10 @@ window.onload = function verifyUser() {
 };
 import {MDCList} from '@material/list';
 import {MDCRipple} from '@material/ripple';
-
-
 const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 
-
 $("#createbtn").on("click", function (event) {
-
+event.preventDefault();
     $("#cardRoutine").append(`
         <div class="mdc-layout-grid__cell">
             <div class="mdc-card routine">
@@ -52,3 +49,19 @@ listEl.addEventListener('click', (event) => {
 document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
+
+/*
+*
+* firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
+* */
+function logoutBtnAction() {
+    $("#logoutBtn").on("click", function (event) {
+        event.preventDefault();
+    });
+}
+
+logoutBtnAction();
