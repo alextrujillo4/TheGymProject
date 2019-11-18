@@ -10,32 +10,38 @@
     <link href="https://material.io/favicon.ico" rel="shortcut icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JQuery -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="bundle-home.css">
+    <link href="bundle-home.css" rel="stylesheet">
 
 </head>
 <body class="home">
-
-<aside class="mdc-drawer shrine-drawer">
-    <div class="mdc-drawer__header">
+<header class="mdc-top-app-bar app-bar" id="app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <a id="menu" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+            <span class="mdc-top-app-bar__title">Energy GYM</span>
+        </section>
+    </div>
+</header>
+<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+    <div class="header">
         <svg class="shrine-logo" enable-background="new 0 0 24 24" fill="#000000" focusable="false"
-             viewBox="0 0 259.18 272.74" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-     <g>
-       <g>
-           <polygon class="cls-1" points="67.29 0.5 258.54 0.5 244.85 56.73 53.25 56.73 67.29 0.5"/>
-           <path d="M238.2,119.49H46.67l-39.52,161H199.74l13-54.95-137.74-.26q6.51-26.9,13-53.8H225.94Z"></path>
-       </g>
-         <rect fill="none" height="24" width="24"/>
-     </g>
-   </svg>
-        <h1 class="shrine-title">SHRINE</h1>
+                     viewBox="0 0 259.18 272.74" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+             <g>
+               <g>
+                   <polygon class="cls-1" points="67.29 0.5 258.54 0.5 244.85 56.73 53.25 56.73 67.29 0.5"/>
+                   <path d="M238.2,119.49H46.67l-39.52,161H199.74l13-54.95-137.74-.26q6.51-26.9,13-53.8H225.94Z"></path>
+               </g>
+                 <rect fill="none" height="24" width="24"/>
+             </g>
+           </svg>
     </div>
     <div class="mdc-drawer__content">
         <nav class="mdc-list">
-            <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" tabindex="0" href="#">
+            <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
                 <span class="mdc-list-item__text">Routines</span>
             </a>
             <div class="shrine-select-item-divider mdc-list-divider" role="separator"></div>
@@ -49,53 +55,66 @@
         </nav>
     </div>
 </aside>
-<div class="shrine-body">
-    <div class="mdc-card mdc-card--outlined">
-        <div class="mdc-card__primary-action" tabindex="0">
-        </div>
-    </div>
-    <!---GRID-->
-    <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner" >
-            <div class="mdc-layout-grid__cell" id="cardRoutine">
-                <!-- LIST OF ROUTINES -->
 
-                <div class="mdc-card routine">
-                    <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
-                        <div class="demo-card__primary">
-                            <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
-                            <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">by Alex Trujillo</h3>
-                        </div>
-                        <div class="demo-card__secondary mdc-typography mdc-typography--body2">This is the first routine. Visit ten places on our planet that are undergoing the biggest changes today.</div>
-                    </div>
-                    <div class="mdc-card__actions">
-                        <div class="mdc-card__action-buttons">
-                            <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Read</button>
-                            <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>
-                        </div>
-                        <div class="mdc-card__action-icons">
-                            <button id="add-to-pubic"
-                                    class="mdc-icon-button"
-                                    aria-label="Add to public"
-                                    aria-hidden="true"
-                                    aria-pressed="false">
-                                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>
-                                <i class="material-icons mdc-icon-button__icon">visibility_off</i>
-                            </button>
-                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
+
+<div class="mdc-drawer-app-content ">
+    <main class="main-content" id="main-content">
+        <div class="mdc-top-app-bar--fixed-adjust shrine-body">
+            <!---GRID-->
+            <div class="mdc-layout-grid ">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell" id="cardRoutine">
+                        <!-- LIST OF ROUTINES -->
+                        <div class="mdc-card routine">
+                            <div class="mdc-card__primary-action demo-card__primary-action my-card-content"
+                                 tabindex="0">
+                                <div class="demo-card__primary">
+                                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
+                                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">by Alex
+                                        Trujillo</h3>
+                                </div>
+                                <div class="demo-card__secondary mdc-typography mdc-typography--body2">This is the first
+                                    routine. Visit ten places on our planet that are undergoing the biggest changes
+                                    today.
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button"><span
+                                            class="mdc-button__ripple"></span> Read
+                                    </button>
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button"><span
+                                            class="mdc-button__ripple"></span> Edit
+                                    </button>
+                                </div>
+                                <div class="mdc-card__action-icons">
+                                    <button aria-hidden="true"
+                                            aria-label="Add to public"
+                                            aria-pressed="false"
+                                            class="mdc-icon-button"
+                                            id="add-to-pubic">
+                                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>
+                                        <i class="material-icons mdc-icon-button__icon">visibility_off</i>
+                                    </button>
+                                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                            title="Delete">delete
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
     <!-- DIALOG SECTION FOT LOGOUT -->
-    <div id="mdc-logout-dialog"
-         class="mdc-dialog"
-         role="alertdialog"
-         aria-modal="true"
+    <div aria-describedby="my-dialog-content"
          aria-labelledby="my-dialog-title"
-         aria-describedby="my-dialog-content">
+         aria-modal="true"
+         class="mdc-dialog"
+         id="mdc-logout-dialog"
+         role="alertdialog">
         <div class="mdc-dialog__container">
             <div class="mdc-dialog__surface">
                 <h2 class="mdc-dialog__title" id="my-dialog-title">
@@ -104,10 +123,11 @@
                     Are you sure you want to log out?
                 </div>
                 <footer class="mdc-dialog__actions">
-                    <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                    <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no" type="button">
                         <span class="mdc-button__label">Cancel</span>
                     </button>
-                    <button id="logoutConfirm" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
+                    <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes" id="logoutConfirm"
+                            type="button">
                         <span class="mdc-button__label">Logout</span>
                     </button>
                 </footer>
@@ -116,11 +136,11 @@
         <div class="mdc-dialog__scrim"></div>
     </div>
     <!-- END DIALOG SECTION FOT LOGOUT -->
-    <button class="mdc-fab create" aria-label="Favorite" id="createbtn">
+    <button aria-label="Favorite" class="mdc-fab create" id="createbtn">
         <div class="mdc-fab__ripple"></div>
         <span class="mdc-fab__icon material-icons">add</span>
     </button>
 </div>
-    <script src="bundle-home.js" async></script>
+<script async src="bundle-home.js"></script>
 </body>
 </html>

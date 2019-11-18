@@ -1,14 +1,19 @@
 import {auth, firestore} from "./firebase";
-import {MDCList} from '@material/list';
-import {MDCRipple} from '@material/ripple';
 import {MDCDialog} from '@material/dialog';
-import {MDCIconButtonToggle} from '@material/icon-button';
-
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
-const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
-const iconToggle = new MDCIconButtonToggle(document.querySelector('.mdc-icon-button'));
+import {MDCList} from "@material/list";
+const list = MDCList.attachTo(document.querySelector('.mdc-list'));
+list.wrapFocus = true;
+import {MDCDrawer} from "@material/drawer";
+const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+import {MDCTopAppBar} from "@material/top-app-bar";
+const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+const menu = document.getElementById("menu");
 
-new MDCList(document.querySelector('.mdc-list'));
+topAppBar.setScrollTarget(document.getElementById('main-content'));
+menu.addEventListener('click', function (event) {
+    drawer.open = !drawer.open;
+})
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
             if (!user) {
@@ -17,10 +22,11 @@ window.onload = function verifyUser() {
     });
 };
 
+drawer.open = true;
 $("#createbtn").on("click", function (event) {
-//event.preventDefault();
-window.location.href='/create.html';
-    /*$("#cardRoutine").append(`
+event.preventDefault();
+//window.location.href='/create.html';
+    $("#cardRoutine").append(`
         <div class="mdc-card routine">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
@@ -47,7 +53,7 @@ window.location.href='/create.html';
                 </div>
             </div>
         </div>
-        `);*/
+        `);
 });
 
 

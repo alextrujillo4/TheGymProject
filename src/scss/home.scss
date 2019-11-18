@@ -1,6 +1,4 @@
 @import "./common";
-@import "@material/drawer/mdc-drawer";
-@import "@material/list/mdc-list";
 @import "@material/image-list/mdc-image-list";
 @import "@material/ripple/mixins";
 @import "@material/typography/mdc-typography";
@@ -11,24 +9,48 @@
 @import "@material/card/mdc-card";
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/dialog/mdc-dialog";
-.home {
-  display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+
+body {
+  display: flex;
+  height: 100vh;
+}
+.header {
+  text-align: center;
 }
 
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+  z-index: 7;
+}
 .shrine-logo-drawer {
-  display: block;
-  width: 48px;
-  padding: 40px 0 0;
-  margin: 0 auto;
+
   fill: currentColor;
 }
 
 .shrine-logo {
-  width: 100px;
-  height: 100px;
-  padding-top: 60px;
-  padding-left: 60px;
-
+  width: 80px;
+  height: 80px;
+  margin-top: 32px;
+  margin-bottom: 24px;
   fill: currentColor;
   align-self: center;
 }
@@ -95,22 +117,6 @@
   margin: 0 auto;
 }
 
-
-.shrine-body {
-  @include mdc-elevation(5);
-
-  display: block;
-  overflow: auto;
-  z-index: 0; // Elevate over the drawer
-}
-
-.mdc-button{
-  display: flex;
-  width: 100px;
-  flex-direction: row;
-
-}
-
 .create {
   @include mdc-button-ink-color(on-primary);
   position: fixed;
@@ -133,6 +139,7 @@
   width: 350px;
   margin:24px;
 }
+
 
 
 
