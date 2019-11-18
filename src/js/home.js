@@ -7,8 +7,6 @@ import {MDCRipple} from '@material/ripple';
 import {MDCDialog} from '@material/dialog';
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
-
-
 new MDCList(document.querySelector('.mdc-list'));
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
@@ -53,16 +51,6 @@ listEl.addEventListener('click', (event) => {
 document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
-
-/*
-*
-* firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-}).catch(function(error) {
-  // An error happened.
-});
-* */
-
 let excerciseRef = firestore.collection('Excercises').doc('0npiQehggfuPgF3X6Z6y');
 let getDoc = excerciseRef.get()
   .then(doc => {

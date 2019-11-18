@@ -130,7 +130,42 @@ module.exports = [
         query: {presets: ['env']}
       }]
     },
-  }
+  },
   //=================================== END REGISTER FOR PRODUCTION
-
+//=================================== ADD CREATE FOR PRODUCTION
+  {
+    entry: './scss/create.scss',
+    output: {
+      path: path.resolve(__dirname, "../public/"),
+      filename: 'style-bundle-create.js',
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'create.html',
+        filename: 'create.html' //relative to root of the application
+      })
+    ],
+    module: {
+      rules: [{
+        test: /create.scss$/,
+        use: getStyleUse('bundle-create.css')
+      }]
+    },
+  },
+  {
+    entry: "./js/create.js",
+    output: {
+      path: path.resolve(__dirname, "../public/"),
+      filename: "bundle-create.js"
+    },
+    module: {
+      loaders: [{
+        test: /create.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  }
+  //=================================== END CREATE FOR PRODUCTION
 ];

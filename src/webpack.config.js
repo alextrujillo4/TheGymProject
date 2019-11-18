@@ -98,7 +98,34 @@ module.exports = [
         query: {presets: ['env']}
       }]
     },
-  }
+  },
   //=================================== REGISTER ADDED
-
+  //=================================== CREATE ADDED
+  {
+    entry: './scss/create.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-create.js',
+    },
+    module: {
+      rules: [{
+        test: /create.scss$/,
+        use: getStyleUse('bundle-create.css')
+      }]
+    },
+  },
+  {
+    entry: "./js/create.js",
+    output: {
+      filename: "bundle-create.js"
+    },
+    module: {
+      loaders: [{
+        test: /create.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  }
+  //=================================== CREATE ADDED
 ];
