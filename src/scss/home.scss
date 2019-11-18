@@ -6,6 +6,7 @@
 @import "@material/typography/mdc-typography";
 @import "@material/elevation/mdc-elevation";
 @import "@material/button/mdc-button";
+@import "@material/icon-button/mdc-icon-button";
 @import "@material/fab/mdc-fab";
 @import "@material/card/mdc-card";
 @import "@material/layout-grid/mdc-layout-grid";
@@ -119,17 +120,18 @@
 
 }
 
+
 .my-card-content {
-  padding: 0px;
+  padding-right: 24px;
+  padding-left: 24px;
+
 }
 
 .routine{
-  display: flex;
-  padding: 0px;
-  height: 250px;
-  width: 250px;
-  flex-direction: column;
-  margin:50px;
+  min-height: 200px;
+  height: auto;
+  width: 350px;
+  margin:24px;
 }
 
 
