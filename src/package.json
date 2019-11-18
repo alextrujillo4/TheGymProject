@@ -21,13 +21,13 @@
     "webpack-dev-server": "^2.11.5"
   },
   "dependencies": {
-
     "@material/button": "^1.0.1",
     "@material/card": "^4.0.0",
     "@material/dialog": "^4.0.0",
     "@material/drawer": "^1.0.1",
     "@material/elevation": "^1.0.0",
     "@material/fab": "^1.1.1",
+    "@material/icon-button": "^4.0.0",
     "@material/image-list": "^1.0.0",
     "@material/layout-grid": "^4.0.0",
     "@material/linear-progress": "^4.0.0",
