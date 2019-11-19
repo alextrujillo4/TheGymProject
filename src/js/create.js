@@ -1,9 +1,6 @@
 
 import {auth, firestore} from "./firebase";
 
-const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
-const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-formField.input = checkbox;
 
 
 let excercisesRef =firestore.collection('Excercises');
@@ -22,11 +19,12 @@ let queryUpBody = excercisesRef.where('muscleType', '==', 'upperBody').get()
     snapshot.forEach(doc => {
 
       let name = doc.data().name
+      let id = doc.data().id
       console.log(doc.id, '=>', name);
  
  
       $("#upper").append(`
-      <ul>
+      <li id="${id}" name="${name}">
       <div class="mdc-form-field">
       <div class="mdc-checkbox">
         <input type="checkbox"
@@ -46,12 +44,10 @@ let queryUpBody = excercisesRef.where('muscleType', '==', 'upperBody').get()
       </div>
       <label for="checkbox-1">${name}</label>
     </div>
-    </ul>
+    </li>
       `)
  
- const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
- const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
- formField.input = checkbox;
+
     });
   })
   .catch(err => {
@@ -71,11 +67,12 @@ function getLowerBody(){
 
    snapshot.forEach(doc => {
     let name = doc.data().name
+    let id = doc.data().id
      console.log(doc.id, '=>', name);
 
 
      $("#lower").append(`
-     <li>
+     <li id="${id}" name="${name}">
      <div class="mdc-form-field">
      <div class="mdc-checkbox">
        <input type="checkbox"
@@ -98,9 +95,6 @@ function getLowerBody(){
    </li>
      `)
 
-const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
-const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-formField.input = checkbox;
 
 
 
@@ -117,7 +111,6 @@ formField.input = checkbox;
 
 function getCore(){
 //core query
-let cont = 0;
 let queryCore = excercisesRef.where('muscleType', '==', 'core').get()
 .then(snapshot => {
   if (snapshot.empty) {
@@ -133,7 +126,7 @@ let queryCore = excercisesRef.where('muscleType', '==', 'core').get()
     
 let tam =$("#core").length;
     $("#core").append(`
-    <li position="${cont}" id="${id}">
+    <li name="${name}" id="${id}">
     <div class="mdc-form-field">
     <div class="mdc-checkbox">
       <input type="checkbox"
@@ -154,10 +147,8 @@ let tam =$("#core").length;
     <label for="checkbox-1">${name}</label>
   </div>
   </li>`)
-  cont = cont+1
-const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
-const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-formField.input = checkbox;
+
+
 
 
 
@@ -170,49 +161,122 @@ formField.input = checkbox;
 
 }
 
+//core isChecked
 $('#core').on('change', ':checkbox', function(event){
 event.preventDefault()
 let par = event.target.parentNode.parentNode.parentNode; 
 if(this.checked){
-    console.log(par);
+    //console.log(par);
     par.setAttribute('isChecked',true);
    
 } else {
     par.removeAttribute('isChecked');
 }
 
-
-     //stuff 
     });
 
+//upperBody isChecked 
+$('#upper').on('change', ':checkbox', function(event){
+    event.preventDefault()
+    let par = event.target.parentNode.parentNode.parentNode; 
+    if(this.checked){
+        //console.log(par);
+        par.setAttribute('isChecked',true);
+       
+    } else {
+        par.removeAttribute('isChecked');
+    }
+    
+        });
+
+//lowerBody isChecked
+$('#lower').on('change', ':checkbox', function(event){
+    event.preventDefault()
+    let par = event.target.parentNode.parentNode.parentNode; 
+    if(this.checked){
+        //console.log(par);
+        par.setAttribute('isChecked',true);
+       
+    } else {
+        par.removeAttribute('isChecked');
+    }
+    
+        });
+
+
+//crear rutina (verifica las casillas que se encuentren checked)
 $("#createbtn").on("click", function (event) {
     event.preventDefault();
 
-    let tam = $('ul#core li').length;
+    
     let core =$('ul#core li')
+    let upper =$('ul#upper li')
+    let lower =$('ul#lower li')
 
-    for (let i=0; i<tam; i++){
-        if (core[i].getAttribute('isChecked') == true){
-            console.log(core[i].getAttribute(id));
+       //checa valores checked del muscleType upper
+       for (let i=0; i<upper.length; i++){
+        let checkUpper = upper[i].getAttribute('isChecked')
+        //console.log(check)
+        if (checkUpper != null){
+            console.log(upper[i].getAttribute('id'));
+
+            let newExc ={
+                id: upper[i].getAttribute('id'),
+                name: upper[i].getAttribute('name')
+            }
+            excChecked.push(newExc)
+        }
+
+     
+
+       // console.log($('ul#core li')[i].getAttribute('id'));
+    }
+
+
+    //checa valores checked del muscleType core
+    for (let i=0; i<core.length; i++){
+        let checkCore = core[i].getAttribute('isChecked')
+        //console.log(check)
+        if (checkCore != null){
+            console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
+            let newExc ={
+                id: core[i].getAttribute('id'),
+                name: core[i].getAttribute('name')
+            }
+            excChecked.push(newExc)
         }
 
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
 
-    console.log(tam);
+  
+     //checa valores checked del muscleType lower
+     for (let i=0; i<lower.length; i++){
+        let checkLower = lower[i].getAttribute('isChecked')
+        //console.log(check)
+        if (checkLower != null){
+            console.log(lower[i].getAttribute('id'));
+            let newExc ={
+                id: lower[i].getAttribute('id'),
+                name: lower[i].getAttribute('name')
+            }
+            excChecked.push(newExc)
+        }
 
-    let newExc = {
-        id :"id",
-        name : "prueba"
+       // console.log($('ul#core li')[i].getAttribute('id'));
     }
 
-excChecked.push(newExc);
-console.log(excChecked.length);
+   
+
+
+//excChecked.push(newExc);
+console.log(excChecked);
 });
 
-getLowerBody();
+
 getUpperBody();
 getCore();
+getLowerBody();
 
 
  
