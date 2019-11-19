@@ -11,7 +11,6 @@ const menu = document.getElementById("menu");
 const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
-
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
         if (!user) {
