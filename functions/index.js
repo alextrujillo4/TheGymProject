@@ -13,7 +13,8 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 const firestore = firebase.firestore();
-
+//===============================================================================================
+//===============================================================================================
 exports.register = functions.https.onRequest((request, response) => {
     console.log("BODY => ");
     console.log(request.body);
@@ -31,15 +32,99 @@ exports.register = functions.https.onRequest((request, response) => {
     });
 });
 
+function setUpperBody(userid) {
+    const exersicesReference = firestore.collection("Excercises");
+    exersicesReference.where('muscleType', '==', 'upperBody').get()
+        .then(snapshot => {
+            console.log("setUpperBody_snap");
+            if (!snapshot.empty) {
+                let array = [];
+                snapshot.forEach(doc => {
+                    var data = doc.data();
+                    data.weight = 10;
+                    data.unit = "lbs";
+                    array.push(data)
+                });
+                const obj = Object.assign({}, array); // {0:"a", 1:"b", 2:"c"}
+                firestore.collection("Users").doc(`${userid}`).collection("Muscles")
+                    .doc("upperBody").set(obj);
+            }
+            console.log('No matching documents.');
+            return;
+        })
+        .catch(err => {
+            console.log('Error getting documents', err);
+        });
+}
+
+
+function setLowerBody(userid) {
+    const exersicesReference = firestore.collection("Excercises");
+    exersicesReference.where('muscleType', '==', 'lowerBody').get()
+        .then(snapshot => {
+            console.log("setLowerBody_snap");
+            if (!snapshot.empty) {
+                let array = [];
+                snapshot.forEach(doc => {
+                    var data = doc.data();
+                    data.weight = 30;
+                    data.unit = "lbs";
+                    array.push(data)
+                });
+                const obj = Object.assign({}, array); // {0:"a", 1:"b", 2:"c"}
+                firestore.collection("Users").doc(`${userid}`).collection("Muscles")
+                    .doc("lowerBody").set(obj);
+                return;
+            }
+            console.log('No matching documents.');
+            return;
+        })
+        .catch(err => {
+            console.log('Error getting documents', err);
+        });
+}
+
+
+function setCore(userid) {
+    const exersicesReference = firestore.collection("Excercises");
+    exersicesReference.where('muscleType', '==', 'core').get()
+        .then(snapshot => {
+            console.log("setCore_snap");
+            if (!snapshot.empty) {
+                let array = [];
+                snapshot.forEach( (doc) => {
+                    var data = doc.data();
+                    data.weight = 0;
+                    data.unit = "lbs";
+                    array.push(data);
+                    array.push(data)
+                });
+                const obj = Object.assign({}, array); // {0:"a", 1:"b", 2:"c"}
+                firestore.collection("Users").doc(`${userid}`).collection("Muscles")
+                    .doc("core").set(obj);
+                return;
+            }
+            console.log('No matching documents.');
+            return;
+        })
+        .catch(err => {
+            console.log('Error getting documents', err);
+        });
+}
+
+
 function processRequest(request, response) {
     let userregistered = request.body.user;
     return new Promise((resolve, reject) => {
         firestore.collection('Users').doc(`${userregistered.uid}`).set({
             username: userregistered.username,
             email: userregistered.mail,
-            uid: userregistered.uid
+            uid: userregistered.uid,
         }).then(() => {
             console.log("Document successfully written!");
+            setUpperBody(userregistered.uid);
+            setLowerBody(userregistered.uid);
+            setCore(userregistered.uid);
             return response.status(200).send({
                 statusMessage: 'Usuario Registrado',
                 status: 200
@@ -55,7 +140,8 @@ function processRequest(request, response) {
     })
 }
 
-
+//===============================================================================================
+//===============================================================================================
 
 exports.home = functions.https.onRequest((request, response) => {
     console.log("BODY => ");

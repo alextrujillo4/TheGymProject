@@ -1,8 +1,8 @@
 import {auth, firestore} from "./firebase";
-import {MDCList} from '@material/list';
-import {MDCRipple} from '@material/ripple';
 import {MDCDialog} from '@material/dialog';
-import {MDCIconButtonToggle} from '@material/icon-button';
+import {MDCList} from "@material/list";
+import {MDCDrawer} from "@material/drawer";
+import {MDCTopAppBar} from "@material/top-app-bar";
 
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
@@ -10,11 +10,19 @@ const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 new MDCList(document.querySelector('.mdc-list'));
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
-            if (!user) {
-                window.location.href='/';
-            }
+        if (!user) {
+            window.location.href='/';
+        }
     });
 };
+topAppBar.setScrollTarget(document.getElementById('main-content'));
+menu.addEventListener('click', function (event) {
+    drawer.open = !drawer.open;
+});
+drawer.open = true;
+document.body.addEventListener('MDCDrawer:closed', () => {
+    mainContentEl.querySelector('input, button').focus();
+});
 
 $("#createbtn").on("click", function (event) {
 event.preventDefault();
@@ -87,6 +95,26 @@ let getDoc = excerciseRef.get()
     console.log('Error getting document', err);
   });
 
+function getSelectedTab() {
+    console.log("getSelectedTab() ");
+    const tabSelected = document.getElementById("my-list");
+    tabSelected.addEventListener("click", event => {
+        event.preventDefault();
+        console.log(list.selectedIndex);
+        if (list.selectedIndex === 0){
+            $("#first").removeClass("hide");
+            $("#second").addClass("hide");
+        } else if(list.selectedIndex === 1){
+            $("#first").addClass("hide");
+            $("#second").removeClass("hide");
+        }else{
+            $("#first").removeClass("hide");
+            $("#second").addClass("hide");
+            list.selectedIndex = 0;
+            dialog.open()
+        }
+    });
+}
 function logoutAction() {
     console.log("logoutAction()");
     $("#logoutConfirm").on("click", function (event) {
@@ -99,18 +127,20 @@ function logoutAction() {
     });
 }
 
-
-
-function logoutBtnAction() {
-    console.log("logoutBtnAction()");
-    $("#logoutBtn").on("click", function (event) {
-        event.preventDefault();
-        dialog.open()
-    });
-}
-
-logoutBtnAction();
-
-
 logoutAction();
+addRoutine();
+getSelectedTab();
 
+/*
+let excerciseRef = firestore.collection('Excercises').doc('0npiQehggfuPgF3X6Z6y');
+let getDoc = excerciseRef.get()
+    .then(doc => {
+        if (!doc.exists) {
+            console.log('No such document!');
+        } else {
+            console.log('Document data:', doc.data());
+        }
+    })
+    .catch(err => {
+        console.log('Error getting document', err);
+    });*/
