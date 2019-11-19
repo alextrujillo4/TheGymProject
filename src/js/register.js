@@ -1,6 +1,7 @@
 import {MDCTextField} from '@material/textfield';
 import {MDCDialog} from '@material/dialog';
 import { auth } from './firebase/index.js'
+
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function(user) {
             if (user) {
