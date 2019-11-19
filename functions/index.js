@@ -143,7 +143,7 @@ function processRequest(request, response) {
 //===============================================================================================
 //===============================================================================================
 
-exports.home = functions.https.onRequest((request, response) => {
+exports.query = functions.https.onRequest((request, response) => {
     console.log("BODY => ");
     console.log(request.body);
     console.log("QUERY => ");
@@ -152,7 +152,7 @@ exports.home = functions.https.onRequest((request, response) => {
     console.log(request.params);
     cors(request, response, () => {
         if ((request.body || request.query || request.params)) {
-            return processHomeRequest(request, response);
+            return processQueryRequest(request, response);
         } else {
             console.log('Invalid Request');
             return response.status(400).end('Invalid Request.');
@@ -160,7 +160,7 @@ exports.home = functions.https.onRequest((request, response) => {
     });
 });
 
-function processHomeRequest(request, response) {
+function processQueryRequest(request, response) {
     return response.status(200).send({
         statusMessage: 'Hola',
         status: 200
