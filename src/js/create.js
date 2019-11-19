@@ -189,9 +189,14 @@ $("#createbtn").on("click", function (event) {
     event.preventDefault();
 
     let tam = $('ul#core li').length;
+    let core =$('ul#core li')
 
     for (let i=0; i<tam; i++){
-        console.log($('ul#core li')[i].getAttribute('id'));
+        if (core[i].getAttribute('isChecked') == true){
+            console.log(core[i].getAttribute(id));
+        }
+
+       // console.log($('ul#core li')[i].getAttribute('id'));
     }
 
     console.log(tam);
