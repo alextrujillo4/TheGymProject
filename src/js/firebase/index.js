@@ -1,6 +1,9 @@
-import { initializeApp } from "firebase";
+const firebase = require('firebase/app');
+require('firebase/analytics');
+require('firebase/auth');
+require('firebase/firestore');
 // Initialize Firebase
-const firebase = initializeApp({
+firebase.initializeApp({
     apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
     authDomain: "gymproject-9f46b.firebaseapp.com",
     databaseURL: "https://gymproject-9f46b.firebaseio.com",

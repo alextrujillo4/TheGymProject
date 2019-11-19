@@ -20,8 +20,6 @@ const confirmPassword = new MDCTextField(document.querySelector('.confirmPasswor
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 linearProgress.close();
 
-
-
 function dialogAction(){
     console.log("dialogAction()");
     let okBtn = document.getElementById('dialog_ok');

@@ -18,8 +18,8 @@ const email = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));
 /*const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 linearProgress.close();*/
-//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 
 
 function loginAction(){

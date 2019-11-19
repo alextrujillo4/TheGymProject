@@ -4,6 +4,10 @@ import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
 
+let userid = "lol";
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
+
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
@@ -11,13 +15,11 @@ const menu = document.getElementById("menu");
 const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
-window.onload = function verifyUser() {
-    auth.onAuthStateChanged(function (user) {
-        if (!user) {
-            window.location.href='/';
-        }
-    });
-};
+auth.onAuthStateChanged(function (user) {
+    if (!user) {
+        window.location.href='/';
+    }
+});
 topAppBar.setScrollTarget(document.getElementById('main-content'));
 menu.addEventListener('click', function (event) {
     drawer.open = !drawer.open;
@@ -94,21 +96,73 @@ function logoutAction() {
         });
     });
 }
+function displayData( data ) {
+    console.log(data);
+    for(let k = 0; k < data.length; k++) {
+        console.log("Element" + k);
+        let element = data[k];
+        for (let exer in element) {
+            console.log(exer, element[exer]);
+            let objData = element[exer];
+            $("#muscle_list").append(`
+    <div class="mdc-card mdc-card--outlined muscle-card">
+                                    <div class="mdc-card__primary-action" tabindex="0">
+                                        <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="background-image: url(${objData.image})">
+                                            <div class="mdc-card__media-content">${objData.name}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mdc-card__actions">
+                                        <div class="mdc-card__action-buttons">
+                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                <span class="mdc-button__label">Agregar</span>
+                                            </button>
+                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                <span class="mdc-button__label">Quitar</span>
+                                            </button>
+                                        </div>
+                                        <div class="mdc-card__action-icons">
+                                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+                                        </div>
+                                    </div>
+                                </div>
+    `)
+        }
+    }
 
+}
+
+function callExcersicesAction() {
+    console.log("callExcersicesAction()");
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            $.ajax({
+                url: URL + "/query",
+                method: "GET",
+                dataType: "json",
+                data:{
+                    uid:user.uid
+                },
+                success: responseJSON => {
+                    console.log("Conexión Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200){
+                        console.log("200");
+                        displayData(responseJSON.data);
+                    }
+                },
+                error: function(err) {
+                    console.log("User Not registered");
+                    alert("Error... user Not registered :(");
+                }
+            });
+        }
+    });
+
+
+
+}
 logoutAction();
 addRoutine();
 getSelectedTab();
-
-/*
-let excerciseRef = firestore.collection('Excercises').doc('0npiQehggfuPgF3X6Z6y');
-let getDoc = excerciseRef.get()
-    .then(doc => {
-        if (!doc.exists) {
-            console.log('No such document!');
-        } else {
-            console.log('Document data:', doc.data());
-        }
-    })
-    .catch(err => {
-        console.log('Error getting document', err);
-    });*/
+callExcersicesAction();
