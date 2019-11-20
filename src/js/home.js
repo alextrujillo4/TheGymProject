@@ -117,7 +117,7 @@ function callExcersicesAction() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("200");
-                        displayData(responseJSON.data);
+                        //displayData(responseJSON.data);
                     }
                 },
                 error: function (err) {
@@ -168,7 +168,7 @@ function displayroutineData(data) {
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.nameRoutine}</h2>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">${element.email}</h3>
                 </div>
-                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ${element.excercises.length}</div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ${element.excercises}</div>
             </div>
             <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
@@ -179,8 +179,9 @@ function displayroutineData(data) {
                     <button id="add-to-pubic"
                             class="mdc-icon-button"
                             aria-label="Add to public"
-                            aria-hidden="true"
-                            aria-pressed="false">
+                            aria-hidden="false"
+                            aria-pressed="true"
+                            >
                         <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>
                         <i class="material-icons mdc-icon-button__icon">visibility_off</i>
                     </button>
@@ -194,12 +195,16 @@ function displayroutineData(data) {
     });
 
 }
-
-function getRotuineByName(name){
-
+/*
+$("#cardRoutine").on('change','.mdc-icon-button',function(event){
+event.preventDefault();
+});
+*/
+function getRoutineByName(name){
+console.log("getRoutineByName()")
     $.ajax({
         url: URL + "/routines",
-        method: "GET",
+        method: "PUT",
         dataType: "json",
         data: name,
         success: responseJSON => {
@@ -207,7 +212,7 @@ function getRotuineByName(name){
             console.log(responseJSON.status);
             if (responseJSON.status === 200) {
                 console.log("Routines 200");
-                displayroutineData(responseJSON.data);
+             //   displayroutineData(responseJSON.data);
             }
         },
         error: function (err) {
