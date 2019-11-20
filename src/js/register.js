@@ -9,6 +9,7 @@ window.onload = function verifyUser() {
             }
     });
 };
+
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
 import {MDCRipple} from '@material/ripple';
 import { MDCLinearProgress } from '@material/linear-progress';
