@@ -134,7 +134,6 @@ function callRoutines() {
     console.log("callRoutines");
     auth.onAuthStateChanged((user) => {
         if (user) {
-
             $.ajax({
                 url: URL + "/routines",
                 method: "GET",
@@ -147,6 +146,7 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
+                        console.log(responseJSON.data)
                         displayroutineData(responseJSON.data);
                     }
                 },
@@ -159,16 +159,19 @@ function callRoutines() {
 }
 function displayroutineData(data) {
     for (let k = 0; k < data.length; k++) {
+        console.log("Element" + k);
         let element = data[k];
+        console.log(element);
+
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
-                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
-                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">by Alex Trujillo</h3>
+                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.name}</h2>
+                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">${element.email}</h3>
                 </div>
-                <div class="demo-card__secondary mdc-typography mdc-typography--body2">This is the first routine. Visit ten places on our planet that are undergoing the biggest changes today.</div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios:</div>
             </div>
             <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">

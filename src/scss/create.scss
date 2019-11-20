@@ -47,8 +47,7 @@
 
 }
 
-.email,
-.password {
+.email {
   &:not(.mdc-text-field--invalid) {
     @include mdc-text-field-label-color(on-primary);
   }
@@ -56,9 +55,9 @@
     @include mdc-text-field-label-color(on-primary);
   }
 
-  display: block;
-  width: 300px;
-  margin: 20px auto;
+  display: flex;
+  width: 90%;
+  margin: 28px auto;
 }
 
 
