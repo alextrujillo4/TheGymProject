@@ -4,6 +4,7 @@ import {auth, firestore} from "./firebase";
 
 
 let excercisesRef =firestore.collection('Excercises');
+let routinesRef = firestore.collection('Routines');
 
 let excChecked = [];
 
@@ -271,6 +272,10 @@ $("#createbtn").on("click", function (event) {
 
 //excChecked.push(newExc);
 console.log(excChecked);
+console.log(routinesRef.id());
+
+
+
 });
 
 
