@@ -85,7 +85,6 @@ function getLowerBody() {
 }
 
 function getCore() {
-//core query
     $.ajax({
         url: URL + "/data",
         method: "GET",
@@ -123,7 +122,6 @@ function getCore() {
             console.log("Core error");
         }
     });
-
 }
 
 //core isChecked
@@ -140,18 +138,15 @@ $('#core').on('change', ':checkbox', function (event) {
 
 //upperBody isChecked 
 $('#upper').on('change', ':checkbox', function (event) {
-    event.preventDefault()
+    event.preventDefault();
     let par = event.target.parentNode.parentNode.parentNode;
     if (this.checked) {
-        //console.log(par);
         par.setAttribute('isChecked', true);
-
     } else {
         par.removeAttribute('isChecked');
     }
 
 });
-
 //lowerBody isChecked
 $('#lower').on('change', ':checkbox', function (event) {
     event.preventDefault()
@@ -163,7 +158,6 @@ $('#lower').on('change', ':checkbox', function (event) {
     } else {
         par.removeAttribute('isChecked');
     }
-
 });
 
 //crear rutina (verifica las casillas que se encuentren checked)
@@ -180,33 +174,14 @@ $("#createbtn").on("click", function (event) {
         //checa valores checked del muscleType upper
         for (let i = 0; i < upper.length; i++) {
             let checkUpper = upper[i].getAttribute('isChecked');
-            //console.log(check)
             if (checkUpper != null) {
                 console.log(upper[i].getAttribute('id'));
-
                 let newExc = {
                     id: upper[i].getAttribute('id'),
                     name: upper[i].getAttribute('name')
                 }
                 excChecked.push(newExc)
             }
-            // console.log($('ul#core li')[i].getAttribute('id'));
-        }
-
-        //checa valores checked del muscleType core
-        for (let i = 0; i < core.length; i++) {
-            let checkCore = core[i].getAttribute('isChecked')
-            //console.log(check)
-            if (checkCore != null) {
-                console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
-                let newExc = {
-                    id: core[i].getAttribute('id'),
-                    name: core[i].getAttribute('name')
-                }
-                excChecked.push(newExc)
-            }
-
-            // console.log($('ul#core li')[i].getAttribute('id'));
         }
         //checa valores checked del muscleType lower
         for (let i = 0; i < lower.length; i++) {
@@ -221,14 +196,37 @@ $("#createbtn").on("click", function (event) {
                 excChecked.push(newExc)
             }
         }
-        console.log("createRoutine...")
-        createRoutine(excChecked, user.uid);
+        //checa valores checked del muscleType core
+        for (let i = 0; i < core.length; i++) {
+            let checkCore = core[i].getAttribute('isChecked')
+            //console.log(check)
+            if (checkCore != null) {
+                console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
+                let newExc = {
+                    id: core[i].getAttribute('id'),
+                    name: core[i].getAttribute('name')
+                }
+                excChecked.push(newExc)
+            }
+        }
+
+        //checa valores checked del muscleType lower
+        for (let i = 0; i < lower.length; i++) {
+            let checkLower = lower[i].getAttribute('isChecked')
+            //console.log(check)
+            if (checkLower != null) {
+                console.log(lower[i].getAttribute('id'));
+                let newExc = {
+                    id: lower[i].getAttribute('id'),
+                    name: lower[i].getAttribute('name'),
+
+                }
+            }
+            console.log("createRoutine...")
+            createRoutine(excChecked, user.uid);
+        }
     });
-
-
 });
-
-
 function createRoutine(excercises, userid) {
     $.ajax({
         url: URL + "/data",
@@ -260,8 +258,3 @@ function createRoutine(excercises, userid) {
 getUpperBody();
 getCore();
 getLowerBody();
-
-
-
-
-
