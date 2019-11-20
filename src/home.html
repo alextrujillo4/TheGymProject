@@ -25,6 +25,9 @@
             <a id="menu" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
             <span class="mdc-top-app-bar__title">Energy GYM</span>
         </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <button id="search_icon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+        </section>
     </div>
 </header>
 <!--END APP BAR -->
@@ -117,9 +120,6 @@
                 Are you sure you want to log out?
             </div>
             <footer class="mdc-dialog__actions">
-                <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no" type="button">
-                    <span class="mdc-button__label">Cancel</span>
-                </button>
                 <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes" id="logoutConfirm"
                         type="button">
                     <span class="mdc-button__label">Logout</span>
@@ -130,6 +130,35 @@
     <div class="mdc-dialog__scrim"></div>
 </div>
 <!-- END  DIALOG SECTION FOR LOGOUT -->
+
+<div id="dialog_search"
+        class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content">
+    <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+            <h2 class="mdc-dialog__title">
+                Search a Routine
+            </h2>
+            <div class="mdc-dialog__content">
+                <div id="search_field" class="mdc-text-field mdc-text-field--fullwidth" >
+                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                    <label class="mdc-floating-label" for="my-text-field">Querie</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+            </div>
+            <footer class="mdc-dialog__actions">
+                <button id="search_button_q" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">
+                    <span   class="mdc-button__label" >Search</span>
+                </button>
+            </footer>
+        </div>
+    </div>
+    <div class="mdc-dialog__scrim"></div>
+</div>
+
 <!-- FAB BUTTON -->
 <button aria-label="Favorite" class="mdc-fab create" id="createbtn">
     <div class="mdc-fab__ripple"></div>
