@@ -5,7 +5,7 @@ let excercisesRef = firestore.collection('Excercises');
 const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 let excChecked = [];
 
-const email = new MDCTextField(document.querySelector('.email'));
+const routinename = new MDCTextField(document.querySelector('.email'));
 
 
 function getUpperBody() {
@@ -166,71 +166,67 @@ $('#lower').on('change', ':checkbox', function (event) {
 $("#createbtn").on("click", function (event) {
     console.log("createbtn");
     event.preventDefault();
+    if(routinename.valid){
+        let nameRoutine =routinename.value;
+    //console.log(nameRoutine);
+        auth.onAuthStateChanged(function (user) {
+            console.log("auth");
+            let core = $('ul#core li');
+            let upper = $('ul#upper li');
+            let lower = $('ul#lower li');
 
-    auth.onAuthStateChanged(function (user) {
-        console.log("auth");
-        let core = $('ul#core li');
-        let upper = $('ul#upper li');
-        let lower = $('ul#lower li');
-
-        //checa valores checked del muscleType upper
-        for (let i = 0; i < upper.length; i++) {
-            let checkUpper = upper[i].getAttribute('isChecked');
-            if (checkUpper != null) {
-                console.log(upper[i].getAttribute('id'));
-                let newExc = {
-                    id: upper[i].getAttribute('id'),
-                    name: upper[i].getAttribute('name')
-                }
-                excChecked.push(newExc)
-            }
-        }
-        //checa valores checked del muscleType lower
-        for (let i = 0; i < lower.length; i++) {
-            let checkLower = lower[i].getAttribute('isChecked')
-            //console.log(check)
-            if (checkLower != null) {
-                console.log(lower[i].getAttribute('id'));
-                let newExc = {
-                    id: lower[i].getAttribute('id'),
-                    name: lower[i].getAttribute('name')
-                }
-                excChecked.push(newExc)
-            }
-        }
-        //checa valores checked del muscleType core
-        for (let i = 0; i < core.length; i++) {
-            let checkCore = core[i].getAttribute('isChecked')
-            //console.log(check)
-            if (checkCore != null) {
-                console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
-                let newExc = {
-                    id: core[i].getAttribute('id'),
-                    name: core[i].getAttribute('name')
-                }
-                excChecked.push(newExc)
-            }
-        }
-
-        //checa valores checked del muscleType lower
-        for (let i = 0; i < lower.length; i++) {
-            let checkLower = lower[i].getAttribute('isChecked')
-            //console.log(check)
-            if (checkLower != null) {
-                console.log(lower[i].getAttribute('id'));
-                let newExc = {
-                    id: lower[i].getAttribute('id'),
-                    name: lower[i].getAttribute('name'),
-
+            //checa valores checked del muscleType upper
+            for (let i = 0; i < upper.length; i++) {
+                let checkUpper = upper[i].getAttribute('isChecked');
+                if (checkUpper != null) {
+                    console.log(upper[i].getAttribute('id'));
+                    let newExc = {
+                        id: upper[i].getAttribute('id'),
+                        name: upper[i].getAttribute('name')
+                    }
+                    excChecked.push(newExc)
                 }
             }
+            //checa valores checked del muscleType lower
+            for (let i = 0; i < lower.length; i++) {
+                let checkLower = lower[i].getAttribute('isChecked')
+                //console.log(check)
+                if (checkLower != null) {
+                    console.log(lower[i].getAttribute('id'));
+                    let newExc = {
+                        id: lower[i].getAttribute('id'),
+                        name: lower[i].getAttribute('name')
+                    }
+                    excChecked.push(newExc)
+                }
+            }
+            //checa valores checked del muscleType core
+            for (let i = 0; i < core.length; i++) {
+                let checkCore = core[i].getAttribute('isChecked')
+                //console.log(check)
+                if (checkCore != null) {
+                    console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
+                    let newExc = {
+                        id: core[i].getAttribute('id'),
+                        name: core[i].getAttribute('name')
+                    }
+                    excChecked.push(newExc)
+                }
+            }
+
             console.log("createRoutine...")
-            createRoutine(excChecked, user.uid);
-        }
-    });
+            createRoutine(excChecked, user.uid,user.email, nameRoutine);
+
+            // routineRef.doc()
+    // const id = ref.id;
+
+        });
+    }else{
+        alert("Please. Add a valid name to your routine.")
+    }
 });
 
-function createRoutine(excercises, userid) {
+function createRoutine(excercises, userid, email, nameRoutine) {
     $.ajax({
         url: URL + "/data",
         method: "POST",
@@ -238,14 +234,15 @@ function createRoutine(excercises, userid) {
             routine : {
                 query : "create",
                 uid: userid,
+                email: email,
+                nameRoutine: nameRoutine,
                 isPrivate: true,
-                excercises: excercises
+                excercises: excercises,
             }
         },
         dataType: "json",
         success: responseJSON => {
             console.log("Conexión Exitosa");
-            console.log(responseJSON.status);
             if (responseJSON.status === 200){
                 window.location.href='/home.html';
             }else{
