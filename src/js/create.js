@@ -6,6 +6,7 @@ import {auth, firestore} from "./firebase";
 let excercisesRef =firestore.collection('Excercises');
 let routinesRef = firestore.collection('Routines');
 
+
 let excChecked = [];
 
 function getUpperBody(){
@@ -148,12 +149,6 @@ let tam =$("#core").length;
     <label for="checkbox-1">${name}</label>
   </div>
   </li>`)
-
-
-
-
-
-
   });
 })
 .catch(err => {
@@ -204,10 +199,23 @@ $('#lower').on('change', ':checkbox', function(event){
     
         });
 
+      
+
+
+
+
+
+
+
+
 
 //crear rutina (verifica las casillas que se encuentren checked)
 $("#createbtn").on("click", function (event) {
     event.preventDefault();
+    auth.onAuthStateChanged(function (user) {
+          
+ 
+  
 
     
     let core =$('ul#core li')
@@ -228,8 +236,6 @@ $("#createbtn").on("click", function (event) {
             excChecked.push(newExc)
         }
 
-     
-
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
 
@@ -243,8 +249,13 @@ $("#createbtn").on("click", function (event) {
             let newExc ={
                 id: core[i].getAttribute('id'),
                 name: core[i].getAttribute('name')
+                
+                
             }
             excChecked.push(newExc)
+
+        
+
         }
 
        // console.log($('ul#core li')[i].getAttribute('id'));
@@ -259,7 +270,8 @@ $("#createbtn").on("click", function (event) {
             console.log(lower[i].getAttribute('id'));
             let newExc ={
                 id: lower[i].getAttribute('id'),
-                name: lower[i].getAttribute('name')
+                name: lower[i].getAttribute('name'),
+                
             }
             excChecked.push(newExc)
         }
@@ -267,14 +279,20 @@ $("#createbtn").on("click", function (event) {
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
 
-   
+   let routine = {
+     excercises: excChecked,
+     userId:  user.uid,
+     isPrivate: true
+   }
+
+   console.log(routine);
 
 
 //excChecked.push(newExc);
 console.log(excChecked);
-console.log(routinesRef.id());
 
 
+});
 
 });
 

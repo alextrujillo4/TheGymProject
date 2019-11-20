@@ -13,6 +13,7 @@ list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function (user) {
+    
         if (!user) {
             window.location.href='/';
         }
