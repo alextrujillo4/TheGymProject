@@ -192,6 +192,31 @@ function displayroutineData(data) {
         `);
     }
 }
+
+function getRotuineByName(name){
+
+    $.ajax({
+        url: URL + "/routines",
+        method: "GET",
+        dataType: "json",
+        data: name,
+        success: responseJSON => {
+            console.log("Conexión Routines Exitosa");
+            console.log(responseJSON.status);
+            if (responseJSON.status === 200) {
+                console.log("Routines 200");
+                displayroutineData(responseJSON.data);
+            }
+        },
+        error: function (err) {
+            console.log("Routines Error...");
+        }
+    });
+
+
+}
+
+
 logoutAction();
 addRoutine();
 getSelectedTab();
