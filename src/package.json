@@ -39,6 +39,7 @@
     "@material/snackbar": "^4.0.0",
     "@material/textfield": "^4.0.0",
     "@material/top-app-bar": "^4.0.0",
+    "@material/touch-target": "^4.0.0",
     "@material/typography": "^4.0.0",
     "firebase": "^7.4.0",
     "firebase-admin": "^8.7.0",

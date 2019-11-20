@@ -24,6 +24,20 @@ function getStyleUse(bundleFilename) {
 
 module.exports = [
   {
+    entry: "./js/firebase/index.js",
+    output: {
+      path: path.resolve(__dirname, "../public/firebase/index.js"),
+      filename: "fire.js"
+    },
+    module: {
+      loaders: [{
+        test: /index.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  },
+  {
     entry: './scss/login.scss',
     output: {
       path: path.resolve(__dirname, "../public"),

@@ -138,12 +138,19 @@ body {
   padding-left: 24px;
 
 }
-
+.mbr-section{
+  margin-top: 26px;
+}
+.text{
+  margin: 16px;
+}
 .routine{
   min-height: 200px;
   height: auto;
-  width: 350px;
-  margin:24px;
+  width: auto;
+  margin-top: 16px;
+  padding-right:0px;
+  padding-left: 0px;
 }
 
 .hide{
@@ -186,5 +193,26 @@ body {
   width: 350px;
 }
 
+.mdc-card__media-content {
+  position: relative;
 
+}
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
 
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+// only apply this style if below top app bar
+.mdc-top-app-bar {
+  z-index: 7;
+}

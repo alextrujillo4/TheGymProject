@@ -4,6 +4,9 @@ import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
 
+let userid = "lol";
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
@@ -11,19 +14,26 @@ const menu = document.getElementById("menu");
 const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
-window.onload = function verifyUser() {
-    auth.onAuthStateChanged(function (user) {
-    
-        if (!user) {
-            window.location.href='/';
-        }
-    });
-};
+auth.onAuthStateChanged(function (user) {
+    if (!user) {
+        window.location.href = '/';
+    } else {
+        $("#user_name").text(`${user.email}`);
+    }
+});
 topAppBar.setScrollTarget(document.getElementById('main-content'));
 menu.addEventListener('click', function (event) {
     drawer.open = !drawer.open;
 });
-drawer.open = true;
+
+function closeIfDevice() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        drawer.open = false;
+    } else {
+        drawer.open = true;
+    }
+}
+
 document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
@@ -32,9 +42,10 @@ function addRoutine() {
     console.log("addRoutine()");
     $("#createbtn").on("click", function (event) {
         event.preventDefault();
-        //window.location.href='/create.html';
-        $("#cardRoutine").append(`
-        <div class="mdc-card routine mdc-card--outlined">
+        window.location.href='/create.html';
+        /*$("#cardRoutine").append(`
+         <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
+            <div class="mdc-card routine mdc-card--outlined col-12">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
@@ -59,8 +70,9 @@ function addRoutine() {
                     <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
                 </div>
             </div>
+            </div>
         </div>
-        `);
+        `);*/
     });
 }
 
@@ -70,46 +82,91 @@ function getSelectedTab() {
     tabSelected.addEventListener("click", event => {
         event.preventDefault();
         console.log(list.selectedIndex);
-        if (list.selectedIndex === 0){
+        if (list.selectedIndex === 0) {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
-        } else if(list.selectedIndex === 1){
+            $("#createbtn").removeClass("hide");
+        } else if (list.selectedIndex === 1) {
             $("#first").addClass("hide");
             $("#second").removeClass("hide");
-        }else{
+            $("#createbtn").addClass("hide");
+
+        } else {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#createbtn").removeClass("hide");
             list.selectedIndex = 0;
             dialog.open()
         }
+        closeIfDevice();
     });
 }
+
 function logoutAction() {
     console.log("logoutAction()");
     $("#logoutConfirm").on("click", function (event) {
         event.preventDefault();
-        auth.signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
+        auth.signOut().then(function () {
+        }).catch(function (error) {
         });
     });
+}
+
+function displayData(data) {
+    console.log(data);
+    for (let k = 0; k < data.length; k++) {
+        console.log("Element" + k);
+        let element = data[k];
+        for (let exer in element) {
+            console.log(exer, element[exer]);
+            let objData = element[exer];
+            $("#muscle_list").append(`
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="mdc-card routine mdc-card--outlined col-12">
+                        <div class="mdc-card__primary-action" tabindex="0">
+                            <div class="mdc-card__media mdc-card__media--square" style="background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(${objData.image}); background-size: cover; ">
+                                <div class="mdc-card__media-content text mdc-typography--headline6">${objData.name}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `)
+        }
+    }
+}
+
+function callExcersicesAction() {
+    console.log("callExcersicesAction()");
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            $.ajax({
+                url: URL + "/query",
+                method: "GET",
+                dataType: "json",
+                data: {
+                    uid: user.uid
+                },
+                success: responseJSON => {
+                    console.log("Conexión Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+                        console.log("200");
+                        displayData(responseJSON.data);
+                    }
+                },
+                error: function (err) {
+                    console.log("User Not registered");
+                    alert("Error... user Not registered :(");
+                }
+            });
+        }
+    });
+
+
 }
 
 logoutAction();
 addRoutine();
 getSelectedTab();
-
-/*
-let excerciseRef = firestore.collection('Excercises').doc('0npiQehggfuPgF3X6Z6y');
-let getDoc = excerciseRef.get()
-    .then(doc => {
-        if (!doc.exists) {
-            console.log('No such document!');
-        } else {
-            console.log('Document data:', doc.data());
-        }
-    })
-    .catch(err => {
-        console.log('Error getting document', err);
-    });*/
+callExcersicesAction();
+closeIfDevice();

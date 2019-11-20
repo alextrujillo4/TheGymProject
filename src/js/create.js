@@ -1,11 +1,7 @@
 
 import {auth, firestore} from "./firebase";
-
-
-
 let excercisesRef =firestore.collection('Excercises');
 let routinesRef = firestore.collection('Routines');
-
 
 let excChecked = [];
 
@@ -26,27 +22,25 @@ let queryUpBody = excercisesRef.where('muscleType', '==', 'upperBody').get()
  
  
       $("#upper").append(`
-      <li id="${id}" name="${name}">
-      <div class="mdc-form-field">
-      <div class="mdc-checkbox">
-        <input type="checkbox"
-               class="mdc-checkbox__native-control"
-               id="checkbox-1"
-               />
-        <div class="mdc-checkbox__background">
-          <svg class="mdc-checkbox__checkmark"
-               viewBox="0 0 24 24">
-            <path class="mdc-checkbox__checkmark-path"
-                  fill="none"
-                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-          </svg>
-          <div class="mdc-checkbox__mixedmark"></div>
-        </div>
-      
-      </div>
-      <label for="checkbox-1">${name}</label>
-    </div>
-    </li>
+        <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${id}" name="${name}">
+            <span class="mdc-list-item__graphic">
+                <div class="mdc-checkbox">
+                    <input class="mdc-checkbox__native-control"
+                           id="demo-list-checkbox-item-3"
+                           type="checkbox"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                              fill="none"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+            </span>
+            <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${name}</label>
+        </li>
       `)
  
 
@@ -74,27 +68,25 @@ function getLowerBody(){
 
 
      $("#lower").append(`
-     <li id="${id}" name="${name}">
-     <div class="mdc-form-field">
-     <div class="mdc-checkbox">
-       <input type="checkbox"
-              class="mdc-checkbox__native-control"
-              id="checkbox-1"
-              />
-       <div class="mdc-checkbox__background">
-         <svg class="mdc-checkbox__checkmark"
-              viewBox="0 0 24 24">
-           <path class="mdc-checkbox__checkmark-path"
-                 fill="none"
-                 d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-         </svg>
-         <div class="mdc-checkbox__mixedmark"></div>
-       </div>
-     
-     </div>
-     <label for="checkbox-1">${name}</label>
-   </div>
-   </li>
+     <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${id}" name="${name}">
+            <span class="mdc-list-item__graphic">
+                <div class="mdc-checkbox">
+                    <input class="mdc-checkbox__native-control"
+                           id="demo-list-checkbox-item-3"
+                           type="checkbox"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                              fill="none"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+            </span>
+            <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${name}</label>
+        </li>
      `)
 
 
@@ -128,27 +120,31 @@ let queryCore = excercisesRef.where('muscleType', '==', 'core').get()
     
 let tam =$("#core").length;
     $("#core").append(`
-    <li name="${name}" id="${id}">
-    <div class="mdc-form-field">
-    <div class="mdc-checkbox">
-      <input type="checkbox"
-             class="mdc-checkbox__native-control"
-             id="checkbox-1"
-             />
-      <div class="mdc-checkbox__background">
-        <svg class="mdc-checkbox__checkmark"
-             viewBox="0 0 24 24">
-          <path class="mdc-checkbox__checkmark-path"
-                fill="none"
-                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-        </svg>
-        <div class="mdc-checkbox__mixedmark"></div>
-      </div>
-    
-    </div>
-    <label for="checkbox-1">${name}</label>
-  </div>
-  </li>`)
+    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${id}" name="${name}">
+            <span class="mdc-list-item__graphic">
+                <div class="mdc-checkbox">
+                    <input class="mdc-checkbox__native-control"
+                           id="demo-list-checkbox-item-3"
+                           type="checkbox"/>
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark"
+                           viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path"
+                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                              fill="none"/>
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                  </div>
+            </span>
+            <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${name}</label>
+        </li>`)
+
+
+
+
+
+
   });
 })
 .catch(err => {
@@ -212,19 +208,12 @@ $('#lower').on('change', ':checkbox', function(event){
 //crear rutina (verifica las casillas que se encuentren checked)
 $("#createbtn").on("click", function (event) {
     event.preventDefault();
-    auth.onAuthStateChanged(function (user) {
-          
- 
-  
-
-    
-    let core =$('ul#core li')
-    let upper =$('ul#upper li')
-    let lower =$('ul#lower li')
-
+    let core =$('ul#core li');
+    let upper =$('ul#upper li');
+    let lower =$('ul#lower li');
        //checa valores checked del muscleType upper
        for (let i=0; i<upper.length; i++){
-        let checkUpper = upper[i].getAttribute('isChecked')
+        let checkUpper = upper[i].getAttribute('isChecked');
         //console.log(check)
         if (checkUpper != null){
             console.log(upper[i].getAttribute('id'));
@@ -235,10 +224,8 @@ $("#createbtn").on("click", function (event) {
             }
             excChecked.push(newExc)
         }
-
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
-
 
     //checa valores checked del muscleType core
     for (let i=0; i<core.length; i++){
@@ -260,8 +247,6 @@ $("#createbtn").on("click", function (event) {
 
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
-
-  
      //checa valores checked del muscleType lower
      for (let i=0; i<lower.length; i++){
         let checkLower = lower[i].getAttribute('isChecked')
@@ -275,24 +260,11 @@ $("#createbtn").on("click", function (event) {
             }
             excChecked.push(newExc)
         }
-
        // console.log($('ul#core li')[i].getAttribute('id'));
     }
-
-   let routine = {
-     excercises: excChecked,
-     userId:  user.uid,
-     isPrivate: true
-   }
-
-   console.log(routine);
-
-
 //excChecked.push(newExc);
 console.log(excChecked);
 
-
-});
 
 });
 
