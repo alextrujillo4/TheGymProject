@@ -35,7 +35,8 @@ function addRoutine() {
         event.preventDefault();
         //window.location.href='/create.html';
         $("#cardRoutine").append(`
-        <div class="mdc-card routine mdc-card--outlined">
+         <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
+            <div class="mdc-card routine mdc-card--outlined col-12">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Day 0</h2>
@@ -59,6 +60,7 @@ function addRoutine() {
                     </button>
                     <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
                 </div>
+            </div>
             </div>
         </div>
         `);
@@ -105,7 +107,8 @@ function displayData( data ) {
             console.log(exer, element[exer]);
             let objData = element[exer];
             $("#muscle_list").append(`
-    <div class="mdc-card mdc-card--outlined muscle-card">
+    <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
+            <div class="mdc-card routine mdc-card--outlined col-12">
                                     <div class="mdc-card__primary-action" tabindex="0">
                                         <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="background-image: url(${objData.image})">
                                             <div class="mdc-card__media-content">${objData.name}</div>
@@ -126,6 +129,7 @@ function displayData( data ) {
                                         </div>
                                     </div>
                                 </div>
+            </div>
     `)
         }
     }

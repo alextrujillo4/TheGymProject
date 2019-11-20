@@ -96,7 +96,6 @@ function setCore(userid) {
                     var data = doc.data();
                     data.weight = 0;
                     data.unit = "lbs";
-                    array.push(data);
                     array.push(data)
                 });
                 const obj = Object.assign({}, array); // {0:"a", 1:"b", 2:"c"}
@@ -144,15 +143,16 @@ function processRequest(request, response) {
 //===============================================================================================
 
 exports.query = functions.https.onRequest((request, response) => {
-    console.log("BODY => ");
-    console.log(request.body);
-    console.log("QUERY => ");
-    console.log(request.query);
-    console.log("PARAMS => ");
-    console.log(request.params);
     cors(request, response, () => {
+        console.log("BODY => ");
+        console.log(request.body.uid);
+        console.log("QUERY => ");
+        console.log(request.query.uid);
+        console.log("PARAMS => ");
+        console.log(request.params.uid);
+        console.log(request.method);
         if ((request.body || request.query || request.params)) {
-            return processQueryRequest(request, response);
+            return processQueryRequest(request, response );
         } else {
             console.log('Invalid Request');
             return response.status(400).end('Invalid Request.');
@@ -161,8 +161,35 @@ exports.query = functions.https.onRequest((request, response) => {
 });
 
 function processQueryRequest(request, response) {
-    return response.status(200).send({
-        statusMessage: 'Hola',
-        status: 200
-    });
+    let uid = request.query.uid;
+    return new Promise((resolve, reject) => {
+        firestore.collection('Users').doc(`${uid}`)
+            .collection("Muscles").get()
+            .then(snapshot => {
+                console.log("getMusclesRequest");
+                if (!snapshot.empty) {
+                    let array = [];
+                    snapshot.forEach(doc => {
+                        var data = doc.data();
+                        array.push(data)
+                    });
+                    return response.status(200).send({
+                        statusMessage: 'Usuario Registrado',
+                        status: 200,
+                        data : array
+                    });
+                }
+                console.log('No matching documents. :(');
+                return;
+            })
+           .catch(error => {
+                    console.error("Error writing document: ", error);
+                    return response.status(300).send({
+                        statusMessage: 'Usuario No Registrado',
+                        status: 400,
+                        data : null
+                    });
+                });
+        resolve();
+    })
 }
