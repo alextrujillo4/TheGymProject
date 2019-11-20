@@ -1,8 +1,13 @@
 import {auth, firestore} from "./firebase";
+import {MDCTextField} from "@material/textfield";
 let excercisesRef = firestore.collection('Excercises');
 //const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 let excChecked = [];
+
+const email = new MDCTextField(document.querySelector('.email'));
+
+
 function getUpperBody() {
     $.ajax({
         url: URL + "/data",

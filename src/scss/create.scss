@@ -1,5 +1,5 @@
 @import "./common";
-@import "@material/form-field/mdc-form-field";
+@import "@material/textfield/mdc-text-field";
 @import "@material/form-field/mdc-form-field";
 @import "@material/checkbox/mdc-checkbox";
 @import "@material/drawer/mdc-drawer";
@@ -45,6 +45,20 @@
   right: 0;
   margin: 24px;
 
+}
+
+.email,
+.password {
+  &:not(.mdc-text-field--invalid) {
+    @include mdc-text-field-label-color(on-primary);
+  }
+  &.mdc-text-field--focused:not(.mdc-text-field--invalid)  {
+    @include mdc-text-field-label-color(on-primary);
+  }
+
+  display: block;
+  width: 300px;
+  margin: 20px auto;
 }
 
 
