@@ -7,8 +7,6 @@ import {MDCTopAppBar} from "@material/top-app-bar";
 let userid = "lol";
 const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 //const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
-
-
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
@@ -18,7 +16,9 @@ list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
 auth.onAuthStateChanged(function (user) {
     if (!user) {
-        window.location.href='/';
+        window.location.href = '/';
+    } else {
+        $("#user_name").text(`${user.email}`);
     }
 });
 topAppBar.setScrollTarget(document.getElementById('main-content'));
@@ -27,9 +27,9 @@ menu.addEventListener('click', function (event) {
 });
 
 function closeIfDevice() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         drawer.open = false;
-    }else{
+    } else {
         drawer.open = true;
     }
 }
@@ -42,8 +42,8 @@ function addRoutine() {
     console.log("addRoutine()");
     $("#createbtn").on("click", function (event) {
         event.preventDefault();
-        //window.location.href='/create.html';
-        $("#cardRoutine").append(`
+        window.location.href='/create.html';
+        /*$("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
@@ -72,7 +72,7 @@ function addRoutine() {
             </div>
             </div>
         </div>
-        `);
+        `);*/
     });
 }
 
@@ -82,68 +82,57 @@ function getSelectedTab() {
     tabSelected.addEventListener("click", event => {
         event.preventDefault();
         console.log(list.selectedIndex);
-        if (list.selectedIndex === 0){
+        if (list.selectedIndex === 0) {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
-        } else if(list.selectedIndex === 1){
+            $("#createbtn").removeClass("hide");
+        } else if (list.selectedIndex === 1) {
             $("#first").addClass("hide");
             $("#second").removeClass("hide");
-        }else{
+            $("#createbtn").addClass("hide");
+
+        } else {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#createbtn").removeClass("hide");
             list.selectedIndex = 0;
             dialog.open()
         }
         closeIfDevice();
     });
 }
+
 function logoutAction() {
     console.log("logoutAction()");
     $("#logoutConfirm").on("click", function (event) {
         event.preventDefault();
-        auth.signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
+        auth.signOut().then(function () {
+        }).catch(function (error) {
         });
     });
 }
-function displayData( data ) {
+
+function displayData(data) {
     console.log(data);
-    for(let k = 0; k < data.length; k++) {
+    for (let k = 0; k < data.length; k++) {
         console.log("Element" + k);
         let element = data[k];
         for (let exer in element) {
             console.log(exer, element[exer]);
             let objData = element[exer];
             $("#muscle_list").append(`
-    <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
-            <div class="mdc-card routine mdc-card--outlined col-12">
-                                    <div class="mdc-card__primary-action" tabindex="0">
-                                        <div class="my-card__media mdc-card__media mdc-card__media--16-9" style="background-image: url(${objData.image})">
-                                            <div class="mdc-card__media-content">${objData.name}</div>
-                                        </div>
-                                    </div>
-                                    <div class="mdc-card__actions">
-                                        <div class="mdc-card__action-buttons">
-                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
-                                                <span class="mdc-button__label">Agregar</span>
-                                            </button>
-                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
-                                                <span class="mdc-button__label">Quitar</span>
-                                            </button>
-                                        </div>
-                                        <div class="mdc-card__action-icons">
-                                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-                                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-                                        </div>
-                                    </div>
-                                </div>
-            </div>
-    `)
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="mdc-card routine mdc-card--outlined col-12">
+                        <div class="mdc-card__primary-action" tabindex="0">
+                            <div class="mdc-card__media mdc-card__media--square" style="background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(${objData.image}); background-size: cover; ">
+                                <div class="mdc-card__media-content text mdc-typography--headline6">${objData.name}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `)
         }
     }
-
 }
 
 function callExcersicesAction() {
@@ -154,25 +143,24 @@ function callExcersicesAction() {
                 url: URL + "/query",
                 method: "GET",
                 dataType: "json",
-                data:{
-                    uid:user.uid
+                data: {
+                    uid: user.uid
                 },
                 success: responseJSON => {
                     console.log("Conexión Exitosa");
                     console.log(responseJSON.status);
-                    if (responseJSON.status === 200){
+                    if (responseJSON.status === 200) {
                         console.log("200");
                         displayData(responseJSON.data);
                     }
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log("User Not registered");
                     alert("Error... user Not registered :(");
                 }
             });
         }
     });
-
 
 
 }

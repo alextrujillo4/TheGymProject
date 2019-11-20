@@ -170,8 +170,7 @@ function processQueryRequest(request, response) {
                 if (!snapshot.empty) {
                     let array = [];
                     snapshot.forEach(doc => {
-                        var data = doc.data();
-                        array.push(data)
+                        array.push(doc.data())
                     });
                     return response.status(200).send({
                         statusMessage: 'Usuario Registrado',
@@ -187,7 +186,7 @@ function processQueryRequest(request, response) {
                     return response.status(300).send({
                         statusMessage: 'Usuario No Registrado',
                         status: 400,
-                        data : null
+                        data : []
                     });
                 });
         resolve();

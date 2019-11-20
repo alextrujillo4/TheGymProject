@@ -14,24 +14,28 @@
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/dialog/mdc-dialog";
 
-
-
-
-.create {
-  display: flex; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
+.create-body {
+  margin: 8px; // Flexbox is used to easily arrange the persistent drawer and content side-by-side
 }
-
-body {
-  display: flex;
-  height: 100vh;
-
+.card_top{
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
-
 .mdc-button{
   display: flex;
   width: 100px;
   flex-direction: row;
 
+}
+.text{
+  margin:16px;
+}
+.text_2{
+  margin-left:16px;
+  margin-bottom:16px;
+}
+.text_mdc_title{
+  margin: 16px;
 }
 
 .createbtn {
