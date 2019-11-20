@@ -5697,23 +5697,30 @@ new _ripple.MDCRipple(document.querySelector('.cancel'));
 new _ripple.MDCRipple(document.querySelector('.next'));
 var email = new _textfield.MDCTextField(document.querySelector('.email'));
 var password = new _textfield.MDCTextField(document.querySelector('.password'));
+var linearProgress = new _linearProgress.MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+linearProgress.close();
 
 function loginAction() {
     console.log("loginAction()");
     var loginBtn = document.getElementById("loginBtn");
     loginBtn.addEventListener("click", function (event) {
         event.preventDefault();
+        linearProgress.open();
+        linearProgress.determinate = false;
         auth.signInWithEmailAndPassword(email.value, password.value).then(function (user) {
             console.log("User logged In!");
+            linearProgress.close();
             window.location.href = '/home.html';
         }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode === 'auth/wrong-password') {
                 snackbar.labelText = "Incorrect password. Please try again.";
+                linearProgress.close();
                 snackbar.open();
             } else {
                 snackbar.labelText = "Error. Please try again.";
+                linearProgress.close();
                 snackbar.open();
             }
             console.log(error);

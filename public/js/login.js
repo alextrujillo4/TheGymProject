@@ -32,23 +32,30 @@ new MDCRipple(document.querySelector('.cancel'));
 new MDCRipple(document.querySelector('.next'));
 const email = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));
+const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+linearProgress.close();
 
 function loginAction(){
     console.log("loginAction()");
     const loginBtn = document.getElementById("loginBtn");
     loginBtn.addEventListener("click", event => {
         event.preventDefault();
+        linearProgress.open();
+        linearProgress.determinate = false;
         auth.signInWithEmailAndPassword(email.value, password.value).then(function(user) {
             console.log("User logged In!");
+            linearProgress.close();
             window.location.href='/home.html';
         }).catch(function(error) {
             const errorCode = error.code;
             const errorMessage = error.message;
             if (errorCode === 'auth/wrong-password') {
                 snackbar.labelText = "Incorrect password. Please try again.";
+                linearProgress.close();
                 snackbar.open();
             } else {
                 snackbar.labelText = "Error. Please try again.";
+                linearProgress.close();
                 snackbar.open();
             }
             console.log(error);
