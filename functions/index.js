@@ -137,8 +137,7 @@ function processDataRequest(request, response, method) {
         let data = request.body.routine;
         console.log("data");
         console.log(data);
-
-        createRoutine(data)
+        createRoutine(response ,data)
     }else{
         getUpperBody(response);
         getLowerBody(response);
@@ -148,22 +147,19 @@ function processDataRequest(request, response, method) {
 //===============================================================================================
 function processRoutinesRequest(request, response,) {
     return new Promise((resolve, reject) => {
-        console.log(request.query.uid)
+        console.log("request.query.uid");
+        console.log(request.query.uid);
         routinesRef.where('uid', '==', `${request.query.uid}`).get()
             .then(snapshot => {
-                let arr = []
+                let array = []
                 snapshot.forEach(doc => {
-                    let name = doc.data().name;
-                    let id = doc.data().id;
-                    arr.push({
-                        id:id,
-                        name: name
-                    })
+
+                    array.push(doc.data());
                 });
                 return response.status(200).send({
                     statusMessage: 'Muscle type, UpperBody',
                     status: 200,
-                    data : arr
+                    data : array
                 });
         }).catch(error => {
             console.error("Error writing document: ", error);
@@ -176,9 +172,15 @@ function processRoutinesRequest(request, response,) {
     })
 }
 //===============================================================================================
-function createRoutine(data){
+function createRoutine(response, data){
     console.log("createRoutine()");
     routinesRef.doc().set(data);
+    return response.status(200).send({
+        statusMessage: 'Routine Created!',
+        status: 200,
+    });
+
+
 }
 
 function getUpperBody(response){
@@ -187,10 +189,11 @@ function getUpperBody(response){
             .then(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
-                    return response.status(200).send({
+                   response.status(200).send({
                         statusMessage: 'Muscle type, not found',
                         status: 300
                     });
+                    return reject
                 }
                 let arr = []
                 snapshot.forEach(doc => {
@@ -201,11 +204,12 @@ function getUpperBody(response){
                         name: name
                     })
                 });
-                return response.status(200).send({
+                response.status(200).send({
                     statusMessage: 'Muscle type, UpperBody',
                     status: 200,
                     data : arr
                 });
+                return resolve()
             })
             .catch(err => {
                 console.log('Error getting documents', err);
@@ -220,10 +224,11 @@ function getLowerBody(response){
             .then(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
-                    return response.status(200).send({
+                    response.status(200).send({
                         statusMessage: 'Muscle type, not found',
                         status: 300
                     });
+                    return reject
                 }
                 let arr = []
                 snapshot.forEach(doc => {
@@ -234,11 +239,12 @@ function getLowerBody(response){
                         name: name
                     })
                 });
-                return response.status(200).send({
+                response.status(200).send({
                     statusMessage: 'Muscle type, LowerBody',
                     status: 200,
                     data : arr
                 });
+                return resolve()
             })
             .catch(err => {
                 console.log('Error getting documents', err);
@@ -255,10 +261,11 @@ function getCore(response){
             .then(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
-                    return response.status(200).send({
+                    response.status(200).send({
                         statusMessage: 'Muscle type, not found',
                         status: 300
                     });
+                    return reject
                 }
                 let arr = []
                 snapshot.forEach(doc => {
@@ -269,11 +276,12 @@ function getCore(response){
                         name: name
                     })
                 });
-                return response.status(200).send({
+                response.status(200).send({
                     statusMessage: 'Muscle type, Core',
                     status: 200,
                     data : arr
                 });
+                return resolve()
             })
             .catch(err => {
                 console.log('Error getting documents', err);

@@ -1,3 +1,6 @@
+const path = require("path");
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
 function getStyleUse(bundleFilename) {
   return [
     {
@@ -23,6 +26,7 @@ module.exports = [
   {
     entry: './scss/login.scss',
     output: {
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-login.js',
     },
@@ -36,6 +40,7 @@ module.exports = [
   {
     entry: './scss/home.scss',
     output: {
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-home.js',
     },
@@ -46,11 +51,21 @@ module.exports = [
       }]
     },
   },
+
+  //================= JS FILES AND HTML  ====================
   {
     entry: "./js/login.js",
     output: {
+      path: path.resolve(__dirname, "../public/"),
       filename: "bundle-login.js"
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'login.html',
+        filename: 'login.html' //relative to root of the application
+      })
+    ],
     module: {
       loaders: [{
         test: /login.js$/,
@@ -62,8 +77,16 @@ module.exports = [
   {
     entry: "./js/home.js",
     output: {
+      path: path.resolve(__dirname, "../public/"),
       filename: "bundle-home.js"
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'home.html',
+        filename: 'home.html' //relative to root of the application
+      })
+    ],
     module: {
       loaders: [{
         test: /home.js$/,
@@ -72,10 +95,11 @@ module.exports = [
       }]
     },
   },
-  //=================================== REGISTER ADDED
+  //=================================== ADD REGISTER FOR PRODUCTION
   {
     entry: './scss/register.scss',
     output: {
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-register.js',
     },
@@ -89,8 +113,16 @@ module.exports = [
   {
     entry: "./js/register.js",
     output: {
+      path: path.resolve(__dirname, "../public/"),
       filename: "bundle-register.js"
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'register.html',
+        filename: 'register.html' //relative to root of the application
+      })
+    ],
     module: {
       loaders: [{
         test: /register.js$/,
@@ -99,11 +131,12 @@ module.exports = [
       }]
     },
   },
-  //=================================== REGISTER ADDED
-  //=================================== CREATE ADDED
+  //=================================== END REGISTER FOR PRODUCTION
+  //=================================== ADD REGISTER FOR PRODUCTION
   {
     entry: './scss/create.scss',
     output: {
+      path: path.resolve(__dirname, "../public"),
       // This is necessary for webpack to compile, but we never reference this js file.
       filename: 'style-bundle-create.js',
     },
@@ -117,15 +150,24 @@ module.exports = [
   {
     entry: "./js/create.js",
     output: {
+      path: path.resolve(__dirname, "../public/"),
       filename: "bundle-create.js"
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        hash: true,
+        template: 'create.html',
+        filename: 'create.html' //relative to root of the application
+      })
+    ],
     module: {
       loaders: [{
-        test: /create.js$/,
+        test: /register.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
     },
-  }
-  //=================================== CREATE ADDED
+  },
+  //=================================== END REGISTER FOR PRODUCTION
+
 ];

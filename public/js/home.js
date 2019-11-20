@@ -1,11 +1,30 @@
-import {auth, firestore} from "./firebase";
+const firebase = require('firebase/app');
+require('firebase/analytics');
+require('firebase/auth');
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
+    authDomain: "gymproject-9f46b.firebaseapp.com",
+    databaseURL: "https://gymproject-9f46b.firebaseio.com",
+    projectId: "gymproject-9f46b",
+    storageBucket: "gymproject-9f46b.appspot.com",
+    messagingSenderId: "585009595190",
+    appId: "1:585009595190:web:cad18d95185a486bf1e997",
+    measurementId: "G-TSWB8RLHM9"
+});
+const auth  = firebase.auth();
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+
 import {MDCDialog} from '@material/dialog';
 import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
-//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
+import {MDCTextField} from "@material/textfield";
+
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
+const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
+const querieField = new MDCTextField(document.getElementById('search_field'));
+
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
 const menu = document.getElementById("menu");
@@ -230,3 +249,5 @@ getSelectedTab();
 callRoutines();
 callExcersicesAction();
 closeIfDevice();
+searchAction();
+searchButtonAction();

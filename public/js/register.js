@@ -1,6 +1,19 @@
-import {MDCTextField} from '@material/textfield';
-import {MDCDialog} from '@material/dialog';
-import { auth } from './firebase/index.js'
+const firebase = require('firebase/app');
+require('firebase/analytics');
+require('firebase/auth');
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
+    authDomain: "gymproject-9f46b.firebaseapp.com",
+    databaseURL: "https://gymproject-9f46b.firebaseio.com",
+    projectId: "gymproject-9f46b",
+    storageBucket: "gymproject-9f46b.appspot.com",
+    messagingSenderId: "585009595190",
+    appId: "1:585009595190:web:cad18d95185a486bf1e997",
+    measurementId: "G-TSWB8RLHM9"
+});
+const auth  = firebase.auth();
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 
 window.onload = function verifyUser() {
     auth.onAuthStateChanged(function(user) {
@@ -11,10 +24,7 @@ window.onload = function verifyUser() {
 };
 
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-import {MDCRipple} from '@material/ripple';
 import { MDCLinearProgress } from '@material/linear-progress';
-//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 const username = new MDCTextField(document.querySelector('.username'));
 const email = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));
