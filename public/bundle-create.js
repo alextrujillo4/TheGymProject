@@ -4774,9 +4774,9 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 var auth = firebase.auth();
+
 var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 
-var excercisesRef = firestore.collection('Excercises');
 var excChecked = [];
 
 var routinename = new _textfield.MDCTextField(document.querySelector('.email'));

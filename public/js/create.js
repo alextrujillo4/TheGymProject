@@ -13,10 +13,10 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 const auth  = firebase.auth();
+
 const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 
 import {MDCTextField} from "@material/textfield";
-let excercisesRef = firestore.collection('Excercises');
 let excChecked = [];
 
 const routinename = new MDCTextField(document.querySelector('.email'));
