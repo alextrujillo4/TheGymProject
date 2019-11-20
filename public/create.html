@@ -5,61 +5,69 @@
     <!-- Config -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>E | Create</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Create</title>
     <!-- Google -->
     <link href="https://material.io/favicon.ico" rel="shortcut icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- JQuery -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="bundle-create.css">
+    <link href="bundle-create.css" rel="stylesheet">
 </head>
 
 <body class="create">
-
-    <div class = "create-body">
-        <div>
-            
-                <div>
-                        <div>Upper Body </div>
-                        <ul id="upper">
-    
-                        </ul>
-                    </div>
-
-                <div>
-                        <div>Core</div>
-                        <ul id="core"> <!-- UL PADRE-->
-    
-                        </ul>
-                    </div>
-
-                <div>
-                    <div>Lower Body </div>
-                    <ul id="lower">
-
-                    </ul>
-                </div>
-            
+<section class="mdc_custom_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text mdc-typography--headline3">New Routine</div>
+            <div class="col-12 text_2 mdc-typography--body2">Please select your routine exercises</div>
+            <div class="mdc-text-field email">
+                <input class="mdc-text-field__input" id="name-input" name="name" type="text"  required>
+                <label class="mdc-floating-label" for="name-input">Name of Routine</label>
+                <div class="mdc-line-ripple"></div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4 card_top">
+                <div class="reate-body mdc-card  mdc-card--outlined col-12">
+                    <div class="mdc-typography--headline6 text_mdc_title">Upper Body</div>
+                    <ul aria-label="List with checkbox items" class="mdc-list" role="group"  id="upper"></ul>
+                </div>
+            </div>
+            <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4 card_top">
+                <div class="reate-body mdc-card  mdc-card--outlined col-12">
+                <div class="mdc-typography--headline6 text_mdc_title">Core</div>
+                <ul aria-label="List with checkbox items" class="mdc-list" role="group"  id="core">
+                </ul>
+            </div>
+            </div>
+            <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4 card_top">
+                <div class="reate-body mdc-card  mdc-card--outlined col-12">
+                <div class="mdc-typography--headline6 text_mdc_title">Lower Body</div>
+                <ul aria-label="List with checkbox items" class="mdc-list" role="group"  id="lower">
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<button aria-label="Favorite" class="mdc-fab mdc-fab--extended createbtn" id="createbtn">
+    <div class="mdc-fab__ripple"></div>
+    <span class="mdc-fab__icon material-icons">done</span>
+    <span class="mdc-fab__label">Next</span>
+
+</button>
+<!---end div body -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 
-        <button class="mdc-fab createbtn" aria-label="Favorite" id="createbtn">
-                <div class="mdc-fab__ripple"></div>
-                <span class="mdc-fab__icon material-icons">add</span>
-            </button>
-
-
-
-    </div> <!---end div body -->
-
-
-
-
-
-
-    <script src="bundle-create.js" async></script>
-<script type="text/javascript" src="style-bundle-create.js?ce9888067adb645b886b"></script></body>
+<script async src="bundle-create.js"></script>
+</body>
 </html>
