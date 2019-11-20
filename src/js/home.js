@@ -8,6 +8,7 @@ let userid = "lol";
 const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 //const URL = "http://localhost:5000/gymproject-9f46b/us-central1";
 
+
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
@@ -24,7 +25,15 @@ topAppBar.setScrollTarget(document.getElementById('main-content'));
 menu.addEventListener('click', function (event) {
     drawer.open = !drawer.open;
 });
-drawer.open = true;
+
+function closeIfDevice() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        drawer.open = false;
+    }else{
+        drawer.open = true;
+    }
+}
+
 document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
@@ -85,6 +94,7 @@ function getSelectedTab() {
             list.selectedIndex = 0;
             dialog.open()
         }
+        closeIfDevice();
     });
 }
 function logoutAction() {
@@ -166,7 +176,9 @@ function callExcersicesAction() {
 
 
 }
+
 logoutAction();
 addRoutine();
 getSelectedTab();
 callExcersicesAction();
+closeIfDevice();
