@@ -3,8 +3,8 @@
   "private": true,
   "version": "2.0.0",
   "scripts": {
-    "build": "webpack --progress --watch",
-    "dist": "webpack --config webpack.prod.config.js",
+    "dist": "webpack --progress --watch",
+    "build": "webpack --config webpack.prod.config.js",
     "clean": "rimraf dist/*"
   },
   "keywords": [
