@@ -158,20 +158,17 @@ function callRoutines() {
 });
 }
 function displayroutineData(data) {
-    for (let k = 0; k < data.length; k++) {
-        console.log("Element" + k);
-        let element = data[k];
+    data.forEach(element => {
         console.log(element);
-
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
             <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
-                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.name}</h2>
+                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.nameRoutine}</h2>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">${element.email}</h3>
                 </div>
-                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios:</div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ${element.excercises.length}</div>
             </div>
             <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
@@ -193,7 +190,9 @@ function displayroutineData(data) {
             </div>
         </div>
         `);
-    }
+
+    });
+
 }
 logoutAction();
 addRoutine();
