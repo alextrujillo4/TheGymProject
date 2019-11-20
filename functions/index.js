@@ -49,8 +49,15 @@ exports.query = functions.https.onRequest((request, response) => {
 //===============================================================================================
 //===============================================================================================
 exports.routines = functions.https.onRequest((request, response) => {
+    console.log("/routines");
+    console.log("BODY => ");
+    console.log(request.body.uid);
+    console.log("QUERY => ");
+    console.log(request.query.uid);
+    console.log("PARAMS => ");
+    console.log(request.params.uid);
     cors(request, response, () => {
-        return processRoutinesRequest(request, response ,request.body.uid);
+        return processRoutinesRequest(request, response );
     });
 });
 //===============================================================================================
@@ -139,15 +146,25 @@ function processDataRequest(request, response, method) {
     }
 }
 //===============================================================================================
-function processRoutinesRequest(request, response, uid) {
+function processRoutinesRequest(request, response,) {
     return new Promise((resolve, reject) => {
-        routinesRef.where('uid', '==', `${uid}`).get()
+        console.log(request.query.uid)
+        routinesRef.where('uid', '==', `${request.query.uid}`).get()
             .then(snapshot => {
-            console.log("Document successfully written!");
-            return response.status(200).send({
-                statusMessage: 'Routines Found!',
-                status: 200
-            });
+                let arr = []
+                snapshot.forEach(doc => {
+                    let name = doc.data().name;
+                    let id = doc.data().id;
+                    arr.push({
+                        id:id,
+                        name: name
+                    })
+                });
+                return response.status(200).send({
+                    statusMessage: 'Muscle type, UpperBody',
+                    status: 200,
+                    data : arr
+                });
         }).catch(error => {
             console.error("Error writing document: ", error);
             return response.status(400).send({
