@@ -123,7 +123,6 @@ function getCore() {
         }
     });
 }
-
 //core isChecked
 $('#core').on('change', ':checkbox', function (event) {
     event.preventDefault()
@@ -135,7 +134,6 @@ $('#core').on('change', ':checkbox', function (event) {
     }
 
 });
-
 //upperBody isChecked 
 $('#upper').on('change', ':checkbox', function (event) {
     event.preventDefault();
@@ -159,7 +157,6 @@ $('#lower').on('change', ':checkbox', function (event) {
         par.removeAttribute('isChecked');
     }
 });
-
 //crear rutina (verifica las casillas que se encuentren checked)
 $("#createbtn").on("click", function (event) {
     console.log("createbtn");
@@ -227,6 +224,7 @@ $("#createbtn").on("click", function (event) {
         }
     });
 });
+
 function createRoutine(excercises, userid) {
     $.ajax({
         url: URL + "/data",
@@ -244,7 +242,7 @@ function createRoutine(excercises, userid) {
             console.log("Conexión Exitosa");
             console.log(responseJSON.status);
             if (responseJSON.status === 200){
-                //window.location.href='/home.html';
+                window.location.href='/home.html';
             }else{
                 alert("Error");
             }

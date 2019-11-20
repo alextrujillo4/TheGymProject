@@ -113,12 +113,10 @@ function logoutAction() {
 }
 
 function displayData(data) {
-    console.log(data);
     for (let k = 0; k < data.length; k++) {
         console.log("Element" + k);
         let element = data[k];
         for (let exer in element) {
-            console.log(exer, element[exer]);
             let objData = element[exer];
             $("#muscle_list").append(`
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
@@ -165,8 +163,32 @@ function callExcersicesAction() {
 
 }
 
+
+function callRoutines() {
+    console.log("callRoutines");
+    $.ajax({
+        url: URL + "/routines",
+        method: "GET",
+        dataType: "json",
+        success: responseJSON => {
+            console.log("Conexión Routines Exitosa");
+            console.log(responseJSON.status);
+            if (responseJSON.status === 200) {
+                console.log("200");
+                displayroutineData(responseJSON.data);
+            }
+        },
+        error: function (err) {
+            console.log("Routines Error");
+        }
+    });
+}
+function displayroutineData(data) {
+    
+}
 logoutAction();
 addRoutine();
 getSelectedTab();
+callRoutines();
 callExcersicesAction();
 closeIfDevice();

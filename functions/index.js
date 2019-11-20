@@ -48,6 +48,13 @@ exports.query = functions.https.onRequest((request, response) => {
 });
 //===============================================================================================
 //===============================================================================================
+exports.routines = functions.https.onRequest((request, response) => {
+    cors(request, response, () => {
+        return processRoutinesRequest(request, response ,request.body.uid);
+    });
+});
+//===============================================================================================
+//===============================================================================================
 exports.data = functions.https.onRequest((request, response) => {
     cors(request, response, () => {
         console.log("Data BODY => ");
@@ -131,6 +138,27 @@ function processDataRequest(request, response, method) {
         getCore(response);
     }
 }
+//===============================================================================================
+function processRoutinesRequest(request, response, uid) {
+    return new Promise((resolve, reject) => {
+        routinesRef.where('uid', '==', `${uid}`).get()
+            .then(snapshot => {
+            console.log("Document successfully written!");
+            return response.status(200).send({
+                statusMessage: 'Routines Found!',
+                status: 200
+            });
+        }).catch(error => {
+            console.error("Error writing document: ", error);
+            return response.status(400).send({
+                statusMessage: 'No Routines mached!',
+                status: 400
+            });
+        });
+        resolve();
+    })
+}
+//===============================================================================================
 function createRoutine(data){
     console.log("createRoutine()");
     routinesRef.doc().set(data);
@@ -201,6 +229,7 @@ function getLowerBody(response){
 
     })
 }
+//===============================================================================================
 
 function getCore(response){
     console.log("getCore()");

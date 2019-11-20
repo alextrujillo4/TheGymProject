@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef738fa-78a5-43f5-92e4-244dfe4b24ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,12 +19,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/create.js">
+        <entry file="file://$PROJECT_DIR$/src/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="260" selection-start-line="260" selection-end-line="260" />
+            <state relative-caret-position="171">
+              <caret line="167" column="32" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
               <folding>
-                <element signature="n#!!block;n#f#0" />
+                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#851#973#0" />
+                <element signature="e#1092#1127#0" />
+                <element signature="n#!!block;n#closeIfDevice#0" />
+                <element signature="e#1396#1457#0" />
+                <element signature="n#!!block;n#addRoutine#0" />
+                <element signature="n#!!block;n#getSelectedTab#0" />
+                <element signature="n#!!block;n#logoutAction#0" />
+                <element signature="n#!!block;n#displayData#0" />
+                <element signature="n#!!block;n#callExcersicesAction#0" />
+                <element signature="e#5896#6671#0" />
               </folding>
             </state>
           </provider>
@@ -30,12 +43,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1659">
-              <caret line="135" column="32" lean-forward="true" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
+            <state relative-caret-position="105">
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="16" />
               <folding>
+                <element signature="e#2656#2883#0" />
                 <element signature="n#!!block;n#processRequest#0" />
                 <element signature="n#!!block;n#processQueryRequest#0" />
-                <element signature="e#6176#6184#0" />
+                <element signature="n#!!block;n#processDataRequest#0" />
+                <element signature="n#!!block;n#createRoutine#0" />
                 <element signature="n#!!block;n#getLowerBody#0" />
                 <element signature="n#!!block;n#setUpperBody#0" />
                 <element signature="n#!!block;n#setLowerBody#0" />
@@ -45,23 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ajax</find>
       <find>.routine</find>
       <find>topA</find>
       <find>mdc-car</find>
@@ -89,8 +91,9 @@
       <find>new</find>
       <find>processDataRequest</find>
       <find>excercisesRef</find>
-      <find>routinesRef</find>
       <find>createRoutine</find>
+      <find>callRoutines</find>
+      <find>routinesRef</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/.firebase</dir>
@@ -127,15 +130,15 @@
         <option value="$PROJECT_DIR$/src/js/login.js" />
         <option value="$PROJECT_DIR$/src/webpack.prod.config.js" />
         <option value="$PROJECT_DIR$/src/scss/home.scss" />
-        <option value="$PROJECT_DIR$/src/js/home.js" />
         <option value="$PROJECT_DIR$/src/home.html" />
         <option value="$PROJECT_DIR$/src/scss/create.scss" />
         <option value="$PROJECT_DIR$/src/create.html" />
         <option value="$PROJECT_DIR$/functions/firebase/whrite.js" />
         <option value="$PROJECT_DIR$/functions/firebase/index.js" />
         <option value="$PROJECT_DIR$/src/js/register.js" />
-        <option value="$PROJECT_DIR$/functions/index.js" />
         <option value="$PROJECT_DIR$/src/js/create.js" />
+        <option value="$PROJECT_DIR$/functions/index.js" />
+        <option value="$PROJECT_DIR$/src/js/home.js" />
       </list>
     </option>
   </component>
@@ -257,12 +260,12 @@
       <workItem from="1574055542888" duration="23119000" />
       <workItem from="1574114105174" duration="21457000" />
       <workItem from="1574208633718" duration="61000" />
-      <workItem from="1574215701312" duration="17998000" />
+      <workItem from="1574215701312" duration="18937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116617000" />
+    <option name="totallyTimeSpent" value="117556000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -277,7 +280,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -289,7 +292,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32913166" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.30392158" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" weight="0.30392158" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.60504204" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -325,7 +328,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/js/create.js</url>
-          <line>163</line>
+          <line>160</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -576,24 +579,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/home.js">
+    <entry file="file://$PROJECT_DIR$/src/js/create.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="185">
+          <caret line="124" column="1" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#getUpperBody#0" />
+            <element signature="n#!!block;n#getLowerBody#0" />
+            <element signature="n#!!block;n#getCore#0" />
+            <element signature="e#5655#5877#0" />
+            <element signature="e#5959#6182#0" />
+            <element signature="e#6262#6512#0" />
+            <element signature="e#6626#9004#0" />
+            <element signature="n#!!block;n#f#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="135" column="32" lean-forward="true" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
+        <state relative-caret-position="105">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="16" />
           <folding>
+            <element signature="e#2656#2883#0" />
             <element signature="n#!!block;n#processRequest#0" />
             <element signature="n#!!block;n#processQueryRequest#0" />
-            <element signature="e#6176#6184#0" />
+            <element signature="n#!!block;n#processDataRequest#0" />
+            <element signature="n#!!block;n#createRoutine#0" />
             <element signature="n#!!block;n#getLowerBody#0" />
             <element signature="n#!!block;n#setUpperBody#0" />
             <element signature="n#!!block;n#setLowerBody#0" />
@@ -602,12 +614,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/create.js">
+    <entry file="file://$PROJECT_DIR$/src/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="260" selection-start-line="260" selection-end-line="260" />
+        <state relative-caret-position="171">
+          <caret line="167" column="32" selection-start-line="167" selection-start-column="32" selection-end-line="167" selection-end-column="32" />
           <folding>
-            <element signature="n#!!block;n#f#0" />
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#851#973#0" />
+            <element signature="e#1092#1127#0" />
+            <element signature="n#!!block;n#closeIfDevice#0" />
+            <element signature="e#1396#1457#0" />
+            <element signature="n#!!block;n#addRoutine#0" />
+            <element signature="n#!!block;n#getSelectedTab#0" />
+            <element signature="n#!!block;n#logoutAction#0" />
+            <element signature="n#!!block;n#displayData#0" />
+            <element signature="n#!!block;n#callExcersicesAction#0" />
+            <element signature="e#5896#6671#0" />
           </folding>
         </state>
       </provider>
