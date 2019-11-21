@@ -16,9 +16,6 @@ firebase.initializeApp({
 const firestore = firebase.firestore();
 let excercisesRef = firestore.collection('Excercises');
 let routinesRef = firestore.collection ('Routines');
-
-
-
 //===============================================================================================
 //===============================================================================================
 exports.register = functions.https.onRequest((request, response) => {
@@ -48,6 +45,20 @@ exports.query = functions.https.onRequest((request, response) => {
 });
 //===============================================================================================
 //===============================================================================================
+exports.search = functions.https.onRequest((request, response) => {
+    console.log("/routines");
+    console.log("BODY => ");
+    console.log(request.body.uid);
+    console.log("QUERY => ");
+    console.log(request.query.uid);
+    console.log("PARAMS => ");
+    console.log(request.params.uid);
+    cors(request, response, () => {
+        return processSearchRequest(request, response );
+    });
+});
+//===============================================================================================
+//===============================================================================================
 exports.routines = functions.https.onRequest((request, response) => {
     console.log("/routines");
     console.log("BODY => ");
@@ -57,7 +68,7 @@ exports.routines = functions.https.onRequest((request, response) => {
     console.log("PARAMS => ");
     console.log(request.params.uid);
     cors(request, response, () => {
-        return processRoutinesRequest(request, response );
+        return processRoutinesRequest(request, response, request.method );
     });
 });
 //===============================================================================================
@@ -70,6 +81,7 @@ exports.data = functions.https.onRequest((request, response) => {
         return processDataRequest(request, response ,request.method);
     });
 });
+//===============================================================================================
 //===============================================================================================
 function processRequest(request, response) {
     let userregistered = request.body.user;
@@ -138,14 +150,24 @@ function processDataRequest(request, response, method) {
         console.log("data");
         console.log(data);
         createRoutine(response ,data)
-    }else{
+    } else { 
         getUpperBody(response);
         getLowerBody(response);
         getCore(response);
     }
 }
 //===============================================================================================
-function processRoutinesRequest(request, response,) {
+
+
+function processRoutinesRequest(request, response,method) {
+
+    if (method == "DELETE"){
+        let data = request.body.id;
+        console.log("delete INDEX", data);
+        deleteRoutine(response, data);
+    } else {
+
+  
     return new Promise((resolve, reject) => {
         console.log("request.query.uid");
         console.log(request.query.uid);
@@ -153,8 +175,19 @@ function processRoutinesRequest(request, response,) {
             .then(snapshot => {
                 let array = []
                 snapshot.forEach(doc => {
+                    console.log("DOCUMENTO ID",doc.id);
 
-                    array.push(doc.data());
+                    let routineWithId= {
+                        nameRoutine: doc.data().nameRoutine,
+                        email: doc.data().email,
+                        excercises: doc.data().excercises,
+                        isPrivate: doc.data().isPrivate,
+                        query: doc.data().query,
+                        uid: doc.data().uid,
+                        id: doc.id
+                    }
+                    console.log("ROUTINEID", routineWithId);
+                    array.push(routineWithId);
                 });
                 return response.status(200).send({
                     statusMessage: 'Muscle type, UpperBody',
@@ -170,7 +203,11 @@ function processRoutinesRequest(request, response,) {
         });
         resolve();
     })
+
 }
+}
+
+
 //===============================================================================================
 function createRoutine(response, data){
     console.log("createRoutine()");
@@ -179,8 +216,17 @@ function createRoutine(response, data){
         statusMessage: 'Routine Created!',
         status: 200,
     });
+}
 
-
+function deleteRoutine (response, data){
+    console.log("DATA DELETE");
+  
+   
+    routinesRef.doc(data).delete();
+    return response.status(200).send({
+        statusMessage: 'Routine Deleted!',
+        status: 200,
+    });
 }
 
 function getUpperBody(response){
@@ -252,7 +298,6 @@ function getLowerBody(response){
 
     })
 }
-//===============================================================================================
 
 function getCore(response){
     console.log("getCore()");
@@ -365,4 +410,34 @@ function setCore(userid) {
         .catch(err => {
             console.log('Error getting documents', err);
         });
+}
+//===============================================================================================
+function processSearchRequest(request, response,) {
+    console.log("processSearchRequest()");
+    let query = request.query.text;
+    console.log(query);
+    return new Promise((resolve, reject) => {
+        routinesRef.where('nameRoutine', '==', `${query}`)
+            //.where('nameRoutine', '<=', `${query}`)
+            .where('isPrivate', '==', "true").get()
+            .then(snapshot => {
+                let array = [];
+                snapshot.forEach(doc => {
+                    console.log(doc.data());
+                    array.push(doc.data());
+                });
+                return response.status(200).send({
+                    statusMessage: 'Success Query Search',
+                    status: 200,
+                    data : array
+                });
+            }).catch(error => {
+            console.error("Error writing document: ", error);
+            return response.status(400).send({
+                statusMessage: 'No Routines mached!',
+                status: 400
+            });
+        });
+        resolve();
+    })
 }

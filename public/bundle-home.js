@@ -8086,7 +8086,8 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 var auth = firebase.auth();
-var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+var URL = "http://localhost:5001/gymproject-9f46b/us-central1";
 
 var dialog = new _dialog.MDCDialog(document.getElementById('mdc-logout-dialog'));
 var dialogSearch = new _dialog.MDCDialog(document.getElementById('dialog_search'));
@@ -8148,14 +8149,17 @@ function getSelectedTab() {
         if (list.selectedIndex === 0) {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").removeClass("hide");
         } else if (list.selectedIndex === 1) {
             $("#first").addClass("hide");
             $("#second").removeClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").addClass("hide");
         } else {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").removeClass("hide");
             list.selectedIndex = 0;
             dialog.open();
@@ -8172,7 +8176,7 @@ function logoutAction() {
     });
 }
 
-function displayData(data) {
+function displayMusclesData(data) {
     for (var k = 0; k < data.length; k++) {
         console.log("Element" + k);
         var element = data[k];
@@ -8198,12 +8202,14 @@ function callExcersicesAction() {
                     console.log("Conexión Exitosa");
                     if (responseJSON.status === 200) {
                         console.log("200");
-                        displayData(responseJSON.data);
+                        displayMusclesData(responseJSON.data);
                     }
+                    progressTwo.close();
                 },
                 error: function error(err) {
                     console.log("User Not registered");
                     alert("Error... user Not registered :(");
+                    progressTwo.close();
                 }
             });
         }
@@ -8212,6 +8218,8 @@ function callExcersicesAction() {
 
 function callRoutines() {
     console.log("callRoutines");
+    progressOne.open();
+    $("#cardRoutine").html("");
     auth.onAuthStateChanged(function (user) {
         if (user) {
             $.ajax({
@@ -8226,11 +8234,14 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
+                        console.log("PRUEBA", responseJSON.data.id);
                         displayroutineData(responseJSON.data);
+                        progressOne.close();
                     }
                 },
                 error: function error(err) {
                     console.log("Routines Error...");
+                    progressOne.close();
                 }
             });
         }
@@ -8238,64 +8249,106 @@ function callRoutines() {
 }
 
 function displayroutineData(data) {
+
     data.forEach(function (element) {
-        $("#cardRoutine").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button\">  <span class=\"mdc-button_ripple\"></span> Read</button>\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button\">  <span class=\"mdc-button_ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button_icon mdc-icon-button_icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card_action mdc-card_action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
+        console.log("data id", element.id);
+
+        $("#cardRoutine").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\" id=\"" + element.id + "\">\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button\">  <span class=\"mdc-button_ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button__icon mdc-icon-button_icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card_action mdc-card_action--icon deletebtn\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
     });
 }
 
-function searchAction() {
-    $("#search_icon").on("click", function (event) {
-        //console.log("search_icon: CLick");
-        event.preventDefault();
-        dialogSearch.open();
+$("#cardRoutine").on('click', ".deletebtn", function (event) {
+    event.preventDefault();
+    console.log("adentro del delete");
+    var padre = event.target.parentNode.parentNode.parentNode;
+    console.log(padre);
+    var id = padre.getAttribute('id');
+    console.log("id elemento;", id);
+    deleteRoutine(id);
+});
+
+function deleteRoutine(id) {
+
+    console.log("deletelRoutine");
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "DELETE",
+                dataType: "json",
+                data: {
+                    id: id
+                },
+                success: function success(responseJSON) {
+                    console.log("Conexión eliminar rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+
+                        console.log("Routine delete 200");
+                        window.location.href = '/home.html';
+
+                        progressOne.close();
+                    }
+                },
+                error: function error(err) {
+                    console.log("Routines Error...");
+                    progressOne.close();
+                }
+            });
+        }
+    });
+}
+function displaySearchRoutineData(data) {
+    data.forEach(function (element) {
+        $("#cardSearchRoutines").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button\">  <span class=\"mdc-button_ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button_icon mdc-icon-button_icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card_action mdc-card_action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
     });
 }
 
 function searchButtonAction() {
     $("#search_button_q").on("click", function (event) {
-        // console.log("search_button: CLick");
-        event.preventDefault();
-        dialogSearch.open();
-        $("#first").addClass("hide");
-        $("#second").addClass("hide");
-        $("#createbtn").addClass("hide");
-        $("#third").removeClass("hide");
-    });
-}
-
-function getRoutineByName(name) {
-    console.log("getRoutineByName()");
-    $.ajax({
-        url: URL + "/routines",
-        method: "PUT",
-        dataType: "json",
-        data: name,
-        success: function success(responseJSON) {
-            console.log("Conexión Routines Exitosa");
-            console.log(responseJSON.status);
-            if (responseJSON.status === 200) {
-                console.log("Routines 200");
-                //   displayroutineData(responseJSON.data);
-            }
-        },
-        error: function error(err) {
-            console.log("Routines Error...");
+        if (querieField.valid) {
+            console.log("Search Query: CLick");
+            event.preventDefault();
+            dialogSearch.close();
+            $("#first").addClass("hide");
+            $("#second").addClass("hide");
+            $("#createbtn").addClass("hide");
+            $("#third").removeClass("hide");
+            $.ajax({
+                url: URL + "/search",
+                method: "GET",
+                dataType: "json",
+                data: {
+                    text: querieField.value
+                },
+                success: function success(responseJSON) {
+                    console.log(responseJSON.statusMessage);
+                    console.log(responseJSON.data);
+                    if (responseJSON.status === 200) {
+                        displaySearchRoutineData(responseJSON.data);
+                        progressTwo.close();
+                        querieField.value = "";
+                    }
+                },
+                error: function error(err) {
+                    console.log("Routines Error...");
+                    progressOne.close();
+                }
+            });
+        } else {
+            alert("Please add a valid text");
         }
     });
 }
-/*
-    <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept" id="search_button_q"
-                        type="button"></button>
 
- <input class="mdc-text-field__input" id="my-text-field" type="text">
-*/
-$("#search_button_q").on('click', function (event) {
-    event.preventDefault();
-    //console.log("adentro del search")
-    var nameRoutine = $("#my-text-field").val();
-    console.log("NOMBRE RUTINA", nameRoutine);
-    getRoutineByName(nameRoutine);
-});
+function searchAction() {
+    $("#search_icon").on("click", function (event) {
+        console.log("search_icon: CLick");
+        event.preventDefault();
+        dialogSearch.open();
+        progressThird.open();
+    });
+}
 
 logoutAction();
 addRoutine();
