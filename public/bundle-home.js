@@ -8245,7 +8245,7 @@ function displayroutineData(data) {
 
 function searchAction() {
     $("#search_icon").on("click", function (event) {
-        console.log("search_icon: CLick");
+        //console.log("search_icon: CLick");
         event.preventDefault();
         dialogSearch.open();
     });
@@ -8253,7 +8253,7 @@ function searchAction() {
 
 function searchButtonAction() {
     $("#search_button_q").on("click", function (event) {
-        console.log("search_button: CLick");
+        // console.log("search_button: CLick");
         event.preventDefault();
         dialogSearch.open();
         $("#first").addClass("hide");
@@ -8262,6 +8262,40 @@ function searchButtonAction() {
         $("#third").removeClass("hide");
     });
 }
+
+function getRoutineByName(name) {
+    console.log("getRoutineByName()");
+    $.ajax({
+        url: URL + "/routines",
+        method: "PUT",
+        dataType: "json",
+        data: name,
+        success: function success(responseJSON) {
+            console.log("Conexión Routines Exitosa");
+            console.log(responseJSON.status);
+            if (responseJSON.status === 200) {
+                console.log("Routines 200");
+                //   displayroutineData(responseJSON.data);
+            }
+        },
+        error: function error(err) {
+            console.log("Routines Error...");
+        }
+    });
+}
+/*
+    <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept" id="search_button_q"
+                        type="button"></button>
+
+ <input class="mdc-text-field__input" id="my-text-field" type="text">
+*/
+$("#search_button_q").on('click', function (event) {
+    event.preventDefault();
+    //console.log("adentro del search")
+    var nameRoutine = $("#my-text-field").val();
+    console.log("NOMBRE RUTINA", nameRoutine);
+    getRoutineByName(nameRoutine);
+});
 
 logoutAction();
 addRoutine();
