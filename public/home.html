@@ -20,11 +20,11 @@
 <!--APP BAR -->
 <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
     <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-start">
             <a class="demo-menu material-icons mdc-top-app-bar__navigation-icon" id="menu">menu</a>
             <span class="mdc-top-app-bar__title">Energy GYM</span>
         </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-end" role="toolbar">
             <button aria-label="Search" class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
                     id="search_icon">search
             </button>
@@ -73,10 +73,10 @@
                         <div class="mdc-linear-progress" role="progressbar">
                             <div class="mdc-linear-progress__buffering-dots"></div>
                             <div class="mdc-linear-progress__buffer"></div>
-                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <div class="mdc-linear-progress_bar mdc-linear-progress_primary-bar">
                                 <span class="mdc-linear-progress__bar-inner"></span>
                             </div>
-                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <div class="mdc-linear-progress_bar mdc-linear-progress_secondary-bar">
                                 <span class="mdc-linear-progress__bar-inner"></span>
                             </div>
                         </div>
@@ -109,10 +109,10 @@
                         <div class="mdc-linear-progress" role="progressbar">
                             <div class="mdc-linear-progress__buffering-dots"></div>
                             <div class="mdc-linear-progress__buffer"></div>
-                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <div class="mdc-linear-progress_bar mdc-linear-progress_primary-bar">
                                 <span class="mdc-linear-progress__bar-inner"></span>
                             </div>
-                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <div class="mdc-linear-progress_bar mdc-linear-progress_secondary-bar">
                                 <span class="mdc-linear-progress__bar-inner"></span>
                             </div>
                         </div>
@@ -125,7 +125,18 @@
                 </div>
             </section>
             <!--END OPTION TREE SELECTED -->
-            
+            <section class="hide third-content" id="third">
+                <div class="">Busqueda</div>
+                <div class="button-container progress-section" id="third-progress">
+                    <div class="mdc-linear-progress" role="progressbar">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress_bar mdc-linear-progress_primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress_bar mdc-linear-progress_secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
                     </div>
                 </div>
 
@@ -203,8 +214,5 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script async src="bundle-home.js"></script>
-
-
-<script type="text/javascript" src="bundle-home.js?43b5179b5e97c4ec0677"></script></body>
-
+</body>
 </html>
