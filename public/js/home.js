@@ -1,4 +1,3 @@
-import {MDCLinearProgress} from "@material/linear-progress";
 
 const firebase = require('firebase/app');
 require('firebase/analytics');
@@ -38,6 +37,9 @@ const mainContentEl = document.querySelector('.main-content');
 const progressOne = new MDCLinearProgress(document.getElementById('first-progress'));
 const progressTwo = new MDCLinearProgress(document.getElementById('second-progress'));
 const progressThird = new MDCLinearProgress(document.getElementById('third-progress'));
+progressOne.determinate = false;
+progressTwo.determinate = false;
+progressThird.determinate = false;
 
 
 
