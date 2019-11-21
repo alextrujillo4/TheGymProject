@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eef738fa-78a5-43f5-92e4-244dfe4b24ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/bundle-create.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle-create.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/bundle-home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle-home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/bundle-home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle-home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scss/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/home.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,60 +24,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
+            <state relative-caret-position="189">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="e#1882#2004#0" />
-                <element signature="e#2123#2158#0" />
-                <element signature="n#!!block;n#closeIfDevice#0" />
-                <element signature="e#2427#2488#0" />
-                <element signature="n#!!block;n#getSelectedTab#0" />
-                <element signature="n#!!block;n#logoutAction#0" />
-                <element signature="e#4384#5461#0" />
-                <element signature="n#!!block;n#callExcersicesAction#0" />
-                <element signature="n#!!block;n#callRoutines#0" />
-                <element signature="n#!!block;n#displayroutineData#0" />
-                <element signature="e#8682#8690#0" />
-                <element signature="n#!!block;n#searchButtonAction#0" />
-                <element signature="e#11024#11829#0" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/create.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="167" selection-start-line="167" selection-end-line="177" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -88,8 +36,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
-              <caret line="217" selection-start-line="217" selection-end-line="217" />
+            <state relative-caret-position="105">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1342">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -98,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/functions/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="392">
-              <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
+              <caret line="176" column="34" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
               <folding>
                 <element signature="n#!!block;n#processRequest#0" />
                 <element signature="n#!!block;n#processQueryRequest#0" />
@@ -120,16 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>processRoutinesRequest</find>
-      <find>routinesRef</find>
-      <find>search_field</find>
-      <find>requi</find>
-      <find>/sea</find>
-      <find>processSearchRequest</find>
-      <find>succe</find>
-      <find>succes query</find>
-      <find>Query</find>
-      <find>querieField</find>
       <find>text</find>
       <find>routine</find>
       <find>/search</find>
@@ -146,10 +93,20 @@
       <find>mdc-checkbox</find>
       <find>MDC</find>
       <find>cardRoutine</find>
-      <find>contains</find>
       <find>datass</find>
+      <find>mdc-card__actions</find>
+      <find>favbtn</find>
       <find>selector</find>
+      <find>iconbutt</find>
+      <find>mdciconbutton</find>
+      <find>change</find>
+      <find>on</find>
+      <find>contains</find>
+      <find>hide</find>
       <find>displayroutineData</find>
+      <find>deleteroutine</find>
+      <find>deleteRoU</find>
+      <find>@import &quot;@material/snackbar/mdc-snackbar&quot;;</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/.firebase</dir>
@@ -200,10 +157,10 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/scss/login.scss" />
         <option value="$PROJECT_DIR$/public/js/login.js" />
-        <option value="$PROJECT_DIR$/public/scss/home.scss" />
-        <option value="$PROJECT_DIR$/public/home.html" />
         <option value="$PROJECT_DIR$/functions/index.js" />
+        <option value="$PROJECT_DIR$/public/scss/home.scss" />
         <option value="$PROJECT_DIR$/public/js/home.js" />
+        <option value="$PROJECT_DIR$/public/home.html" />
       </list>
     </option>
   </component>
@@ -241,6 +198,12 @@
               <item name="GymProject" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GymProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GymProject" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,12 +280,12 @@
       <workItem from="1574215701312" duration="33660000" />
       <workItem from="1574271045530" duration="3774000" />
       <workItem from="1574275651364" duration="1434000" />
-      <workItem from="1574299270355" duration="17021000" />
+      <workItem from="1574299270355" duration="22448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154508000" />
+    <option name="totallyTimeSpent" value="159935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,7 +300,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -399,18 +362,6 @@
           <line>206</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/public/js/home.js</url>
-          <line>121</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/public/js/home.js</url>
-          <line>202</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -578,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scss/login.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -637,17 +581,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/home.html">
+    <entry file="file://$PROJECT_DIR$/public/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
-          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        <state relative-caret-position="252">
+          <caret line="12" column="14" lean-forward="true" selection-end-line="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
-          <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
+          <caret line="176" column="34" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
           <folding>
             <element signature="n#!!block;n#processRequest#0" />
             <element signature="n#!!block;n#processQueryRequest#0" />
@@ -664,32 +608,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="17829" column="12" selection-start-line="17829" selection-start-column="12" selection-end-line="17829" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="-1342">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#1882#2004#0" />
-            <element signature="e#2123#2158#0" />
-            <element signature="n#!!block;n#closeIfDevice#0" />
-            <element signature="e#2427#2488#0" />
-            <element signature="n#!!block;n#getSelectedTab#0" />
-            <element signature="n#!!block;n#logoutAction#0" />
-            <element signature="e#4384#5461#0" />
-            <element signature="n#!!block;n#callExcersicesAction#0" />
-            <element signature="n#!!block;n#callRoutines#0" />
-            <element signature="n#!!block;n#displayroutineData#0" />
-            <element signature="e#8682#8690#0" />
-            <element signature="n#!!block;n#searchButtonAction#0" />
-            <element signature="e#11024#11829#0" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
