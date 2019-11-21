@@ -209,13 +209,13 @@ function displayroutineData(data) {
                 </div>
                 <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ${element.excercises.length}</div>
             </div>
-            <div class="mdc-card__actions">
+            <div class="mdc-card__actions" idindex="${element.id}">
                 <div class="mdc-card__action-buttons">
                     <button class="mdc-button mdc-card_action mdc-cardaction--button">  <span class="mdc-button_ripple"></span> Edit</button>
                 </div>
                 <div class="mdc-card__action-icons">
                     <button id="add-to-pubic"
-                            class="mdc-icon-button"
+                            class="mdc-icon-button ispublic"
                             aria-label="Add to public"
                             aria-hidden="true"
                             aria-pressed="false">
@@ -235,13 +235,25 @@ function displayroutineData(data) {
 
 $("#cardRoutine").on('click',".deletebtn", function(event){
 event.preventDefault();
-console.log("adentro del delete");
+//console.log("adentro del delete");
 let padre = event.target.parentNode.parentNode.parentNode;
-console.log(padre);
+//console.log(padre);
 let id = padre.getAttribute('id');
-console.log("id elemento;", id);
+//console.log("id elemento;", id);
 deleteRoutine(id);
 });
+
+
+$("#cardRoutine").on('click',".ispublic", function(event){
+event.preventDefault();
+let padre = event.target.parentNode.parentNode.parentNode;
+console.log(padre);
+let id = padre.getAttribute('idindex');
+console.log(id);
+
+setPublic(id,false);
+});
+
 
 function deleteRoutine(id){
 
@@ -275,6 +287,41 @@ function deleteRoutine(id){
 });
 
 }
+
+function setPublic(id, value){
+    console.log("setPublic");
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "PUT",
+                dataType: "json",
+                data: {
+                    id: id,
+                    value: value
+                },
+                success: responseJSON => {
+                    console.log("Conexión setPublic rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+                        
+                        console.log("Routine setPublic 200");
+                        window.location.href='/home.html';
+                    
+                        progressOne.close()
+                    }
+                },
+                error: function (err) {
+                    console.log("Routines Error...");
+                    progressOne.close()
+                }
+            });
+        }
+});
+
+}
+
+
 function displaySearchRoutineData(data){
     data.forEach(element => {
         $("#cardSearchRoutines").append(`

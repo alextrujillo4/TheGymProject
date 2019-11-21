@@ -165,9 +165,12 @@ function processRoutinesRequest(request, response,method) {
         let data = request.body.id;
         console.log("delete INDEX", data);
         deleteRoutine(response, data);
-    } else {
-
-  
+    } else if (method == "PUT"){
+        let data = request.body.id;
+        let value = request.body.value;
+        console.log("PUT id",data, "PUT value",value);
+        setPublicRoutine(response,data,value);
+    }else{
     return new Promise((resolve, reject) => {
         console.log("request.query.uid");
         console.log(request.query.uid);
@@ -227,6 +230,19 @@ function deleteRoutine (response, data){
         statusMessage: 'Routine Deleted!',
         status: 200,
     });
+}
+
+function setPublicRoutine(response,data,value){
+    console.log("DATA SETPUBLIC");
+
+    routinesRef.doc(data).update({
+        isPrivate: value
+    });
+    return response.status(200).send({
+        statusMessage: 'Routine isPrivate Updated!',
+        status: 200,
+    });
+
 }
 
 function getUpperBody(response){
