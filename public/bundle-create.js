@@ -478,9 +478,9 @@ var MDCComponent = /** @class */ (function () {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib = __webpack_require__(25);
-var util = __webpack_require__(4);
-var logger$1 = __webpack_require__(27);
+var tslib = __webpack_require__(39);
+var util = __webpack_require__(7);
+var logger$1 = __webpack_require__(41);
 
 /**
  * @license
@@ -1053,6 +1053,292 @@ exports.firebase = firebase;
 
 /***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldCharacterCounterFoundation; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(15);
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCTextFieldCharacterCounterFoundation = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextFieldCharacterCounterFoundation, _super);
+    function MDCTextFieldCharacterCounterFoundation(adapter) {
+        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCTextFieldCharacterCounterFoundation.defaultAdapter, adapter)) || this;
+    }
+    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "cssClasses", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "strings", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "defaultAdapter", {
+        /**
+         * See {@link MDCTextFieldCharacterCounterAdapter} for typing information on parameters and return types.
+         */
+        get: function () {
+            return {
+                setContent: function () { return undefined; },
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCTextFieldCharacterCounterFoundation.prototype.setCounterValue = function (currentLength, maxLength) {
+        currentLength = Math.min(currentLength, maxLength);
+        this.adapter_.setContent(currentLength + " / " + maxLength);
+    };
+    return MDCTextFieldCharacterCounterFoundation;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCTextFieldCharacterCounterFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return cssClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return strings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return numbers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return VALIDATION_ATTR_WHITELIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ALWAYS_FLOAT_TYPES; });
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var strings = {
+    ARIA_CONTROLS: 'aria-controls',
+    ICON_SELECTOR: '.mdc-text-field__icon',
+    INPUT_SELECTOR: '.mdc-text-field__input',
+    LABEL_SELECTOR: '.mdc-floating-label',
+    LINE_RIPPLE_SELECTOR: '.mdc-line-ripple',
+    OUTLINE_SELECTOR: '.mdc-notched-outline',
+};
+var cssClasses = {
+    DENSE: 'mdc-text-field--dense',
+    DISABLED: 'mdc-text-field--disabled',
+    FOCUSED: 'mdc-text-field--focused',
+    FULLWIDTH: 'mdc-text-field--fullwidth',
+    HELPER_LINE: 'mdc-text-field-helper-line',
+    INVALID: 'mdc-text-field--invalid',
+    NO_LABEL: 'mdc-text-field--no-label',
+    OUTLINED: 'mdc-text-field--outlined',
+    ROOT: 'mdc-text-field',
+    TEXTAREA: 'mdc-text-field--textarea',
+    WITH_LEADING_ICON: 'mdc-text-field--with-leading-icon',
+    WITH_TRAILING_ICON: 'mdc-text-field--with-trailing-icon',
+};
+var numbers = {
+    DENSE_LABEL_SCALE: 0.923,
+    LABEL_SCALE: 0.75,
+};
+/**
+ * Whitelist based off of https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation
+ * under the "Validation-related attributes" section.
+ */
+var VALIDATION_ATTR_WHITELIST = [
+    'pattern', 'min', 'max', 'required', 'step', 'minlength', 'maxlength',
+];
+/**
+ * Label should always float for these types as they show some UI even if value is empty.
+ */
+var ALWAYS_FLOAT_TYPES = [
+    'color', 'date', 'datetime-local', 'month', 'range', 'time', 'week',
+];
+
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldHelperTextFoundation; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(18);
+/**
+ * @license
+ * Copyright 2017 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCTextFieldHelperTextFoundation = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextFieldHelperTextFoundation, _super);
+    function MDCTextFieldHelperTextFoundation(adapter) {
+        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCTextFieldHelperTextFoundation.defaultAdapter, adapter)) || this;
+    }
+    Object.defineProperty(MDCTextFieldHelperTextFoundation, "cssClasses", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextFieldHelperTextFoundation, "strings", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextFieldHelperTextFoundation, "defaultAdapter", {
+        /**
+         * See {@link MDCTextFieldHelperTextAdapter} for typing information on parameters and return types.
+         */
+        get: function () {
+            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+            return {
+                addClass: function () { return undefined; },
+                removeClass: function () { return undefined; },
+                hasClass: function () { return false; },
+                setAttr: function () { return undefined; },
+                removeAttr: function () { return undefined; },
+                setContent: function () { return undefined; },
+            };
+            // tslint:enable:object-literal-sort-keys
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Sets the content of the helper text field.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.setContent = function (content) {
+        this.adapter_.setContent(content);
+    };
+    /**
+     * @param isPersistent Sets the persistency of the helper text.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.setPersistent = function (isPersistent) {
+        if (isPersistent) {
+            this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
+        }
+        else {
+            this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
+        }
+    };
+    /**
+     * @param isValidation True to make the helper text act as an error validation message.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.setValidation = function (isValidation) {
+        if (isValidation) {
+            this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
+        }
+        else {
+            this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
+        }
+    };
+    /**
+     * Makes the helper text visible to the screen reader.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.showToScreenReader = function () {
+        this.adapter_.removeAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ARIA_HIDDEN);
+    };
+    /**
+     * Sets the validity of the helper text based on the input validity.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.setValidity = function (inputIsValid) {
+        var helperTextIsPersistent = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
+        var helperTextIsValidationMsg = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
+        var validationMsgNeedsDisplay = helperTextIsValidationMsg && !inputIsValid;
+        if (validationMsgNeedsDisplay) {
+            this.adapter_.setAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ROLE, 'alert');
+        }
+        else {
+            this.adapter_.removeAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ROLE);
+        }
+        if (!helperTextIsPersistent && !validationMsgNeedsDisplay) {
+            this.hide_();
+        }
+    };
+    /**
+     * Hides the help text from screen readers.
+     */
+    MDCTextFieldHelperTextFoundation.prototype.hide_ = function () {
+        this.adapter_.setAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ARIA_HIDDEN, 'true');
+    };
+    return MDCTextFieldHelperTextFoundation;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCTextFieldHelperTextFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1060,7 +1346,7 @@ exports.firebase = firebase;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib = __webpack_require__(26);
+var tslib = __webpack_require__(40);
 
 /**
  * @license
@@ -2679,323 +2965,10 @@ exports.validateContextObject = validateContextObject;
 exports.validateNamespace = validateNamespace;
 //# sourceMappingURL=index.cjs.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldCharacterCounterFoundation; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(16);
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCTextFieldCharacterCounterFoundation = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextFieldCharacterCounterFoundation, _super);
-    function MDCTextFieldCharacterCounterFoundation(adapter) {
-        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCTextFieldCharacterCounterFoundation.defaultAdapter, adapter)) || this;
-    }
-    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "cssClasses", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "strings", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "defaultAdapter", {
-        /**
-         * See {@link MDCTextFieldCharacterCounterAdapter} for typing information on parameters and return types.
-         */
-        get: function () {
-            return {
-                setContent: function () { return undefined; },
-            };
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCTextFieldCharacterCounterFoundation.prototype.setCounterValue = function (currentLength, maxLength) {
-        currentLength = Math.min(currentLength, maxLength);
-        this.adapter_.setContent(currentLength + " / " + maxLength);
-    };
-    return MDCTextFieldCharacterCounterFoundation;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCTextFieldCharacterCounterFoundation);
-//# sourceMappingURL=foundation.js.map
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return cssClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return strings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return numbers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return VALIDATION_ATTR_WHITELIST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ALWAYS_FLOAT_TYPES; });
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var strings = {
-    ARIA_CONTROLS: 'aria-controls',
-    ICON_SELECTOR: '.mdc-text-field__icon',
-    INPUT_SELECTOR: '.mdc-text-field__input',
-    LABEL_SELECTOR: '.mdc-floating-label',
-    LINE_RIPPLE_SELECTOR: '.mdc-line-ripple',
-    OUTLINE_SELECTOR: '.mdc-notched-outline',
-};
-var cssClasses = {
-    DENSE: 'mdc-text-field--dense',
-    DISABLED: 'mdc-text-field--disabled',
-    FOCUSED: 'mdc-text-field--focused',
-    FULLWIDTH: 'mdc-text-field--fullwidth',
-    HELPER_LINE: 'mdc-text-field-helper-line',
-    INVALID: 'mdc-text-field--invalid',
-    NO_LABEL: 'mdc-text-field--no-label',
-    OUTLINED: 'mdc-text-field--outlined',
-    ROOT: 'mdc-text-field',
-    TEXTAREA: 'mdc-text-field--textarea',
-    WITH_LEADING_ICON: 'mdc-text-field--with-leading-icon',
-    WITH_TRAILING_ICON: 'mdc-text-field--with-trailing-icon',
-};
-var numbers = {
-    DENSE_LABEL_SCALE: 0.923,
-    LABEL_SCALE: 0.75,
-};
-/**
- * Whitelist based off of https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation
- * under the "Validation-related attributes" section.
- */
-var VALIDATION_ATTR_WHITELIST = [
-    'pattern', 'min', 'max', 'required', 'step', 'minlength', 'maxlength',
-];
-/**
- * Label should always float for these types as they show some UI even if value is empty.
- */
-var ALWAYS_FLOAT_TYPES = [
-    'color', 'date', 'datetime-local', 'month', 'range', 'time', 'week',
-];
-
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldHelperTextFoundation; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(19);
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCTextFieldHelperTextFoundation = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextFieldHelperTextFoundation, _super);
-    function MDCTextFieldHelperTextFoundation(adapter) {
-        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCTextFieldHelperTextFoundation.defaultAdapter, adapter)) || this;
-    }
-    Object.defineProperty(MDCTextFieldHelperTextFoundation, "cssClasses", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextFieldHelperTextFoundation, "strings", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextFieldHelperTextFoundation, "defaultAdapter", {
-        /**
-         * See {@link MDCTextFieldHelperTextAdapter} for typing information on parameters and return types.
-         */
-        get: function () {
-            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-            return {
-                addClass: function () { return undefined; },
-                removeClass: function () { return undefined; },
-                hasClass: function () { return false; },
-                setAttr: function () { return undefined; },
-                removeAttr: function () { return undefined; },
-                setContent: function () { return undefined; },
-            };
-            // tslint:enable:object-literal-sort-keys
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Sets the content of the helper text field.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.setContent = function (content) {
-        this.adapter_.setContent(content);
-    };
-    /**
-     * @param isPersistent Sets the persistency of the helper text.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.setPersistent = function (isPersistent) {
-        if (isPersistent) {
-            this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
-        }
-        else {
-            this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
-        }
-    };
-    /**
-     * @param isValidation True to make the helper text act as an error validation message.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.setValidation = function (isValidation) {
-        if (isValidation) {
-            this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
-        }
-        else {
-            this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
-        }
-    };
-    /**
-     * Makes the helper text visible to the screen reader.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.showToScreenReader = function () {
-        this.adapter_.removeAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ARIA_HIDDEN);
-    };
-    /**
-     * Sets the validity of the helper text based on the input validity.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.setValidity = function (inputIsValid) {
-        var helperTextIsPersistent = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_PERSISTENT);
-        var helperTextIsValidationMsg = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].HELPER_TEXT_VALIDATION_MSG);
-        var validationMsgNeedsDisplay = helperTextIsValidationMsg && !inputIsValid;
-        if (validationMsgNeedsDisplay) {
-            this.adapter_.setAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ROLE, 'alert');
-        }
-        else {
-            this.adapter_.removeAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ROLE);
-        }
-        if (!helperTextIsPersistent && !validationMsgNeedsDisplay) {
-            this.hide_();
-        }
-    };
-    /**
-     * Hides the help text from screen readers.
-     */
-    MDCTextFieldHelperTextFoundation.prototype.hide_ = function () {
-        this.adapter_.setAttr(__WEBPACK_IMPORTED_MODULE_2__constants__["b" /* strings */].ARIA_HIDDEN, 'true');
-    };
-    return MDCTextFieldHelperTextFoundation;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCTextFieldHelperTextFoundation);
-//# sourceMappingURL=foundation.js.map
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)))
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3053,7 +3026,7 @@ function applyPassive(globalObj, forceRefresh) {
 //# sourceMappingURL=events.js.map
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3107,14 +3080,14 @@ function matches(element, selector) {
 //# sourceMappingURL=ponyfill.js.map
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFloatingLabelFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(27);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -3223,7 +3196,7 @@ var MDCFloatingLabelFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3268,15 +3241,15 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRippleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(13);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -3747,7 +3720,7 @@ var MDCRippleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3830,14 +3803,14 @@ function getNormalizedEventCoords(evt, pageOffset, clientRect) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldCharacterCounter; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(4);
 /**
  * @license
  * Copyright 2019 Google Inc.
@@ -3895,7 +3868,7 @@ var MDCTextFieldCharacterCounter = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3933,14 +3906,14 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(5);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -4403,14 +4376,14 @@ var MDCTextFieldFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldHelperText; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(6);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -4475,7 +4448,7 @@ var MDCTextFieldHelperText = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4517,14 +4490,14 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldIcon; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(20);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -4590,14 +4563,14 @@ var MDCTextFieldIcon = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldIconFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(21);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -4712,7 +4685,7 @@ var MDCTextFieldIconFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4751,15 +4724,44 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 23 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__material_textfield__ = __webpack_require__(36);
-const firebase = __webpack_require__(24);
-__webpack_require__(28);
-__webpack_require__(34);
+
+
+var _textfield = __webpack_require__(24);
+
+var firebase = __webpack_require__(38);
+__webpack_require__(42);
+__webpack_require__(48);
 // Initialize Firebase
 firebase.initializeApp({
     apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
@@ -4771,55 +4773,32 @@ firebase.initializeApp({
     appId: "1:585009595190:web:cad18d95185a486bf1e997",
     measurementId: "G-TSWB8RLHM9"
 });
-const auth  = firebase.auth();
+var auth = firebase.auth();
 
-const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 
+var excChecked = [];
 
-let excChecked = [];
-
-const routinename = new __WEBPACK_IMPORTED_MODULE_0__material_textfield__["a" /* MDCTextField */](document.querySelector('.email'));
-
+var routinename = new _textfield.MDCTextField(document.querySelector('.email'));
 
 function getUpperBody() {
     $.ajax({
         url: URL + "/data",
         method: "GET",
         dataType: "json",
-        success: responseJSON => {
+        success: function success(responseJSON) {
             console.log("Conexión Exitosa");
             console.log(responseJSON.status);
-            if (responseJSON.status === 200){
-                responseJSON.data.forEach(element => {
-                    $("#upper").append(`
-                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${element.id}" name="${element.name}">
-                        <span class="mdc-list-item__graphic">
-                            <div class="mdc-checkbox">
-                                <input class="mdc-checkbox__native-control"
-                                       id="demo-list-checkbox-item-3"
-                                       type="checkbox"/>
-                                <div class="mdc-checkbox__background">
-                                  <svg class="mdc-checkbox__checkmark"
-                                       viewBox="0 0 24 24">
-                                    <path class="mdc-checkbox__checkmark-path"
-                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                                          fill="none"/>
-                                  </svg>
-                                  <div class="mdc-checkbox__mixedmark"></div>
-                                </div>
-                              </div>
-                        </span>
-                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${element.name}</label>
-                    </li>
-                    `)
+            if (responseJSON.status === 200) {
+                responseJSON.data.forEach(function (element) {
+                    $("#upper").append('\n                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="' + element.id + '" name="' + element.name + '">\n                        <span class="mdc-list-item__graphic">\n                            <div class="mdc-checkbox">\n                                <input class="mdc-checkbox__native-control"\n                                       id="demo-list-checkbox-item-3"\n                                       type="checkbox"/>\n                                <div class="mdc-checkbox__background">\n                                  <svg class="mdc-checkbox__checkmark"\n                                       viewBox="0 0 24 24">\n                                    <path class="mdc-checkbox__checkmark-path"\n                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"\n                                          fill="none"/>\n                                  </svg>\n                                  <div class="mdc-checkbox__mixedmark"></div>\n                                </div>\n                              </div>\n                        </span>\n                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">' + element.name + '</label>\n                    </li>\n                    ');
                 });
             }
         },
-        error: function(err) {
+        error: function error(err) {
             console.log("UpperBody error");
         }
     });
-
 }
 
 function getLowerBody() {
@@ -4827,36 +4806,16 @@ function getLowerBody() {
         url: URL + "/data",
         method: "GET",
         dataType: "json",
-        success: responseJSON => {
+        success: function success(responseJSON) {
             console.log("Conexión Exitosa");
             console.log(responseJSON.status);
-            if (responseJSON.status === 200){
-                responseJSON.data.forEach(element => {
-                    $("#lower").append(`
-                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${element.id}" name="${element.name}">
-                        <span class="mdc-list-item__graphic">
-                            <div class="mdc-checkbox">
-                                <input class="mdc-checkbox__native-control"
-                                       id="demo-list-checkbox-item-3"
-                                       type="checkbox"/>
-                                <div class="mdc-checkbox__background">
-                                  <svg class="mdc-checkbox__checkmark"
-                                       viewBox="0 0 24 24">
-                                    <path class="mdc-checkbox__checkmark-path"
-                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                                          fill="none"/>
-                                  </svg>
-                                  <div class="mdc-checkbox__mixedmark"></div>
-                                </div>
-                              </div>
-                        </span>
-                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${element.name}</label>
-                    </li>
-                    `)
+            if (responseJSON.status === 200) {
+                responseJSON.data.forEach(function (element) {
+                    $("#lower").append('\n                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="' + element.id + '" name="' + element.name + '">\n                        <span class="mdc-list-item__graphic">\n                            <div class="mdc-checkbox">\n                                <input class="mdc-checkbox__native-control"\n                                       id="demo-list-checkbox-item-3"\n                                       type="checkbox"/>\n                                <div class="mdc-checkbox__background">\n                                  <svg class="mdc-checkbox__checkmark"\n                                       viewBox="0 0 24 24">\n                                    <path class="mdc-checkbox__checkmark-path"\n                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"\n                                          fill="none"/>\n                                  </svg>\n                                  <div class="mdc-checkbox__mixedmark"></div>\n                                </div>\n                              </div>\n                        </span>\n                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">' + element.name + '</label>\n                    </li>\n                    ');
                 });
             }
         },
-        error: function(err) {
+        error: function error(err) {
             console.log("LowerBody error");
         }
     });
@@ -4867,70 +4826,47 @@ function getCore() {
         url: URL + "/data",
         method: "GET",
         dataType: "json",
-        success: responseJSON => {
+        success: function success(responseJSON) {
             console.log("Conexión Exitosa");
             console.log(responseJSON.status);
-            if (responseJSON.status === 200){
-                responseJSON.data.forEach(element => {
-                    $("#core").append(`
-                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="${element.id}" name="${element.name}">
-                        <span class="mdc-list-item__graphic">
-                            <div class="mdc-checkbox">
-                                <input class="mdc-checkbox__native-control"
-                                       id="demo-list-checkbox-item-3"
-                                       type="checkbox"/>
-                                <div class="mdc-checkbox__background">
-                                  <svg class="mdc-checkbox__checkmark"
-                                       viewBox="0 0 24 24">
-                                    <path class="mdc-checkbox__checkmark-path"
-                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                                          fill="none"/>
-                                  </svg>
-                                  <div class="mdc-checkbox__mixedmark"></div>
-                                </div>
-                              </div>
-                        </span>
-                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">${element.name}</label>
-                    </li>
-                    `)
+            if (responseJSON.status === 200) {
+                responseJSON.data.forEach(function (element) {
+                    $("#core").append('\n                    <li aria-checked="false" class="mdc-list-item" role="checkbox" id="' + element.id + '" name="' + element.name + '">\n                        <span class="mdc-list-item__graphic">\n                            <div class="mdc-checkbox">\n                                <input class="mdc-checkbox__native-control"\n                                       id="demo-list-checkbox-item-3"\n                                       type="checkbox"/>\n                                <div class="mdc-checkbox__background">\n                                  <svg class="mdc-checkbox__checkmark"\n                                       viewBox="0 0 24 24">\n                                    <path class="mdc-checkbox__checkmark-path"\n                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"\n                                          fill="none"/>\n                                  </svg>\n                                  <div class="mdc-checkbox__mixedmark"></div>\n                                </div>\n                              </div>\n                        </span>\n                        <label class="mdc-list-item__text" for="demo-list-checkbox-item-3">' + element.name + '</label>\n                    </li>\n                    ');
                 });
             }
         },
-        error: function(err) {
+        error: function error(err) {
             console.log("Core error");
         }
     });
 }
 //core isChecked
 $('#core').on('change', ':checkbox', function (event) {
-    event.preventDefault()
-    let par = event.target.parentNode.parentNode.parentNode;
+    event.preventDefault();
+    var par = event.target.parentNode.parentNode.parentNode;
     if (this.checked) {
         par.setAttribute('isChecked', true);
     } else {
         par.removeAttribute('isChecked');
     }
-
 });
 //upperBody isChecked 
 $('#upper').on('change', ':checkbox', function (event) {
     event.preventDefault();
-    let par = event.target.parentNode.parentNode.parentNode;
+    var par = event.target.parentNode.parentNode.parentNode;
     if (this.checked) {
         par.setAttribute('isChecked', true);
     } else {
         par.removeAttribute('isChecked');
     }
-
 });
 //lowerBody isChecked
 $('#lower').on('change', ':checkbox', function (event) {
-    event.preventDefault()
-    let par = event.target.parentNode.parentNode.parentNode;
+    event.preventDefault();
+    var par = event.target.parentNode.parentNode.parentNode;
     if (this.checked) {
         //console.log(par);
         par.setAttribute('isChecked', true);
-
     } else {
         par.removeAttribute('isChecked');
     }
@@ -4939,63 +4875,62 @@ $('#lower').on('change', ':checkbox', function (event) {
 $("#createbtn").on("click", function (event) {
     console.log("createbtn");
     event.preventDefault();
-    if(routinename.valid){
-        let nameRoutine =routinename.value;
-    //console.log(nameRoutine);
+    if (routinename.valid) {
+        var nameRoutine = routinename.value;
+        //console.log(nameRoutine);
         auth.onAuthStateChanged(function (user) {
             console.log("auth");
-            let core = $('ul#core li');
-            let upper = $('ul#upper li');
-            let lower = $('ul#lower li');
+            var core = $('ul#core li');
+            var upper = $('ul#upper li');
+            var lower = $('ul#lower li');
 
             //checa valores checked del muscleType upper
-            for (let i = 0; i < upper.length; i++) {
-                let checkUpper = upper[i].getAttribute('isChecked');
+            for (var i = 0; i < upper.length; i++) {
+                var checkUpper = upper[i].getAttribute('isChecked');
                 if (checkUpper != null) {
                     console.log(upper[i].getAttribute('id'));
-                    let newExc = {
+                    var newExc = {
                         id: upper[i].getAttribute('id'),
                         name: upper[i].getAttribute('name')
-                    }
-                    excChecked.push(newExc)
+                    };
+                    excChecked.push(newExc);
                 }
             }
             //checa valores checked del muscleType lower
-            for (let i = 0; i < lower.length; i++) {
-                let checkLower = lower[i].getAttribute('isChecked')
+            for (var _i = 0; _i < lower.length; _i++) {
+                var checkLower = lower[_i].getAttribute('isChecked');
                 //console.log(check)
                 if (checkLower != null) {
-                    console.log(lower[i].getAttribute('id'));
-                    let newExc = {
-                        id: lower[i].getAttribute('id'),
-                        name: lower[i].getAttribute('name')
-                    }
-                    excChecked.push(newExc)
+                    console.log(lower[_i].getAttribute('id'));
+                    var _newExc = {
+                        id: lower[_i].getAttribute('id'),
+                        name: lower[_i].getAttribute('name')
+                    };
+                    excChecked.push(_newExc);
                 }
             }
             //checa valores checked del muscleType core
-            for (let i = 0; i < core.length; i++) {
-                let checkCore = core[i].getAttribute('isChecked')
+            for (var _i2 = 0; _i2 < core.length; _i2++) {
+                var checkCore = core[_i2].getAttribute('isChecked');
                 //console.log(check)
                 if (checkCore != null) {
-                    console.log(core[i].getAttribute('id'), '=>', core[i].getAttribute('name'));
-                    let newExc = {
-                        id: core[i].getAttribute('id'),
-                        name: core[i].getAttribute('name')
-                    }
-                    excChecked.push(newExc)
+                    console.log(core[_i2].getAttribute('id'), '=>', core[_i2].getAttribute('name'));
+                    var _newExc2 = {
+                        id: core[_i2].getAttribute('id'),
+                        name: core[_i2].getAttribute('name')
+                    };
+                    excChecked.push(_newExc2);
                 }
             }
 
-            console.log("createRoutine...")
-            createRoutine(excChecked, user.uid,user.email, nameRoutine);
+            console.log("createRoutine...");
+            createRoutine(excChecked, user.uid, user.email, nameRoutine);
 
             // routineRef.doc()
-    // const id = ref.id;
-
+            // const id = ref.id;
         });
-    }else{
-        alert("Please. Add a valid name to your routine.")
+    } else {
+        alert("Please. Add a valid name to your routine.");
     }
 });
 
@@ -5003,26 +4938,26 @@ function createRoutine(excercises, userid, email, nameRoutine) {
     $.ajax({
         url: URL + "/data",
         method: "POST",
-        data:{
-            routine : {
-                query : "create",
+        data: {
+            routine: {
+                query: "create",
                 uid: userid,
                 email: email,
                 nameRoutine: nameRoutine,
                 isPrivate: true,
-                excercises: excercises,
+                excercises: excercises
             }
         },
         dataType: "json",
-        success: responseJSON => {
+        success: function success(responseJSON) {
             console.log("Conexión Exitosa");
-            if (responseJSON.status === 200){
-                window.location.href='/home.html';
-            }else{
+            if (responseJSON.status === 200) {
+                window.location.href = '/home.html';
+            } else {
                 alert("Error");
             }
         },
-        error: function(err) {
+        error: function error(err) {
             console.log("");
         }
     });
@@ -5032,9 +4967,1371 @@ getUpperBody();
 getCore();
 getLowerBody();
 
-
 /***/ }),
 /* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(25);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextField", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(5);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["e"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "VALIDATION_ATTR_WHITELIST", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ALWAYS_FLOAT_TYPES", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(16);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__character_counter_index__ = __webpack_require__(35);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "characterCountCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "characterCountStrings", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldCharacterCounter", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldCharacterCounterFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_text_index__ = __webpack_require__(36);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "helperTextCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "helperTextStrings", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldHelperText", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldHelperTextFoundation", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon_index__ = __webpack_require__(37);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "iconCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "iconStrings", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["d"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldIcon", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldIconFoundation", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["b"]; });
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextField; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__character_counter_component__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__foundation__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__helper_text_component__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__icon_component__ = __webpack_require__(19);
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MDCTextField = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextField, _super);
+    function MDCTextField() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MDCTextField.attachTo = function (root) {
+        return new MDCTextField(root);
+    };
+    MDCTextField.prototype.initialize = function (rippleFactory, lineRippleFactory, helperTextFactory, characterCounterFactory, iconFactory, labelFactory, outlineFactory) {
+        if (rippleFactory === void 0) { rippleFactory = function (el, foundation) { return new __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__["a" /* MDCRipple */](el, foundation); }; }
+        if (lineRippleFactory === void 0) { lineRippleFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__["a" /* MDCLineRipple */](el); }; }
+        if (helperTextFactory === void 0) { helperTextFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_13__helper_text_component__["a" /* MDCTextFieldHelperText */](el); }; }
+        if (characterCounterFactory === void 0) { characterCounterFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_9__character_counter_component__["a" /* MDCTextFieldCharacterCounter */](el); }; }
+        if (iconFactory === void 0) { iconFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_15__icon_component__["a" /* MDCTextFieldIcon */](el); }; }
+        if (labelFactory === void 0) { labelFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__["a" /* MDCFloatingLabel */](el); }; }
+        if (outlineFactory === void 0) { outlineFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__["a" /* MDCNotchedOutline */](el); }; }
+        this.input_ = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].INPUT_SELECTOR);
+        var labelElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].LABEL_SELECTOR);
+        this.label_ = labelElement ? labelFactory(labelElement) : null;
+        var lineRippleElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].LINE_RIPPLE_SELECTOR);
+        this.lineRipple_ = lineRippleElement ? lineRippleFactory(lineRippleElement) : null;
+        var outlineElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].OUTLINE_SELECTOR);
+        this.outline_ = outlineElement ? outlineFactory(outlineElement) : null;
+        // Helper text
+        var helperTextStrings = __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__["a" /* MDCTextFieldHelperTextFoundation */].strings;
+        var nextElementSibling = this.root_.nextElementSibling;
+        var hasHelperLine = (nextElementSibling && nextElementSibling.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].HELPER_LINE));
+        var helperTextEl = hasHelperLine && nextElementSibling && nextElementSibling.querySelector(helperTextStrings.ROOT_SELECTOR);
+        this.helperText_ = helperTextEl ? helperTextFactory(helperTextEl) : null;
+        // Character counter
+        var characterCounterStrings = __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__["a" /* MDCTextFieldCharacterCounterFoundation */].strings;
+        var characterCounterEl = this.root_.querySelector(characterCounterStrings.ROOT_SELECTOR);
+        // If character counter is not found in root element search in sibling element.
+        if (!characterCounterEl && hasHelperLine && nextElementSibling) {
+            characterCounterEl = nextElementSibling.querySelector(characterCounterStrings.ROOT_SELECTOR);
+        }
+        this.characterCounter_ = characterCounterEl ? characterCounterFactory(characterCounterEl) : null;
+        this.leadingIcon_ = null;
+        this.trailingIcon_ = null;
+        var iconElements = this.root_.querySelectorAll(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].ICON_SELECTOR);
+        if (iconElements.length > 0) {
+            if (iconElements.length > 1) { // Has both icons.
+                this.leadingIcon_ = iconFactory(iconElements[0]);
+                this.trailingIcon_ = iconFactory(iconElements[1]);
+            }
+            else {
+                if (this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].WITH_LEADING_ICON)) {
+                    this.leadingIcon_ = iconFactory(iconElements[0]);
+                }
+                else {
+                    this.trailingIcon_ = iconFactory(iconElements[0]);
+                }
+            }
+        }
+        this.ripple = this.createRipple_(rippleFactory);
+    };
+    MDCTextField.prototype.destroy = function () {
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
+        if (this.lineRipple_) {
+            this.lineRipple_.destroy();
+        }
+        if (this.helperText_) {
+            this.helperText_.destroy();
+        }
+        if (this.characterCounter_) {
+            this.characterCounter_.destroy();
+        }
+        if (this.leadingIcon_) {
+            this.leadingIcon_.destroy();
+        }
+        if (this.trailingIcon_) {
+            this.trailingIcon_.destroy();
+        }
+        if (this.label_) {
+            this.label_.destroy();
+        }
+        if (this.outline_) {
+            this.outline_.destroy();
+        }
+        _super.prototype.destroy.call(this);
+    };
+    /**
+     * Initializes the Text Field's internal state based on the environment's
+     * state.
+     */
+    MDCTextField.prototype.initialSyncWithDOM = function () {
+        this.disabled = this.input_.disabled;
+    };
+    Object.defineProperty(MDCTextField.prototype, "value", {
+        get: function () {
+            return this.foundation_.getValue();
+        },
+        /**
+         * @param value The value to set on the input.
+         */
+        set: function (value) {
+            this.foundation_.setValue(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "disabled", {
+        get: function () {
+            return this.foundation_.isDisabled();
+        },
+        /**
+         * @param disabled Sets the Text Field disabled or enabled.
+         */
+        set: function (disabled) {
+            this.foundation_.setDisabled(disabled);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "valid", {
+        get: function () {
+            return this.foundation_.isValid();
+        },
+        /**
+         * @param valid Sets the Text Field valid or invalid.
+         */
+        set: function (valid) {
+            this.foundation_.setValid(valid);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "required", {
+        get: function () {
+            return this.input_.required;
+        },
+        /**
+         * @param required Sets the Text Field to required.
+         */
+        set: function (required) {
+            this.input_.required = required;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "pattern", {
+        get: function () {
+            return this.input_.pattern;
+        },
+        /**
+         * @param pattern Sets the input element's validation pattern.
+         */
+        set: function (pattern) {
+            this.input_.pattern = pattern;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "minLength", {
+        get: function () {
+            return this.input_.minLength;
+        },
+        /**
+         * @param minLength Sets the input element's minLength.
+         */
+        set: function (minLength) {
+            this.input_.minLength = minLength;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "maxLength", {
+        get: function () {
+            return this.input_.maxLength;
+        },
+        /**
+         * @param maxLength Sets the input element's maxLength.
+         */
+        set: function (maxLength) {
+            // Chrome throws exception if maxLength is set to a value less than zero
+            if (maxLength < 0) {
+                this.input_.removeAttribute('maxLength');
+            }
+            else {
+                this.input_.maxLength = maxLength;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "min", {
+        get: function () {
+            return this.input_.min;
+        },
+        /**
+         * @param min Sets the input element's min.
+         */
+        set: function (min) {
+            this.input_.min = min;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "max", {
+        get: function () {
+            return this.input_.max;
+        },
+        /**
+         * @param max Sets the input element's max.
+         */
+        set: function (max) {
+            this.input_.max = max;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "step", {
+        get: function () {
+            return this.input_.step;
+        },
+        /**
+         * @param step Sets the input element's step.
+         */
+        set: function (step) {
+            this.input_.step = step;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "helperTextContent", {
+        /**
+         * Sets the helper text element content.
+         */
+        set: function (content) {
+            this.foundation_.setHelperTextContent(content);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "leadingIconAriaLabel", {
+        /**
+         * Sets the aria label of the leading icon.
+         */
+        set: function (label) {
+            this.foundation_.setLeadingIconAriaLabel(label);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "leadingIconContent", {
+        /**
+         * Sets the text content of the leading icon.
+         */
+        set: function (content) {
+            this.foundation_.setLeadingIconContent(content);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "trailingIconAriaLabel", {
+        /**
+         * Sets the aria label of the trailing icon.
+         */
+        set: function (label) {
+            this.foundation_.setTrailingIconAriaLabel(label);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "trailingIconContent", {
+        /**
+         * Sets the text content of the trailing icon.
+         */
+        set: function (content) {
+            this.foundation_.setTrailingIconContent(content);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCTextField.prototype, "useNativeValidation", {
+        /**
+         * Enables or disables the use of native validation. Use this for custom validation.
+         * @param useNativeValidation Set this to false to ignore native input validation.
+         */
+        set: function (useNativeValidation) {
+            this.foundation_.setUseNativeValidation(useNativeValidation);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Focuses the input element.
+     */
+    MDCTextField.prototype.focus = function () {
+        this.input_.focus();
+    };
+    /**
+     * Recomputes the outline SVG path for the outline element.
+     */
+    MDCTextField.prototype.layout = function () {
+        var openNotch = this.foundation_.shouldFloat;
+        this.foundation_.notchOutline(openNotch);
+    };
+    MDCTextField.prototype.getDefaultFoundation = function () {
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        var adapter = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, this.getRootAdapterMethods_(), this.getInputAdapterMethods_(), this.getLabelAdapterMethods_(), this.getLineRippleAdapterMethods_(), this.getOutlineAdapterMethods_());
+        // tslint:enable:object-literal-sort-keys
+        return new __WEBPACK_IMPORTED_MODULE_12__foundation__["a" /* MDCTextFieldFoundation */](adapter, this.getFoundationMap_());
+    };
+    MDCTextField.prototype.getRootAdapterMethods_ = function () {
+        var _this = this;
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        return {
+            addClass: function (className) { return _this.root_.classList.add(className); },
+            removeClass: function (className) { return _this.root_.classList.remove(className); },
+            hasClass: function (className) { return _this.root_.classList.contains(className); },
+            registerTextFieldInteractionHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
+            deregisterTextFieldInteractionHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
+            registerValidationAttributeChangeHandler: function (handler) {
+                var getAttributesList = function (mutationsList) {
+                    return mutationsList
+                        .map(function (mutation) { return mutation.attributeName; })
+                        .filter(function (attributeName) { return attributeName; });
+                };
+                var observer = new MutationObserver(function (mutationsList) { return handler(getAttributesList(mutationsList)); });
+                var config = { attributes: true };
+                observer.observe(_this.input_, config);
+                return observer;
+            },
+            deregisterValidationAttributeChangeHandler: function (observer) { return observer.disconnect(); },
+        };
+        // tslint:enable:object-literal-sort-keys
+    };
+    MDCTextField.prototype.getInputAdapterMethods_ = function () {
+        var _this = this;
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        return {
+            getNativeInput: function () { return _this.input_; },
+            isFocused: function () { return document.activeElement === _this.input_; },
+            registerInputInteractionHandler: function (evtType, handler) {
+                return _this.input_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+            deregisterInputInteractionHandler: function (evtType, handler) {
+                return _this.input_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+        };
+        // tslint:enable:object-literal-sort-keys
+    };
+    MDCTextField.prototype.getLabelAdapterMethods_ = function () {
+        var _this = this;
+        return {
+            floatLabel: function (shouldFloat) { return _this.label_ && _this.label_.float(shouldFloat); },
+            getLabelWidth: function () { return _this.label_ ? _this.label_.getWidth() : 0; },
+            hasLabel: function () { return Boolean(_this.label_); },
+            shakeLabel: function (shouldShake) { return _this.label_ && _this.label_.shake(shouldShake); },
+        };
+    };
+    MDCTextField.prototype.getLineRippleAdapterMethods_ = function () {
+        var _this = this;
+        return {
+            activateLineRipple: function () {
+                if (_this.lineRipple_) {
+                    _this.lineRipple_.activate();
+                }
+            },
+            deactivateLineRipple: function () {
+                if (_this.lineRipple_) {
+                    _this.lineRipple_.deactivate();
+                }
+            },
+            setLineRippleTransformOrigin: function (normalizedX) {
+                if (_this.lineRipple_) {
+                    _this.lineRipple_.setRippleCenter(normalizedX);
+                }
+            },
+        };
+    };
+    MDCTextField.prototype.getOutlineAdapterMethods_ = function () {
+        var _this = this;
+        return {
+            closeOutline: function () { return _this.outline_ && _this.outline_.closeNotch(); },
+            hasOutline: function () { return Boolean(_this.outline_); },
+            notchOutline: function (labelWidth) { return _this.outline_ && _this.outline_.notch(labelWidth); },
+        };
+    };
+    /**
+     * @return A map of all subcomponents to subfoundations.
+     */
+    MDCTextField.prototype.getFoundationMap_ = function () {
+        return {
+            characterCounter: this.characterCounter_ ? this.characterCounter_.foundation : undefined,
+            helperText: this.helperText_ ? this.helperText_.foundation : undefined,
+            leadingIcon: this.leadingIcon_ ? this.leadingIcon_.foundation : undefined,
+            trailingIcon: this.trailingIcon_ ? this.trailingIcon_.foundation : undefined,
+        };
+    };
+    MDCTextField.prototype.createRipple_ = function (rippleFactory) {
+        var _this = this;
+        var isTextArea = this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].TEXTAREA);
+        var isOutlined = this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].OUTLINED);
+        if (isTextArea || isOutlined) {
+            return null;
+        }
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        var adapter = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__["a" /* MDCRipple */].createAdapter(this), { isSurfaceActive: function () { return __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__["a" /* matches */](_this.input_, ':active'); }, registerInteractionHandler: function (evtType, handler) { return _this.input_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])()); }, deregisterInteractionHandler: function (evtType, handler) {
+                return _this.input_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            } });
+        // tslint:enable:object-literal-sort-keys
+        return rippleFactory(this.root_, new __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__["a" /* MDCRippleFoundation */](adapter));
+    };
+    return MDCTextField;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFloatingLabel; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(10);
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCFloatingLabel = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCFloatingLabel, _super);
+    function MDCFloatingLabel() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MDCFloatingLabel.attachTo = function (root) {
+        return new MDCFloatingLabel(root);
+    };
+    /**
+     * Styles the label to produce the label shake for errors.
+     * @param shouldShake If true, shakes the label by adding a CSS class; otherwise, stops shaking by removing the class.
+     */
+    MDCFloatingLabel.prototype.shake = function (shouldShake) {
+        this.foundation_.shake(shouldShake);
+    };
+    /**
+     * Styles the label to float/dock.
+     * @param shouldFloat If true, floats the label by adding a CSS class; otherwise, docks it by removing the class.
+     */
+    MDCFloatingLabel.prototype.float = function (shouldFloat) {
+        this.foundation_.float(shouldFloat);
+    };
+    MDCFloatingLabel.prototype.getWidth = function () {
+        return this.foundation_.getWidth();
+    };
+    MDCFloatingLabel.prototype.getDefaultFoundation = function () {
+        var _this = this;
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        var adapter = {
+            addClass: function (className) { return _this.root_.classList.add(className); },
+            removeClass: function (className) { return _this.root_.classList.remove(className); },
+            getWidth: function () { return _this.root_.scrollWidth; },
+            registerInteractionHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
+            deregisterInteractionHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
+        };
+        // tslint:enable:object-literal-sort-keys
+        return new __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* MDCFloatingLabelFoundation */](adapter);
+    };
+    return MDCFloatingLabel;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses = {
+    LABEL_FLOAT_ABOVE: 'mdc-floating-label--float-above',
+    LABEL_SHAKE: 'mdc-floating-label--shake',
+    ROOT: 'mdc-floating-label',
+};
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRipple; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(29);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCLineRipple = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCLineRipple, _super);
+    function MDCLineRipple() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MDCLineRipple.attachTo = function (root) {
+        return new MDCLineRipple(root);
+    };
+    /**
+     * Activates the line ripple
+     */
+    MDCLineRipple.prototype.activate = function () {
+        this.foundation_.activate();
+    };
+    /**
+     * Deactivates the line ripple
+     */
+    MDCLineRipple.prototype.deactivate = function () {
+        this.foundation_.deactivate();
+    };
+    /**
+     * Sets the transform origin given a user's click location.
+     * The `rippleCenter` is the x-coordinate of the middle of the ripple.
+     */
+    MDCLineRipple.prototype.setRippleCenter = function (xCoordinate) {
+        this.foundation_.setRippleCenter(xCoordinate);
+    };
+    MDCLineRipple.prototype.getDefaultFoundation = function () {
+        var _this = this;
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        var adapter = {
+            addClass: function (className) { return _this.root_.classList.add(className); },
+            removeClass: function (className) { return _this.root_.classList.remove(className); },
+            hasClass: function (className) { return _this.root_.classList.contains(className); },
+            setStyle: function (propertyName, value) { return _this.root_.style.setProperty(propertyName, value); },
+            registerEventHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
+            deregisterEventHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
+        };
+        // tslint:enable:object-literal-sort-keys
+        return new __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* MDCLineRippleFoundation */](adapter);
+    };
+    return MDCLineRipple;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRippleFoundation; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(30);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCLineRippleFoundation = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCLineRippleFoundation, _super);
+    function MDCLineRippleFoundation(adapter) {
+        var _this = _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCLineRippleFoundation.defaultAdapter, adapter)) || this;
+        _this.transitionEndHandler_ = function (evt) { return _this.handleTransitionEnd(evt); };
+        return _this;
+    }
+    Object.defineProperty(MDCLineRippleFoundation, "cssClasses", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCLineRippleFoundation, "defaultAdapter", {
+        /**
+         * See {@link MDCLineRippleAdapter} for typing information on parameters and return types.
+         */
+        get: function () {
+            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+            return {
+                addClass: function () { return undefined; },
+                removeClass: function () { return undefined; },
+                hasClass: function () { return false; },
+                setStyle: function () { return undefined; },
+                registerEventHandler: function () { return undefined; },
+                deregisterEventHandler: function () { return undefined; },
+            };
+            // tslint:enable:object-literal-sort-keys
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCLineRippleFoundation.prototype.init = function () {
+        this.adapter_.registerEventHandler('transitionend', this.transitionEndHandler_);
+    };
+    MDCLineRippleFoundation.prototype.destroy = function () {
+        this.adapter_.deregisterEventHandler('transitionend', this.transitionEndHandler_);
+    };
+    MDCLineRippleFoundation.prototype.activate = function () {
+        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
+        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_ACTIVE);
+    };
+    MDCLineRippleFoundation.prototype.setRippleCenter = function (xCoordinate) {
+        this.adapter_.setStyle('transform-origin', xCoordinate + "px center");
+    };
+    MDCLineRippleFoundation.prototype.deactivate = function () {
+        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
+    };
+    MDCLineRippleFoundation.prototype.handleTransitionEnd = function (evt) {
+        // Wait for the line ripple to be either transparent or opaque
+        // before emitting the animation end event
+        var isDeactivating = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
+        if (evt.propertyName === 'opacity') {
+            if (isDeactivating) {
+                this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_ACTIVE);
+                this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
+            }
+        }
+    };
+    return MDCLineRippleFoundation;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCLineRippleFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses = {
+    LINE_RIPPLE_ACTIVE: 'mdc-line-ripple--active',
+    LINE_RIPPLE_DEACTIVATING: 'mdc-line-ripple--deactivating',
+};
+
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutline; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(32);
+/**
+ * @license
+ * Copyright 2017 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+var MDCNotchedOutline = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCNotchedOutline, _super);
+    function MDCNotchedOutline() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MDCNotchedOutline.attachTo = function (root) {
+        return new MDCNotchedOutline(root);
+    };
+    MDCNotchedOutline.prototype.initialSyncWithDOM = function () {
+        this.notchElement_ = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].NOTCH_ELEMENT_SELECTOR);
+        var label = this.root_.querySelector('.' + __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__["a" /* MDCFloatingLabelFoundation */].cssClasses.ROOT);
+        if (label) {
+            label.style.transitionDuration = '0s';
+            this.root_.classList.add(__WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */].OUTLINE_UPGRADED);
+            requestAnimationFrame(function () {
+                label.style.transitionDuration = '';
+            });
+        }
+        else {
+            this.root_.classList.add(__WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */].NO_LABEL);
+        }
+    };
+    /**
+     * Updates classes and styles to open the notch to the specified width.
+     * @param notchWidth The notch width in the outline.
+     */
+    MDCNotchedOutline.prototype.notch = function (notchWidth) {
+        this.foundation_.notch(notchWidth);
+    };
+    /**
+     * Updates classes and styles to close the notch.
+     */
+    MDCNotchedOutline.prototype.closeNotch = function () {
+        this.foundation_.closeNotch();
+    };
+    MDCNotchedOutline.prototype.getDefaultFoundation = function () {
+        var _this = this;
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+        var adapter = {
+            addClass: function (className) { return _this.root_.classList.add(className); },
+            removeClass: function (className) { return _this.root_.classList.remove(className); },
+            setNotchWidthProperty: function (width) { return _this.notchElement_.style.setProperty('width', width + 'px'); },
+            removeNotchWidthProperty: function () { return _this.notchElement_.style.removeProperty('width'); },
+        };
+        // tslint:enable:object-literal-sort-keys
+        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCNotchedOutlineFoundation */](adapter);
+    };
+    return MDCNotchedOutline;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutlineFoundation; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(11);
+/**
+ * @license
+ * Copyright 2017 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCNotchedOutlineFoundation, _super);
+    function MDCNotchedOutlineFoundation(adapter) {
+        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCNotchedOutlineFoundation.defaultAdapter, adapter)) || this;
+    }
+    Object.defineProperty(MDCNotchedOutlineFoundation, "strings", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCNotchedOutlineFoundation, "cssClasses", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCNotchedOutlineFoundation, "numbers", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCNotchedOutlineFoundation, "defaultAdapter", {
+        /**
+         * See {@link MDCNotchedOutlineAdapter} for typing information on parameters and return types.
+         */
+        get: function () {
+            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
+            return {
+                addClass: function () { return undefined; },
+                removeClass: function () { return undefined; },
+                setNotchWidthProperty: function () { return undefined; },
+                removeNotchWidthProperty: function () { return undefined; },
+            };
+            // tslint:enable:object-literal-sort-keys
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Adds the outline notched selector and updates the notch width calculated based off of notchWidth.
+     */
+    MDCNotchedOutlineFoundation.prototype.notch = function (notchWidth) {
+        var OUTLINE_NOTCHED = MDCNotchedOutlineFoundation.cssClasses.OUTLINE_NOTCHED;
+        if (notchWidth > 0) {
+            notchWidth += __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].NOTCH_ELEMENT_PADDING; // Add padding from left/right.
+        }
+        this.adapter_.setNotchWidthProperty(notchWidth);
+        this.adapter_.addClass(OUTLINE_NOTCHED);
+    };
+    /**
+     * Removes notched outline selector to close the notch in the outline.
+     */
+    MDCNotchedOutlineFoundation.prototype.closeNotch = function () {
+        var OUTLINE_NOTCHED = MDCNotchedOutlineFoundation.cssClasses.OUTLINE_NOTCHED;
+        this.adapter_.removeClass(OUTLINE_NOTCHED);
+        this.adapter_.removeNotchWidthProperty();
+    };
+    return MDCNotchedOutlineFoundation;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCNotchedOutlineFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(13);
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+
+var MDCRipple = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCRipple, _super);
+    function MDCRipple() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.disabled = false;
+        return _this;
+    }
+    MDCRipple.attachTo = function (root, opts) {
+        if (opts === void 0) { opts = { isUnbounded: undefined }; }
+        var ripple = new MDCRipple(root);
+        // Only override unbounded behavior if option is explicitly specified
+        if (opts.isUnbounded !== undefined) {
+            ripple.unbounded = opts.isUnbounded;
+        }
+        return ripple;
+    };
+    MDCRipple.createAdapter = function (instance) {
+        return {
+            addClass: function (className) { return instance.root_.classList.add(className); },
+            browserSupportsCssVars: function () { return __WEBPACK_IMPORTED_MODULE_5__util__["b" /* supportsCssVariables */](window); },
+            computeBoundingRect: function () { return instance.root_.getBoundingClientRect(); },
+            containsEventTarget: function (target) { return instance.root_.contains(target); },
+            deregisterDocumentInteractionHandler: function (evtType, handler) {
+                return document.documentElement.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+            deregisterInteractionHandler: function (evtType, handler) {
+                return instance.root_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+            deregisterResizeHandler: function (handler) { return window.removeEventListener('resize', handler); },
+            getWindowPageOffset: function () { return ({ x: window.pageXOffset, y: window.pageYOffset }); },
+            isSurfaceActive: function () { return Object(__WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__["a" /* matches */])(instance.root_, ':active'); },
+            isSurfaceDisabled: function () { return Boolean(instance.disabled); },
+            isUnbounded: function () { return Boolean(instance.unbounded); },
+            registerDocumentInteractionHandler: function (evtType, handler) {
+                return document.documentElement.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+            registerInteractionHandler: function (evtType, handler) {
+                return instance.root_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
+            },
+            registerResizeHandler: function (handler) { return window.addEventListener('resize', handler); },
+            removeClass: function (className) { return instance.root_.classList.remove(className); },
+            updateCssVariable: function (varName, value) { return instance.root_.style.setProperty(varName, value); },
+        };
+    };
+    Object.defineProperty(MDCRipple.prototype, "unbounded", {
+        get: function () {
+            return Boolean(this.unbounded_);
+        },
+        set: function (unbounded) {
+            this.unbounded_ = Boolean(unbounded);
+            this.setUnbounded_();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCRipple.prototype.activate = function () {
+        this.foundation_.activate();
+    };
+    MDCRipple.prototype.deactivate = function () {
+        this.foundation_.deactivate();
+    };
+    MDCRipple.prototype.layout = function () {
+        this.foundation_.layout();
+    };
+    MDCRipple.prototype.getDefaultFoundation = function () {
+        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCRippleFoundation */](MDCRipple.createAdapter(this));
+    };
+    MDCRipple.prototype.initialSyncWithDOM = function () {
+        var root = this.root_;
+        this.unbounded = 'mdcRippleIsUnbounded' in root.dataset;
+    };
+    /**
+     * Closure Compiler throws an access control error when directly accessing a
+     * protected or private property inside a getter/setter, like unbounded above.
+     * By accessing the protected property inside a method, we solve that problem.
+     * That's why this function exists.
+     */
+    MDCRipple.prototype.setUnbounded_ = function () {
+        this.foundation_.setUnbounded(Boolean(this.unbounded_));
+    };
+    return MDCRipple;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return strings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return numbers; });
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses = {
+    // Ripple is a special case where the "root" component is really a "mixin" of sorts,
+    // given that it's an 'upgrade' to an existing component. That being said it is the root
+    // CSS class that all other CSS classes derive from.
+    BG_FOCUSED: 'mdc-ripple-upgraded--background-focused',
+    FG_ACTIVATION: 'mdc-ripple-upgraded--foreground-activation',
+    FG_DEACTIVATION: 'mdc-ripple-upgraded--foreground-deactivation',
+    ROOT: 'mdc-ripple-upgraded',
+    UNBOUNDED: 'mdc-ripple-upgraded--unbounded',
+};
+var strings = {
+    VAR_FG_SCALE: '--mdc-ripple-fg-scale',
+    VAR_FG_SIZE: '--mdc-ripple-fg-size',
+    VAR_FG_TRANSLATE_END: '--mdc-ripple-fg-translate-end',
+    VAR_FG_TRANSLATE_START: '--mdc-ripple-fg-translate-start',
+    VAR_LEFT: '--mdc-ripple-left',
+    VAR_TOP: '--mdc-ripple-top',
+};
+var numbers = {
+    DEACTIVATION_TIMEOUT_MS: 225,
+    FG_DEACTIVATION_MS: 150,
+    INITIAL_ORIGIN_SCALE: 0.6,
+    PADDING: 10,
+    TAP_DELAY_MS: 300,
+};
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(14);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(4);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(15);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(17);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(6);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(18);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(19);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(20);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(21);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5066,7 +6363,7 @@ module.exports = firebase;
 
 
 /***/ }),
-/* 25 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5290,7 +6587,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 26 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5514,7 +6811,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 27 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5745,18 +7042,18 @@ function setLogLevel(level) {
 
 
 /***/ }),
-/* 28 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_analytics__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_analytics__ = __webpack_require__(43);
 
 //# sourceMappingURL=index.esm.js.map
 
 
 /***/ }),
-/* 29 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5766,9 +7063,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export settings */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_installations__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_installations__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__firebase_util__);
 
 
@@ -6312,7 +7609,7 @@ registerAnalytics(__WEBPACK_IMPORTED_MODULE_0__firebase_app___default.a);
 
 
 /***/ }),
-/* 30 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6535,17 +7832,17 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 31 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export registerInstallations */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__firebase_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_idb__);
 
 
@@ -7706,7 +9003,7 @@ registerInstallations(__WEBPACK_IMPORTED_MODULE_0__firebase_app___default.a);
 
 
 /***/ }),
-/* 32 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7929,7 +9226,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 33 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -8251,18 +9548,18 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 34 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_auth__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_auth__ = __webpack_require__(49);
 
 //# sourceMappingURL=index.esm.js.map
 
 
 /***/ }),
-/* 35 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8643,1356 +9940,7 @@ wg,[V("providerId")]);Z(a,"PhoneAuthProvider",Tg,[Dn()]);Z(a,"RecaptchaVerifier"
 
 //# sourceMappingURL=auth.esm.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8)))
-
-/***/ }),
-/* 36 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(37);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(6);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(17);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__character_counter_index__ = __webpack_require__(47);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_text_index__ = __webpack_require__(48);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon_index__ = __webpack_require__(49);
-/* unused harmony namespace reexport */
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 37 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextField; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__character_counter_component__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__foundation__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__helper_text_component__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__icon_component__ = __webpack_require__(20);
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var MDCTextField = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCTextField, _super);
-    function MDCTextField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MDCTextField.attachTo = function (root) {
-        return new MDCTextField(root);
-    };
-    MDCTextField.prototype.initialize = function (rippleFactory, lineRippleFactory, helperTextFactory, characterCounterFactory, iconFactory, labelFactory, outlineFactory) {
-        if (rippleFactory === void 0) { rippleFactory = function (el, foundation) { return new __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__["a" /* MDCRipple */](el, foundation); }; }
-        if (lineRippleFactory === void 0) { lineRippleFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__["a" /* MDCLineRipple */](el); }; }
-        if (helperTextFactory === void 0) { helperTextFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_13__helper_text_component__["a" /* MDCTextFieldHelperText */](el); }; }
-        if (characterCounterFactory === void 0) { characterCounterFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_9__character_counter_component__["a" /* MDCTextFieldCharacterCounter */](el); }; }
-        if (iconFactory === void 0) { iconFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_15__icon_component__["a" /* MDCTextFieldIcon */](el); }; }
-        if (labelFactory === void 0) { labelFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__["a" /* MDCFloatingLabel */](el); }; }
-        if (outlineFactory === void 0) { outlineFactory = function (el) { return new __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__["a" /* MDCNotchedOutline */](el); }; }
-        this.input_ = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].INPUT_SELECTOR);
-        var labelElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].LABEL_SELECTOR);
-        this.label_ = labelElement ? labelFactory(labelElement) : null;
-        var lineRippleElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].LINE_RIPPLE_SELECTOR);
-        this.lineRipple_ = lineRippleElement ? lineRippleFactory(lineRippleElement) : null;
-        var outlineElement = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].OUTLINE_SELECTOR);
-        this.outline_ = outlineElement ? outlineFactory(outlineElement) : null;
-        // Helper text
-        var helperTextStrings = __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__["a" /* MDCTextFieldHelperTextFoundation */].strings;
-        var nextElementSibling = this.root_.nextElementSibling;
-        var hasHelperLine = (nextElementSibling && nextElementSibling.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].HELPER_LINE));
-        var helperTextEl = hasHelperLine && nextElementSibling && nextElementSibling.querySelector(helperTextStrings.ROOT_SELECTOR);
-        this.helperText_ = helperTextEl ? helperTextFactory(helperTextEl) : null;
-        // Character counter
-        var characterCounterStrings = __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__["a" /* MDCTextFieldCharacterCounterFoundation */].strings;
-        var characterCounterEl = this.root_.querySelector(characterCounterStrings.ROOT_SELECTOR);
-        // If character counter is not found in root element search in sibling element.
-        if (!characterCounterEl && hasHelperLine && nextElementSibling) {
-            characterCounterEl = nextElementSibling.querySelector(characterCounterStrings.ROOT_SELECTOR);
-        }
-        this.characterCounter_ = characterCounterEl ? characterCounterFactory(characterCounterEl) : null;
-        this.leadingIcon_ = null;
-        this.trailingIcon_ = null;
-        var iconElements = this.root_.querySelectorAll(__WEBPACK_IMPORTED_MODULE_11__constants__["e" /* strings */].ICON_SELECTOR);
-        if (iconElements.length > 0) {
-            if (iconElements.length > 1) { // Has both icons.
-                this.leadingIcon_ = iconFactory(iconElements[0]);
-                this.trailingIcon_ = iconFactory(iconElements[1]);
-            }
-            else {
-                if (this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].WITH_LEADING_ICON)) {
-                    this.leadingIcon_ = iconFactory(iconElements[0]);
-                }
-                else {
-                    this.trailingIcon_ = iconFactory(iconElements[0]);
-                }
-            }
-        }
-        this.ripple = this.createRipple_(rippleFactory);
-    };
-    MDCTextField.prototype.destroy = function () {
-        if (this.ripple) {
-            this.ripple.destroy();
-        }
-        if (this.lineRipple_) {
-            this.lineRipple_.destroy();
-        }
-        if (this.helperText_) {
-            this.helperText_.destroy();
-        }
-        if (this.characterCounter_) {
-            this.characterCounter_.destroy();
-        }
-        if (this.leadingIcon_) {
-            this.leadingIcon_.destroy();
-        }
-        if (this.trailingIcon_) {
-            this.trailingIcon_.destroy();
-        }
-        if (this.label_) {
-            this.label_.destroy();
-        }
-        if (this.outline_) {
-            this.outline_.destroy();
-        }
-        _super.prototype.destroy.call(this);
-    };
-    /**
-     * Initializes the Text Field's internal state based on the environment's
-     * state.
-     */
-    MDCTextField.prototype.initialSyncWithDOM = function () {
-        this.disabled = this.input_.disabled;
-    };
-    Object.defineProperty(MDCTextField.prototype, "value", {
-        get: function () {
-            return this.foundation_.getValue();
-        },
-        /**
-         * @param value The value to set on the input.
-         */
-        set: function (value) {
-            this.foundation_.setValue(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "disabled", {
-        get: function () {
-            return this.foundation_.isDisabled();
-        },
-        /**
-         * @param disabled Sets the Text Field disabled or enabled.
-         */
-        set: function (disabled) {
-            this.foundation_.setDisabled(disabled);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "valid", {
-        get: function () {
-            return this.foundation_.isValid();
-        },
-        /**
-         * @param valid Sets the Text Field valid or invalid.
-         */
-        set: function (valid) {
-            this.foundation_.setValid(valid);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "required", {
-        get: function () {
-            return this.input_.required;
-        },
-        /**
-         * @param required Sets the Text Field to required.
-         */
-        set: function (required) {
-            this.input_.required = required;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "pattern", {
-        get: function () {
-            return this.input_.pattern;
-        },
-        /**
-         * @param pattern Sets the input element's validation pattern.
-         */
-        set: function (pattern) {
-            this.input_.pattern = pattern;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "minLength", {
-        get: function () {
-            return this.input_.minLength;
-        },
-        /**
-         * @param minLength Sets the input element's minLength.
-         */
-        set: function (minLength) {
-            this.input_.minLength = minLength;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "maxLength", {
-        get: function () {
-            return this.input_.maxLength;
-        },
-        /**
-         * @param maxLength Sets the input element's maxLength.
-         */
-        set: function (maxLength) {
-            // Chrome throws exception if maxLength is set to a value less than zero
-            if (maxLength < 0) {
-                this.input_.removeAttribute('maxLength');
-            }
-            else {
-                this.input_.maxLength = maxLength;
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "min", {
-        get: function () {
-            return this.input_.min;
-        },
-        /**
-         * @param min Sets the input element's min.
-         */
-        set: function (min) {
-            this.input_.min = min;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "max", {
-        get: function () {
-            return this.input_.max;
-        },
-        /**
-         * @param max Sets the input element's max.
-         */
-        set: function (max) {
-            this.input_.max = max;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "step", {
-        get: function () {
-            return this.input_.step;
-        },
-        /**
-         * @param step Sets the input element's step.
-         */
-        set: function (step) {
-            this.input_.step = step;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "helperTextContent", {
-        /**
-         * Sets the helper text element content.
-         */
-        set: function (content) {
-            this.foundation_.setHelperTextContent(content);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "leadingIconAriaLabel", {
-        /**
-         * Sets the aria label of the leading icon.
-         */
-        set: function (label) {
-            this.foundation_.setLeadingIconAriaLabel(label);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "leadingIconContent", {
-        /**
-         * Sets the text content of the leading icon.
-         */
-        set: function (content) {
-            this.foundation_.setLeadingIconContent(content);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "trailingIconAriaLabel", {
-        /**
-         * Sets the aria label of the trailing icon.
-         */
-        set: function (label) {
-            this.foundation_.setTrailingIconAriaLabel(label);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "trailingIconContent", {
-        /**
-         * Sets the text content of the trailing icon.
-         */
-        set: function (content) {
-            this.foundation_.setTrailingIconContent(content);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCTextField.prototype, "useNativeValidation", {
-        /**
-         * Enables or disables the use of native validation. Use this for custom validation.
-         * @param useNativeValidation Set this to false to ignore native input validation.
-         */
-        set: function (useNativeValidation) {
-            this.foundation_.setUseNativeValidation(useNativeValidation);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Focuses the input element.
-     */
-    MDCTextField.prototype.focus = function () {
-        this.input_.focus();
-    };
-    /**
-     * Recomputes the outline SVG path for the outline element.
-     */
-    MDCTextField.prototype.layout = function () {
-        var openNotch = this.foundation_.shouldFloat;
-        this.foundation_.notchOutline(openNotch);
-    };
-    MDCTextField.prototype.getDefaultFoundation = function () {
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        var adapter = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, this.getRootAdapterMethods_(), this.getInputAdapterMethods_(), this.getLabelAdapterMethods_(), this.getLineRippleAdapterMethods_(), this.getOutlineAdapterMethods_());
-        // tslint:enable:object-literal-sort-keys
-        return new __WEBPACK_IMPORTED_MODULE_12__foundation__["a" /* MDCTextFieldFoundation */](adapter, this.getFoundationMap_());
-    };
-    MDCTextField.prototype.getRootAdapterMethods_ = function () {
-        var _this = this;
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        return {
-            addClass: function (className) { return _this.root_.classList.add(className); },
-            removeClass: function (className) { return _this.root_.classList.remove(className); },
-            hasClass: function (className) { return _this.root_.classList.contains(className); },
-            registerTextFieldInteractionHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
-            deregisterTextFieldInteractionHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
-            registerValidationAttributeChangeHandler: function (handler) {
-                var getAttributesList = function (mutationsList) {
-                    return mutationsList
-                        .map(function (mutation) { return mutation.attributeName; })
-                        .filter(function (attributeName) { return attributeName; });
-                };
-                var observer = new MutationObserver(function (mutationsList) { return handler(getAttributesList(mutationsList)); });
-                var config = { attributes: true };
-                observer.observe(_this.input_, config);
-                return observer;
-            },
-            deregisterValidationAttributeChangeHandler: function (observer) { return observer.disconnect(); },
-        };
-        // tslint:enable:object-literal-sort-keys
-    };
-    MDCTextField.prototype.getInputAdapterMethods_ = function () {
-        var _this = this;
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        return {
-            getNativeInput: function () { return _this.input_; },
-            isFocused: function () { return document.activeElement === _this.input_; },
-            registerInputInteractionHandler: function (evtType, handler) {
-                return _this.input_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-            deregisterInputInteractionHandler: function (evtType, handler) {
-                return _this.input_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-        };
-        // tslint:enable:object-literal-sort-keys
-    };
-    MDCTextField.prototype.getLabelAdapterMethods_ = function () {
-        var _this = this;
-        return {
-            floatLabel: function (shouldFloat) { return _this.label_ && _this.label_.float(shouldFloat); },
-            getLabelWidth: function () { return _this.label_ ? _this.label_.getWidth() : 0; },
-            hasLabel: function () { return Boolean(_this.label_); },
-            shakeLabel: function (shouldShake) { return _this.label_ && _this.label_.shake(shouldShake); },
-        };
-    };
-    MDCTextField.prototype.getLineRippleAdapterMethods_ = function () {
-        var _this = this;
-        return {
-            activateLineRipple: function () {
-                if (_this.lineRipple_) {
-                    _this.lineRipple_.activate();
-                }
-            },
-            deactivateLineRipple: function () {
-                if (_this.lineRipple_) {
-                    _this.lineRipple_.deactivate();
-                }
-            },
-            setLineRippleTransformOrigin: function (normalizedX) {
-                if (_this.lineRipple_) {
-                    _this.lineRipple_.setRippleCenter(normalizedX);
-                }
-            },
-        };
-    };
-    MDCTextField.prototype.getOutlineAdapterMethods_ = function () {
-        var _this = this;
-        return {
-            closeOutline: function () { return _this.outline_ && _this.outline_.closeNotch(); },
-            hasOutline: function () { return Boolean(_this.outline_); },
-            notchOutline: function (labelWidth) { return _this.outline_ && _this.outline_.notch(labelWidth); },
-        };
-    };
-    /**
-     * @return A map of all subcomponents to subfoundations.
-     */
-    MDCTextField.prototype.getFoundationMap_ = function () {
-        return {
-            characterCounter: this.characterCounter_ ? this.characterCounter_.foundation : undefined,
-            helperText: this.helperText_ ? this.helperText_.foundation : undefined,
-            leadingIcon: this.leadingIcon_ ? this.leadingIcon_.foundation : undefined,
-            trailingIcon: this.trailingIcon_ ? this.trailingIcon_.foundation : undefined,
-        };
-    };
-    MDCTextField.prototype.createRipple_ = function (rippleFactory) {
-        var _this = this;
-        var isTextArea = this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].TEXTAREA);
-        var isOutlined = this.root_.classList.contains(__WEBPACK_IMPORTED_MODULE_11__constants__["c" /* cssClasses */].OUTLINED);
-        if (isTextArea || isOutlined) {
-            return null;
-        }
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        var adapter = __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__["a" /* MDCRipple */].createAdapter(this), { isSurfaceActive: function () { return __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__["a" /* matches */](_this.input_, ':active'); }, registerInteractionHandler: function (evtType, handler) { return _this.input_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])()); }, deregisterInteractionHandler: function (evtType, handler) {
-                return _this.input_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            } });
-        // tslint:enable:object-literal-sort-keys
-        return rippleFactory(this.root_, new __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__["a" /* MDCRippleFoundation */](adapter));
-    };
-    return MDCTextField;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 38 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFloatingLabel; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(11);
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCFloatingLabel = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCFloatingLabel, _super);
-    function MDCFloatingLabel() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MDCFloatingLabel.attachTo = function (root) {
-        return new MDCFloatingLabel(root);
-    };
-    /**
-     * Styles the label to produce the label shake for errors.
-     * @param shouldShake If true, shakes the label by adding a CSS class; otherwise, stops shaking by removing the class.
-     */
-    MDCFloatingLabel.prototype.shake = function (shouldShake) {
-        this.foundation_.shake(shouldShake);
-    };
-    /**
-     * Styles the label to float/dock.
-     * @param shouldFloat If true, floats the label by adding a CSS class; otherwise, docks it by removing the class.
-     */
-    MDCFloatingLabel.prototype.float = function (shouldFloat) {
-        this.foundation_.float(shouldFloat);
-    };
-    MDCFloatingLabel.prototype.getWidth = function () {
-        return this.foundation_.getWidth();
-    };
-    MDCFloatingLabel.prototype.getDefaultFoundation = function () {
-        var _this = this;
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        var adapter = {
-            addClass: function (className) { return _this.root_.classList.add(className); },
-            removeClass: function (className) { return _this.root_.classList.remove(className); },
-            getWidth: function () { return _this.root_.scrollWidth; },
-            registerInteractionHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
-            deregisterInteractionHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
-        };
-        // tslint:enable:object-literal-sort-keys
-        return new __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* MDCFloatingLabelFoundation */](adapter);
-    };
-    return MDCFloatingLabel;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var cssClasses = {
-    LABEL_FLOAT_ABOVE: 'mdc-floating-label--float-above',
-    LABEL_SHAKE: 'mdc-floating-label--shake',
-    ROOT: 'mdc-floating-label',
-};
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRipple; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(41);
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCLineRipple = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCLineRipple, _super);
-    function MDCLineRipple() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MDCLineRipple.attachTo = function (root) {
-        return new MDCLineRipple(root);
-    };
-    /**
-     * Activates the line ripple
-     */
-    MDCLineRipple.prototype.activate = function () {
-        this.foundation_.activate();
-    };
-    /**
-     * Deactivates the line ripple
-     */
-    MDCLineRipple.prototype.deactivate = function () {
-        this.foundation_.deactivate();
-    };
-    /**
-     * Sets the transform origin given a user's click location.
-     * The `rippleCenter` is the x-coordinate of the middle of the ripple.
-     */
-    MDCLineRipple.prototype.setRippleCenter = function (xCoordinate) {
-        this.foundation_.setRippleCenter(xCoordinate);
-    };
-    MDCLineRipple.prototype.getDefaultFoundation = function () {
-        var _this = this;
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        var adapter = {
-            addClass: function (className) { return _this.root_.classList.add(className); },
-            removeClass: function (className) { return _this.root_.classList.remove(className); },
-            hasClass: function (className) { return _this.root_.classList.contains(className); },
-            setStyle: function (propertyName, value) { return _this.root_.style.setProperty(propertyName, value); },
-            registerEventHandler: function (evtType, handler) { return _this.listen(evtType, handler); },
-            deregisterEventHandler: function (evtType, handler) { return _this.unlisten(evtType, handler); },
-        };
-        // tslint:enable:object-literal-sort-keys
-        return new __WEBPACK_IMPORTED_MODULE_2__foundation__["a" /* MDCLineRippleFoundation */](adapter);
-    };
-    return MDCLineRipple;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 41 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRippleFoundation; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(42);
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCLineRippleFoundation = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCLineRippleFoundation, _super);
-    function MDCLineRippleFoundation(adapter) {
-        var _this = _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCLineRippleFoundation.defaultAdapter, adapter)) || this;
-        _this.transitionEndHandler_ = function (evt) { return _this.handleTransitionEnd(evt); };
-        return _this;
-    }
-    Object.defineProperty(MDCLineRippleFoundation, "cssClasses", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCLineRippleFoundation, "defaultAdapter", {
-        /**
-         * See {@link MDCLineRippleAdapter} for typing information on parameters and return types.
-         */
-        get: function () {
-            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-            return {
-                addClass: function () { return undefined; },
-                removeClass: function () { return undefined; },
-                hasClass: function () { return false; },
-                setStyle: function () { return undefined; },
-                registerEventHandler: function () { return undefined; },
-                deregisterEventHandler: function () { return undefined; },
-            };
-            // tslint:enable:object-literal-sort-keys
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCLineRippleFoundation.prototype.init = function () {
-        this.adapter_.registerEventHandler('transitionend', this.transitionEndHandler_);
-    };
-    MDCLineRippleFoundation.prototype.destroy = function () {
-        this.adapter_.deregisterEventHandler('transitionend', this.transitionEndHandler_);
-    };
-    MDCLineRippleFoundation.prototype.activate = function () {
-        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
-        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_ACTIVE);
-    };
-    MDCLineRippleFoundation.prototype.setRippleCenter = function (xCoordinate) {
-        this.adapter_.setStyle('transform-origin', xCoordinate + "px center");
-    };
-    MDCLineRippleFoundation.prototype.deactivate = function () {
-        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
-    };
-    MDCLineRippleFoundation.prototype.handleTransitionEnd = function (evt) {
-        // Wait for the line ripple to be either transparent or opaque
-        // before emitting the animation end event
-        var isDeactivating = this.adapter_.hasClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
-        if (evt.propertyName === 'opacity') {
-            if (isDeactivating) {
-                this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_ACTIVE);
-                this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].LINE_RIPPLE_DEACTIVATING);
-            }
-        }
-    };
-    return MDCLineRippleFoundation;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCLineRippleFoundation);
-//# sourceMappingURL=foundation.js.map
-
-/***/ }),
-/* 42 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var cssClasses = {
-    LINE_RIPPLE_ACTIVE: 'mdc-line-ripple--active',
-    LINE_RIPPLE_DEACTIVATING: 'mdc-line-ripple--deactivating',
-};
-
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-/* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutline; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(44);
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-var MDCNotchedOutline = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCNotchedOutline, _super);
-    function MDCNotchedOutline() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MDCNotchedOutline.attachTo = function (root) {
-        return new MDCNotchedOutline(root);
-    };
-    MDCNotchedOutline.prototype.initialSyncWithDOM = function () {
-        this.notchElement_ = this.root_.querySelector(__WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].NOTCH_ELEMENT_SELECTOR);
-        var label = this.root_.querySelector('.' + __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__["a" /* MDCFloatingLabelFoundation */].cssClasses.ROOT);
-        if (label) {
-            label.style.transitionDuration = '0s';
-            this.root_.classList.add(__WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */].OUTLINE_UPGRADED);
-            requestAnimationFrame(function () {
-                label.style.transitionDuration = '';
-            });
-        }
-        else {
-            this.root_.classList.add(__WEBPACK_IMPORTED_MODULE_3__constants__["a" /* cssClasses */].NO_LABEL);
-        }
-    };
-    /**
-     * Updates classes and styles to open the notch to the specified width.
-     * @param notchWidth The notch width in the outline.
-     */
-    MDCNotchedOutline.prototype.notch = function (notchWidth) {
-        this.foundation_.notch(notchWidth);
-    };
-    /**
-     * Updates classes and styles to close the notch.
-     */
-    MDCNotchedOutline.prototype.closeNotch = function () {
-        this.foundation_.closeNotch();
-    };
-    MDCNotchedOutline.prototype.getDefaultFoundation = function () {
-        var _this = this;
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-        var adapter = {
-            addClass: function (className) { return _this.root_.classList.add(className); },
-            removeClass: function (className) { return _this.root_.classList.remove(className); },
-            setNotchWidthProperty: function (width) { return _this.notchElement_.style.setProperty('width', width + 'px'); },
-            removeNotchWidthProperty: function () { return _this.notchElement_.style.removeProperty('width'); },
-        };
-        // tslint:enable:object-literal-sort-keys
-        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCNotchedOutlineFoundation */](adapter);
-    };
-    return MDCNotchedOutline;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutlineFoundation; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(12);
-/**
- * @license
- * Copyright 2017 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCNotchedOutlineFoundation, _super);
-    function MDCNotchedOutlineFoundation(adapter) {
-        return _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCNotchedOutlineFoundation.defaultAdapter, adapter)) || this;
-    }
-    Object.defineProperty(MDCNotchedOutlineFoundation, "strings", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCNotchedOutlineFoundation, "cssClasses", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCNotchedOutlineFoundation, "numbers", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCNotchedOutlineFoundation, "defaultAdapter", {
-        /**
-         * See {@link MDCNotchedOutlineAdapter} for typing information on parameters and return types.
-         */
-        get: function () {
-            // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-            return {
-                addClass: function () { return undefined; },
-                removeClass: function () { return undefined; },
-                setNotchWidthProperty: function () { return undefined; },
-                removeNotchWidthProperty: function () { return undefined; },
-            };
-            // tslint:enable:object-literal-sort-keys
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Adds the outline notched selector and updates the notch width calculated based off of notchWidth.
-     */
-    MDCNotchedOutlineFoundation.prototype.notch = function (notchWidth) {
-        var OUTLINE_NOTCHED = MDCNotchedOutlineFoundation.cssClasses.OUTLINE_NOTCHED;
-        if (notchWidth > 0) {
-            notchWidth += __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].NOTCH_ELEMENT_PADDING; // Add padding from left/right.
-        }
-        this.adapter_.setNotchWidthProperty(notchWidth);
-        this.adapter_.addClass(OUTLINE_NOTCHED);
-    };
-    /**
-     * Removes notched outline selector to close the notch in the outline.
-     */
-    MDCNotchedOutlineFoundation.prototype.closeNotch = function () {
-        var OUTLINE_NOTCHED = MDCNotchedOutlineFoundation.cssClasses.OUTLINE_NOTCHED;
-        this.adapter_.removeClass(OUTLINE_NOTCHED);
-        this.adapter_.removeNotchWidthProperty();
-    };
-    return MDCNotchedOutlineFoundation;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCNotchedOutlineFoundation);
-//# sourceMappingURL=foundation.js.map
-
-/***/ }),
-/* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(14);
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-
-var MDCRipple = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCRipple, _super);
-    function MDCRipple() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.disabled = false;
-        return _this;
-    }
-    MDCRipple.attachTo = function (root, opts) {
-        if (opts === void 0) { opts = { isUnbounded: undefined }; }
-        var ripple = new MDCRipple(root);
-        // Only override unbounded behavior if option is explicitly specified
-        if (opts.isUnbounded !== undefined) {
-            ripple.unbounded = opts.isUnbounded;
-        }
-        return ripple;
-    };
-    MDCRipple.createAdapter = function (instance) {
-        return {
-            addClass: function (className) { return instance.root_.classList.add(className); },
-            browserSupportsCssVars: function () { return __WEBPACK_IMPORTED_MODULE_5__util__["b" /* supportsCssVariables */](window); },
-            computeBoundingRect: function () { return instance.root_.getBoundingClientRect(); },
-            containsEventTarget: function (target) { return instance.root_.contains(target); },
-            deregisterDocumentInteractionHandler: function (evtType, handler) {
-                return document.documentElement.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-            deregisterInteractionHandler: function (evtType, handler) {
-                return instance.root_.removeEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-            deregisterResizeHandler: function (handler) { return window.removeEventListener('resize', handler); },
-            getWindowPageOffset: function () { return ({ x: window.pageXOffset, y: window.pageYOffset }); },
-            isSurfaceActive: function () { return Object(__WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__["a" /* matches */])(instance.root_, ':active'); },
-            isSurfaceDisabled: function () { return Boolean(instance.disabled); },
-            isUnbounded: function () { return Boolean(instance.unbounded); },
-            registerDocumentInteractionHandler: function (evtType, handler) {
-                return document.documentElement.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-            registerInteractionHandler: function (evtType, handler) {
-                return instance.root_.addEventListener(evtType, handler, Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_events__["a" /* applyPassive */])());
-            },
-            registerResizeHandler: function (handler) { return window.addEventListener('resize', handler); },
-            removeClass: function (className) { return instance.root_.classList.remove(className); },
-            updateCssVariable: function (varName, value) { return instance.root_.style.setProperty(varName, value); },
-        };
-    };
-    Object.defineProperty(MDCRipple.prototype, "unbounded", {
-        get: function () {
-            return Boolean(this.unbounded_);
-        },
-        set: function (unbounded) {
-            this.unbounded_ = Boolean(unbounded);
-            this.setUnbounded_();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCRipple.prototype.activate = function () {
-        this.foundation_.activate();
-    };
-    MDCRipple.prototype.deactivate = function () {
-        this.foundation_.deactivate();
-    };
-    MDCRipple.prototype.layout = function () {
-        this.foundation_.layout();
-    };
-    MDCRipple.prototype.getDefaultFoundation = function () {
-        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCRippleFoundation */](MDCRipple.createAdapter(this));
-    };
-    MDCRipple.prototype.initialSyncWithDOM = function () {
-        var root = this.root_;
-        this.unbounded = 'mdcRippleIsUnbounded' in root.dataset;
-    };
-    /**
-     * Closure Compiler throws an access control error when directly accessing a
-     * protected or private property inside a getter/setter, like unbounded above.
-     * By accessing the protected property inside a method, we solve that problem.
-     * That's why this function exists.
-     */
-    MDCRipple.prototype.setUnbounded_ = function () {
-        this.foundation_.setUnbounded(Boolean(this.unbounded_));
-    };
-    return MDCRipple;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return strings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return numbers; });
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var cssClasses = {
-    // Ripple is a special case where the "root" component is really a "mixin" of sorts,
-    // given that it's an 'upgrade' to an existing component. That being said it is the root
-    // CSS class that all other CSS classes derive from.
-    BG_FOCUSED: 'mdc-ripple-upgraded--background-focused',
-    FG_ACTIVATION: 'mdc-ripple-upgraded--foreground-activation',
-    FG_DEACTIVATION: 'mdc-ripple-upgraded--foreground-deactivation',
-    ROOT: 'mdc-ripple-upgraded',
-    UNBOUNDED: 'mdc-ripple-upgraded--unbounded',
-};
-var strings = {
-    VAR_FG_SCALE: '--mdc-ripple-fg-scale',
-    VAR_FG_SIZE: '--mdc-ripple-fg-size',
-    VAR_FG_TRANSLATE_END: '--mdc-ripple-fg-translate-end',
-    VAR_FG_TRANSLATE_START: '--mdc-ripple-fg-translate-start',
-    VAR_LEFT: '--mdc-ripple-left',
-    VAR_TOP: '--mdc-ripple-top',
-};
-var numbers = {
-    DEACTIVATION_TIMEOUT_MS: 225,
-    FG_DEACTIVATION_MS: 150,
-    INITIAL_ORIGIN_SCALE: 0.6,
-    PADDING: 10,
-    TAP_DELAY_MS: 300,
-};
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-/* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(15);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(5);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(16);
-/* unused harmony reexport characterCountCssClasses */
-/* unused harmony reexport characterCountStrings */
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 48 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(18);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(7);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(19);
-/* unused harmony reexport helperTextCssClasses */
-/* unused harmony reexport helperTextStrings */
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(20);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(21);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(22);
-/* unused harmony reexport iconCssClasses */
-/* unused harmony reexport iconStrings */
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-//# sourceMappingURL=index.js.map
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(22)))
 
 /***/ })
 /******/ ]);
