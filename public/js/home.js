@@ -36,7 +36,6 @@ const mainContentEl = document.querySelector('.main-content');
 
 const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
 
-linearProgress.close();
 
 auth.onAuthStateChanged(function (user) {
     if (!user) {
@@ -140,7 +139,6 @@ function callExcersicesAction() {
                 },
                 success: responseJSON => {
                     console.log("Conexión Exitosa");
-                    console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("200");
                         //displayData(responseJSON.data);
@@ -172,7 +170,6 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
-                        console.log(responseJSON.data)
                         displayroutineData(responseJSON.data);
                     }
                 },
@@ -185,7 +182,6 @@ function callRoutines() {
 }
 function displayroutineData(data) {
     data.forEach(element => {
-        console.log(element);
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
@@ -246,6 +242,16 @@ console.log("getRoutineByName()")
         }
     });
 
+
+}
+
+
+function searchButtonAction(){
+    $("#search_button_q").on("click", event => {
+        console.log("search_button: CLick")
+        event.preventDefault();
+        dialogSearch.open()
+    })
 
 }
 
