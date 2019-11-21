@@ -7915,7 +7915,7 @@ function callExcersicesAction() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("200");
-                        displayData(responseJSON.data);
+                        //displayData(responseJSON.data);
                     }
                 },
                 error: function error(err) {
@@ -7957,24 +7957,32 @@ function callRoutines() {
 function displayroutineData(data) {
     data.forEach(function (element) {
         console.log(element);
-        $("#cardRoutine").append('\n         <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">\n            <div class="mdc-card routine mdc-card--outlined col-12">\n            <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">\n                <div class="demo-card__primary">\n                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">' + element.nameRoutine + '</h2>\n                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">' + element.email + '</h3>\n                </div>\n                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ' + element.excercises.length + '</div>\n            </div>\n            <div class="mdc-card__actions">\n                <div class="mdc-card__action-buttons">\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Read</button>\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>\n                </div>\n                <div class="mdc-card__action-icons">\n                    <button id="add-to-pubic"\n                            class="mdc-icon-button"\n                            aria-label="Add to public"\n                            aria-hidden="true"\n                            aria-pressed="false">\n                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>\n                        <i class="material-icons mdc-icon-button__icon">visibility_off</i>\n                    </button>\n                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ');
+        $("#cardRoutine").append('\n         <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">\n            <div class="mdc-card routine mdc-card--outlined col-12">\n            <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">\n                <div class="demo-card__primary">\n                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">' + element.nameRoutine + '</h2>\n                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">' + element.email + '</h3>\n                </div>\n                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ' + element.excercises + '</div>\n            </div>\n            <div class="mdc-card__actions">\n                <div class="mdc-card__action-buttons">\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Read</button>\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>\n                </div>\n                <div class="mdc-card__action-icons">\n                    <button id="add-to-pubic"\n                            class="mdc-icon-button"\n                            aria-label="Add to public"\n                            aria-hidden="false"\n                            aria-pressed="true"\n                            >\n                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>\n                        <i class="material-icons mdc-icon-button__icon">visibility_off</i>\n                    </button>\n                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ');
     });
 }
-
-function searchAction() {
-    $("#search_icon").on("click", function (event) {
-        console.log("search_icon: CLick");
-        event.preventDefault();
-        dialogSearch.open();
-    });
-}
-
-function searchButtonAction() {
-    $("#search_button_q").on("click", function (event) {
-        console.log("search_button: CLick");
-        event.preventDefault();
-        console.log(querieField.value);
-        dialogSearch.open();
+/*
+$("#cardRoutine").on('change','.mdc-icon-button',function(event){
+event.preventDefault();
+});
+*/
+function getRoutineByName(name) {
+    console.log("getRoutineByName()");
+    $.ajax({
+        url: URL + "/routines",
+        method: "PUT",
+        dataType: "json",
+        data: name,
+        success: function success(responseJSON) {
+            console.log("Conexión Routines Exitosa");
+            console.log(responseJSON.status);
+            if (responseJSON.status === 200) {
+                console.log("Routines 200");
+                //   displayroutineData(responseJSON.data);
+            }
+        },
+        error: function error(err) {
+            console.log("Routines Error...");
+        }
     });
 }
 
