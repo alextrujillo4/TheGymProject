@@ -35,11 +35,13 @@ const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
 
-const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
-const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
-const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+const progressOne = new MDCLinearProgress(document.getElementById('first-progress'));
+const progressTwo = new MDCLinearProgress(document.getElementById('second-progress'));
+const progressThird = new MDCLinearProgress(document.getElementById('third-progress'));
 
-linearProgress.close();
+
+
+
 
 auth.onAuthStateChanged(function (user) {
     if (!user) {
@@ -143,7 +145,6 @@ function callExcersicesAction() {
                 },
                 success: responseJSON => {
                     console.log("Conexión Exitosa");
-                    console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("200");
                         displayData(responseJSON.data);
@@ -175,7 +176,6 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
-                        console.log(responseJSON.data)
                         displayroutineData(responseJSON.data);
                     }
                 },
@@ -188,7 +188,6 @@ function callRoutines() {
 }
 function displayroutineData(data) {
     data.forEach(element => {
-        console.log(element);
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
@@ -237,7 +236,6 @@ function searchButtonAction(){
     $("#search_button_q").on("click", event => {
         console.log("search_button: CLick")
         event.preventDefault();
-        console.log(querieField.value)
         dialogSearch.open()
     })
 
