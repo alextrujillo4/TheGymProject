@@ -16,9 +16,6 @@ firebase.initializeApp({
 const firestore = firebase.firestore();
 let excercisesRef = firestore.collection('Excercises');
 let routinesRef = firestore.collection ('Routines');
-
-
-
 //===============================================================================================
 //===============================================================================================
 exports.register = functions.https.onRequest((request, response) => {
@@ -48,6 +45,20 @@ exports.query = functions.https.onRequest((request, response) => {
 });
 //===============================================================================================
 //===============================================================================================
+exports.search = functions.https.onRequest((request, response) => {
+    console.log("/routines");
+    console.log("BODY => ");
+    console.log(request.body.uid);
+    console.log("QUERY => ");
+    console.log(request.query.uid);
+    console.log("PARAMS => ");
+    console.log(request.params.uid);
+    cors(request, response, () => {
+        return processSearchRequest(request, response );
+    });
+});
+//===============================================================================================
+//===============================================================================================
 exports.routines = functions.https.onRequest((request, response) => {
     console.log("/routines");
     console.log("BODY => ");
@@ -70,6 +81,7 @@ exports.data = functions.https.onRequest((request, response) => {
         return processDataRequest(request, response ,request.method);
     });
 });
+//===============================================================================================
 //===============================================================================================
 function processRequest(request, response) {
     let userregistered = request.body.user;
@@ -179,8 +191,6 @@ function createRoutine(response, data){
         statusMessage: 'Routine Created!',
         status: 200,
     });
-
-
 }
 
 function getUpperBody(response){
@@ -252,7 +262,6 @@ function getLowerBody(response){
 
     })
 }
-//===============================================================================================
 
 function getCore(response){
     console.log("getCore()");
@@ -365,4 +374,34 @@ function setCore(userid) {
         .catch(err => {
             console.log('Error getting documents', err);
         });
+}
+//===============================================================================================
+function processSearchRequest(request, response,) {
+    console.log("processSearchRequest()");
+    let query = request.query.text;
+    console.log(query);
+    return new Promise((resolve, reject) => {
+        routinesRef.where('nameRoutine', '==', `${query}`)
+            //.where('nameRoutine', '<=', `${query}`)
+            .where('isPrivate', '==', "true").get()
+            .then(snapshot => {
+                let array = [];
+                snapshot.forEach(doc => {
+                    console.log(doc.data());
+                    array.push(doc.data());
+                });
+                return response.status(200).send({
+                    statusMessage: 'Success Query Search',
+                    status: 200,
+                    data : array
+                });
+            }).catch(error => {
+            console.error("Error writing document: ", error);
+            return response.status(400).send({
+                statusMessage: 'No Routines mached!',
+                status: 400
+            });
+        });
+        resolve();
+    })
 }

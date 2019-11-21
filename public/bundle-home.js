@@ -8086,7 +8086,8 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 var auth = firebase.auth();
-var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+var URL = "http://localhost:5001/gymproject-9f46b/us-central1";
 
 var dialog = new _dialog.MDCDialog(document.getElementById('mdc-logout-dialog'));
 var dialogSearch = new _dialog.MDCDialog(document.getElementById('dialog_search'));
@@ -8095,24 +8096,26 @@ var drawer = _drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 var topAppBar = _topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
 var menu = document.getElementById("menu");
 var list = new _list.MDCList(document.getElementById('my-list'));
-list.singleSelection = true;
 var mainContentEl = document.querySelector('.main-content');
-
 var progressOne = new _linearProgress.MDCLinearProgress(document.getElementById('first-progress'));
 var progressTwo = new _linearProgress.MDCLinearProgress(document.getElementById('second-progress'));
 var progressThird = new _linearProgress.MDCLinearProgress(document.getElementById('third-progress'));
+
 progressOne.determinate = false;
 progressTwo.determinate = false;
 progressThird.determinate = false;
+list.singleSelection = true;
 
 auth.onAuthStateChanged(function (user) {
     if (!user) {
         window.location.href = '/';
     } else {
-        $("#user_name").text('' + user.email);
+        $("#user_name").text("" + user.email);
     }
 });
+
 topAppBar.setScrollTarget(document.getElementById('main-content'));
+
 menu.addEventListener('click', function (event) {
     drawer.open = !drawer.open;
 });
@@ -8138,7 +8141,7 @@ function addRoutine() {
 }
 
 function getSelectedTab() {
-    console.log("getSelectedTab() ");
+    console.log("getSelectedTab()");
     var tabSelected = document.getElementById("my-list");
     tabSelected.addEventListener("click", function (event) {
         event.preventDefault();
@@ -8146,14 +8149,17 @@ function getSelectedTab() {
         if (list.selectedIndex === 0) {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").removeClass("hide");
         } else if (list.selectedIndex === 1) {
             $("#first").addClass("hide");
             $("#second").removeClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").addClass("hide");
         } else {
             $("#first").removeClass("hide");
             $("#second").addClass("hide");
+            $("#third").addClass("hide");
             $("#createbtn").removeClass("hide");
             list.selectedIndex = 0;
             dialog.open();
@@ -8170,13 +8176,13 @@ function logoutAction() {
     });
 }
 
-function displayData(data) {
+function displayMusclesData(data) {
     for (var k = 0; k < data.length; k++) {
         console.log("Element" + k);
         var element = data[k];
         for (var exer in element) {
             var objData = element[exer];
-            $("#muscle_list").append('\n                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">\n                    <div class="mdc-card routine mdc-card--outlined col-12">\n                        <div class="mdc-card__primary-action" tabindex="0">\n                            <div class="mdc-card__media mdc-card__media--square" style="background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(' + objData.image + '); background-size: cover; ">\n                                <div class="mdc-card__media-content text mdc-typography--headline6">' + objData.name + '</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            ');
+            $("#muscle_list").append("\n                <div class=\"col-sm-12 col-md-12 col-lg-4 col-xl-4\">\n                    <div class=\"mdc-card routine mdc-card--outlined col-12\">\n                        <div class=\"mdc-card__primary-action\" tabindex=\"0\">\n                            <div class=\"mdc-card__media mdc-card__media--square\" style=\"background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(" + objData.image + "); background-size: cover; \">\n                                <div class=\"mdc-card__media-content text mdc-typography--headline6\">" + objData.name + "</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            ");
         }
     }
 }
@@ -8196,12 +8202,14 @@ function callExcersicesAction() {
                     console.log("Conexión Exitosa");
                     if (responseJSON.status === 200) {
                         console.log("200");
-                        displayData(responseJSON.data);
+                        displayMusclesData(responseJSON.data);
                     }
+                    progressTwo.close();
                 },
                 error: function error(err) {
                     console.log("User Not registered");
                     alert("Error... user Not registered :(");
+                    progressTwo.close();
                 }
             });
         }
@@ -8225,18 +8233,63 @@ function callRoutines() {
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
                         displayroutineData(responseJSON.data);
+                        progressOne.close();
                     }
                 },
                 error: function error(err) {
                     console.log("Routines Error...");
+                    progressOne.close();
                 }
             });
         }
     });
 }
+
 function displayroutineData(data) {
     data.forEach(function (element) {
-        $("#cardRoutine").append('\n         <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">\n            <div class="mdc-card routine mdc-card--outlined col-12">\n            <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">\n                <div class="demo-card__primary">\n                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">' + element.nameRoutine + '</h2>\n                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">' + element.email + '</h3>\n                </div>\n                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Numero de Ejersicios: ' + element.excercises.length + '</div>\n            </div>\n            <div class="mdc-card__actions">\n                <div class="mdc-card__action-buttons">\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Read</button>\n                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>\n                </div>\n                <div class="mdc-card__action-icons">\n                    <button id="add-to-pubic"\n                            class="mdc-icon-button"\n                            aria-label="Add to public"\n                            aria-hidden="true"\n                            aria-pressed="false">\n                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>\n                        <i class="material-icons mdc-icon-button__icon">visibility_off</i>\n                    </button>\n                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ');
+        $("#cardRoutine").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card__primary-action demo-card__primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card__action mdc-card__action--button\">  <span class=\"mdc-button__ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button__icon mdc-icon-button__icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
+    });
+}
+
+function displaySearchRoutineData(data) {
+    data.forEach(function (element) {
+        $("#cardSearchRoutines").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card__primary-action demo-card__primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card__action mdc-card__action--button\">  <span class=\"mdc-button__ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button__icon mdc-icon-button__icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
+    });
+}
+
+function searchButtonAction() {
+    $("#search_button_q").on("click", function (event) {
+        if (querieField.valid) {
+            console.log("Search Query: CLick");
+            event.preventDefault();
+            dialogSearch.close();
+            $("#first").addClass("hide");
+            $("#second").addClass("hide");
+            $("#createbtn").addClass("hide");
+            $("#third").removeClass("hide");
+            $.ajax({
+                url: URL + "/search",
+                method: "GET",
+                dataType: "json",
+                data: {
+                    text: querieField.value
+                },
+                success: function success(responseJSON) {
+                    console.log(responseJSON.statusMessage);
+                    console.log(responseJSON.data);
+                    if (responseJSON.status === 200) {
+                        displaySearchRoutineData(responseJSON.data);
+                        progressOne.close();
+                    }
+                },
+                error: function error(err) {
+                    console.log("Routines Error...");
+                    progressOne.close();
+                }
+            });
+        } else {
+            alert("Please add a valid text");
+        }
     });
 }
 
@@ -8245,14 +8298,7 @@ function searchAction() {
         console.log("search_icon: CLick");
         event.preventDefault();
         dialogSearch.open();
-    });
-}
-
-function searchButtonAction() {
-    $("#search_button_q").on("click", function (event) {
-        console.log("search_button: CLick");
-        event.preventDefault();
-        dialogSearch.open();
+        progressThird.open();
     });
 }
 
