@@ -5,7 +5,6 @@ import {MDCTopAppBar} from "@material/top-app-bar";
 import {MDCTextField} from "@material/textfield";
 import {MDCLinearProgress} from "@material/linear-progress";
 import {MDCSnackbar} from '@material/snackbar';
-
 import {MDCIconButtonToggle} from '@material/icon-button';
 import {MDCRipple} from '@material/ripple';
 const firebase = require('firebase/app');
@@ -25,7 +24,6 @@ firebase.initializeApp({
 const auth  = firebase.auth();
 //const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 const URL = "http://localhost:5001/gymproject-9f46b/us-central1";
-
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
@@ -42,7 +40,6 @@ const progressThird = new MDCLinearProgress(document.getElementById('third-progr
 const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
 iconButtonRipple.disable = false;
 const selector = '.favbtn';
-
 
 progressOne.determinate = false;
 progressTwo.determinate = false;
@@ -131,7 +128,7 @@ function displayMusclesData(data) {
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="mdc-card routine mdc-card--outlined col-12">
                         <div class="mdc-card__primary-action" tabindex="0">
-                            <div class="mdc-card__media mdc-card__media--square" style="background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(${objData.image}); background-size: cover; ">
+                            <div class="mdc-card_media mdc-card_media--square" style="height:200px; background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(${objData.image}); background-size: cover; ">
                                 <div class="mdc-card__media-content text mdc-typography--headline6">${objData.name}</div>
                             </div>
                         </div>
@@ -189,7 +186,8 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
-                        displayroutineData(responseJSON.data, user.uid);
+                        console.log("PRUEBA",responseJSON.data.id);
+                        displayroutineData(responseJSON.data);
                         progressOne.close()
                     }
                 },
@@ -207,14 +205,12 @@ function displayroutineData(data, userid) {
     data.forEach(element => {
         console.log("data id",element.id);
         let isVisible, isHiden = "";
-        if (!element.isPrivate) {
-            isVisible = "visibility"
-        }else{
+        if (element.isPrivate == "true") {
             isVisible = "visibility_off"
+        }else{
+            isVisible = "visibility"
         }
-        if (userid !== element.uid){
-            isHiden = "hide"
-        }
+
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12" id="${element.id}" index="${count}" >
@@ -227,12 +223,11 @@ function displayroutineData(data, userid) {
             </div>
             <div class="mdc-card__actions" >
                 <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card_action mdc-cardaction--button ${isHiden}">  <span class="mdc-button_ripple"></span>Edit</button>
+                    <button class="mdc-button mdc-card_action mdc-cardaction--button hide">  <span class="mdc-button_ripple"></span>Edit</button>
                 </div>
                 <div class="mdc-card__action-icons">
-              
-                     <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon favbtn" title="Visible">${isVisible}</button>
-                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
+                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon favbtn" title="Visible">${isVisible}</button>
+                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon deletebtn" title="Delete">delete</button>
                 </div>
             </div>
             </div>
@@ -240,6 +235,83 @@ function displayroutineData(data, userid) {
         `);
     count++;
     });
+}
+
+$("#cardRoutine").on('click',".deletebtn", function(event){
+event.preventDefault();
+console.log("cardRoutine")
+//console.log("adentro del delete");
+let padre = event.target.parentNode.parentNode.parentNode;
+//console.log(padre);
+let id = padre.getAttribute('id');
+//console.log("id elemento;", id);
+deleteRoutine(id);
+    snackbar.labelText="Deleting..."
+    snackbar.open()
+});
+
+function deleteRoutine(id){
+    console.log("deletelRoutine");
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "DELETE",
+                dataType: "json",
+                data: {
+                    id: id
+                },
+                success: responseJSON => {
+                    console.log("Conexión eliminar rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+                        
+                        console.log("Routine delete 200");
+                        window.location.href='/home.html';
+                    
+                        progressOne.close()
+                    }
+                },
+                error: function (err) {
+                    console.log("Routines Error...");
+                    progressOne.close()
+                }
+            });
+        }
+});
+
+}
+
+function setPublic(id, value){
+    console.log("setPublic");
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "PUT",
+                dataType: "json",
+                data: {
+                    id: id,
+                    value: value
+                },
+                success: responseJSON => {
+                    console.log("Conexión setPublic rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+                        
+                        console.log("Routine setPublic 200");
+                       // window.location.href='/home.html';
+                    
+                        progressOne.close()
+                    }
+                },
+                error: function (err) {
+                    console.log("Routines Error...");
+                    progressOne.close()
+                }
+            });
+        }
+});
 
 }
 
@@ -248,7 +320,7 @@ function displaySearchRoutineData(data){
         $("#cardSearchRoutines").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
             <div class="mdc-card routine mdc-card--outlined col-12">
-            <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
+            <div class="mdc-card_primary-action demo-card_primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.nameRoutine}</h2>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">${element.email}</h3>
@@ -257,7 +329,7 @@ function displaySearchRoutineData(data){
             </div>
             <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>
+                    <button class="mdc-button mdc-card_action mdc-cardaction--button">  <span class="mdc-button_ripple"></span> Edit</button>
                 </div>
                 <div class="mdc-card__action-icons">
                     <button id="add-to-pubic"
@@ -265,10 +337,10 @@ function displaySearchRoutineData(data){
                             aria-label="Add to public"
                             aria-hidden="true"
                             aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>
+                        <i class="material-icons mdc-icon-button_icon mdc-icon-button_icon--on">visibility</i>
                         <i class="material-icons mdc-icon-button__icon">visibility_off</i>
                     </button>
-                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
+                    <button class="material-icons mdc-icon-button mdc-card_action mdc-card_action--icon" title="Delete">delete</button>
                 </div>
             </div>
             </div>
@@ -326,34 +398,31 @@ function searchAction() {
     })
 }
 
-function setPublic(id){
-
-}
-
-
 function enableFavClick(){
     $('#cardRoutine').on('click', ".favbtn", function (event) {
         event.preventDefault();
         console.log("click ...");
         let padre = event.target.parentNode.parentNode.parentNode;
         let onChild =padre.lastElementChild.lastElementChild.firstElementChild;
+        let id = padre.getAttribute('id');
+        let value ;
+
         if (onChild.textContent === "visibility_off") {
             onChild.textContent = "visibility"
             snackbar.labelText="Yout Routine is now PUBLIC to everyone!"
+            value = false;
             snackbar.open()
         }else{
             onChild.textContent = "visibility_off"
             snackbar.labelText="Yout Routine is now HIDE to everyone!"
+            value = true;
             snackbar.open()
         }
-        let id = padre.getAttribute('id');
-        let index = padre.getAttribute('index');
+
+        setPublic(id,value);
+
     });
 }
-
-
-
-
 
 logoutAction();
 addRoutine();
@@ -364,4 +433,3 @@ closeIfDevice();
 searchAction();
 searchButtonAction();
 enableFavClick();
-

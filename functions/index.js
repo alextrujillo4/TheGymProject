@@ -68,7 +68,7 @@ exports.routines = functions.https.onRequest((request, response) => {
     console.log("PARAMS => ");
     console.log(request.params.uid);
     cors(request, response, () => {
-        return processRoutinesRequest(request, response );
+        return processRoutinesRequest(request, response, request.method );
     });
 });
 //===============================================================================================
@@ -150,14 +150,27 @@ function processDataRequest(request, response, method) {
         console.log("data");
         console.log(data);
         createRoutine(response ,data)
-    }else{
+    } else { 
         getUpperBody(response);
         getLowerBody(response);
         getCore(response);
     }
 }
 //===============================================================================================
-function processRoutinesRequest(request, response,) {
+
+
+function processRoutinesRequest(request, response,method) {
+
+    if (method == "DELETE"){
+        let data = request.body.id;
+        console.log("delete INDEX", data);
+        deleteRoutine(response, data);
+    } else if (method == "PUT"){
+        let data = request.body.id;
+        let value = request.body.value;
+        console.log("PUT id",data, "PUT value",value);
+        setPublicRoutine(response,data,value);
+    }else{
     return new Promise((resolve, reject) => {
         console.log("request.query.uid");
         console.log(request.query.uid);
@@ -193,7 +206,11 @@ function processRoutinesRequest(request, response,) {
         });
         resolve();
     })
+
 }
+}
+
+
 //===============================================================================================
 function createRoutine(response, data){
     console.log("createRoutine()");
@@ -202,6 +219,30 @@ function createRoutine(response, data){
         statusMessage: 'Routine Created!',
         status: 200,
     });
+}
+
+function deleteRoutine (response, data){
+    console.log("DATA DELETE");
+  
+   
+    routinesRef.doc(data).delete();
+    return response.status(200).send({
+        statusMessage: 'Routine Deleted!',
+        status: 200,
+    });
+}
+
+function setPublicRoutine(response,data,value){
+    console.log("DATA SETPUBLIC");
+
+    routinesRef.doc(data).update({
+        isPrivate: value
+    });
+    return response.status(200).send({
+        statusMessage: 'Routine isPrivate Updated!',
+        status: 200,
+    });
+
 }
 
 function getUpperBody(response){

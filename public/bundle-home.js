@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 54);
+/******/ 	return __webpack_require__(__webpack_require__.s = 58);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -522,6 +522,72 @@ var strings = {
 
 /***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return strings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return numbers; });
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var cssClasses = {
+    CLOSING: 'mdc-snackbar--closing',
+    OPEN: 'mdc-snackbar--open',
+    OPENING: 'mdc-snackbar--opening',
+};
+var strings = {
+    ACTION_SELECTOR: '.mdc-snackbar__action',
+    ARIA_LIVE_LABEL_TEXT_ATTR: 'data-mdc-snackbar-label-text',
+    CLOSED_EVENT: 'MDCSnackbar:closed',
+    CLOSING_EVENT: 'MDCSnackbar:closing',
+    DISMISS_SELECTOR: '.mdc-snackbar__dismiss',
+    LABEL_SELECTOR: '.mdc-snackbar__label',
+    OPENED_EVENT: 'MDCSnackbar:opened',
+    OPENING_EVENT: 'MDCSnackbar:opening',
+    REASON_ACTION: 'action',
+    REASON_DISMISS: 'dismiss',
+    SURFACE_SELECTOR: '.mdc-snackbar__surface',
+};
+var numbers = {
+    DEFAULT_AUTO_DISMISS_TIMEOUT_MS: 5000,
+    INDETERMINATE: -1,
+    MAX_AUTO_DISMISS_TIMEOUT_MS: 10000,
+    MIN_AUTO_DISMISS_TIMEOUT_MS: 4000,
+    // These variables need to be kept in sync with the values in _variables.scss.
+    SNACKBAR_ANIMATION_CLOSE_TIME_MS: 75,
+    SNACKBAR_ANIMATION_OPEN_TIME_MS: 150,
+    /**
+     * Number of milliseconds to wait between temporarily clearing the label text
+     * in the DOM and subsequently restoring it. This is necessary to force IE 11
+     * to pick up the `aria-live` content change and announce it to the user.
+     */
+    ARIA_LIVE_DELAY_MS: 1000,
+};
+
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -529,9 +595,9 @@ var strings = {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib = __webpack_require__(94);
-var util = __webpack_require__(19);
-var logger$1 = __webpack_require__(96);
+var tslib = __webpack_require__(102);
+var util = __webpack_require__(20);
+var logger$1 = __webpack_require__(104);
 
 /**
  * @license
@@ -1103,7 +1169,7 @@ exports.firebase = firebase;
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1186,7 +1252,7 @@ var MDCFoundation = /** @class */ (function () {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1240,7 +1306,7 @@ function matches(element, selector) {
 //# sourceMappingURL=ponyfill.js.map
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1300,14 +1366,14 @@ var numbers = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCListFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(8);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -1781,14 +1847,14 @@ var MDCListFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCDismissibleDrawerFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(31);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -1978,7 +2044,7 @@ var MDCDismissibleDrawerFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2061,14 +2127,14 @@ var MDCFoundation = /** @class */ (function () {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTopAppBarFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(13);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -2239,13 +2305,13 @@ var MDCTopAppBarFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTopAppBarBaseFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(3);
 /**
  * @license
@@ -2335,17 +2401,17 @@ var MDCTopAppBarBaseFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(16);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -2460,15 +2526,15 @@ var MDCRipple = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRippleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(16);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -2939,7 +3005,7 @@ var MDCRippleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3023,14 +3089,14 @@ function getNormalizedEventCoords(evt, pageOffset, clientRect) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldCharacterCounterFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(42);
 /**
  * @license
  * Copyright 2019 Google Inc.
@@ -3099,7 +3165,7 @@ var MDCTextFieldCharacterCounterFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3173,14 +3239,14 @@ var ALWAYS_FLOAT_TYPES = [
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldHelperTextFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(45);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -3309,7 +3375,7 @@ var MDCTextFieldHelperTextFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3317,7 +3383,7 @@ var MDCTextFieldHelperTextFoundation = /** @class */ (function (_super) {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib = __webpack_require__(95);
+var tslib = __webpack_require__(103);
 
 /**
  * @license
@@ -4936,10 +5002,10 @@ exports.validateContextObject = validateContextObject;
 exports.validateNamespace = validateNamespace;
 //# sourceMappingURL=index.cjs.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(57)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4947,7 +5013,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["createFocusTrapInstance"] = createFocusTrapInstance;
 /* harmony export (immutable) */ __webpack_exports__["isScrollable"] = isScrollable;
 /* harmony export (immutable) */ __webpack_exports__["areTopsMisaligned"] = areTopsMisaligned;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_focus_trap__);
 /**
  * @license
@@ -4991,7 +5057,7 @@ function areTopsMisaligned(els) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = extend
@@ -5016,13 +5082,13 @@ function extend() {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(6);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -5127,7 +5193,7 @@ var MDCComponent = /** @class */ (function () {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5181,7 +5247,7 @@ function matches(element, selector) {
 //# sourceMappingURL=ponyfill.js.map
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5264,14 +5330,14 @@ function getNormalizedEventCoords(evt, pageOffset, clientRect) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCDialogFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(27);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -5533,7 +5599,7 @@ var MDCDialogFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5597,16 +5663,16 @@ var numbers = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(9);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -5864,13 +5930,13 @@ var MDCList = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["createFocusTrapInstance"] = createFocusTrapInstance;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_focus_trap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_focus_trap__);
 /**
  * @license
@@ -5907,11 +5973,11 @@ function createFocusTrapInstance(surfaceEl, focusTrapFactory) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var tabbable = __webpack_require__(65);
-var xtend = __webpack_require__(21);
+var tabbable = __webpack_require__(69);
+var xtend = __webpack_require__(22);
 
 var activeFocusDelay;
 
@@ -6250,7 +6316,7 @@ module.exports = focusTrap;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6297,13 +6363,13 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCModalDrawerFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dismissible_foundation__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dismissible_foundation__ = __webpack_require__(10);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -6360,13 +6426,13 @@ var MDCModalDrawerFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(11);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -6471,7 +6537,7 @@ var MDCComponent = /** @class */ (function () {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6554,14 +6620,14 @@ function getNormalizedEventCoords(evt, pageOffset, clientRect) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFixedTopAppBarFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__standard_foundation__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__standard_foundation__ = __webpack_require__(12);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -6624,14 +6690,14 @@ var MDCFixedTopAppBarFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCShortTopAppBarFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(13);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -6739,7 +6805,7 @@ var MDCShortTopAppBarFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6797,14 +6863,14 @@ function applyPassive(globalObj, forceRefresh) {
 //# sourceMappingURL=events.js.map
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFloatingLabelFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(81);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -6913,7 +6979,7 @@ var MDCFloatingLabelFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6958,7 +7024,7 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7015,14 +7081,14 @@ var numbers = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldCharacterCounter; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(17);
 /**
  * @license
  * Copyright 2019 Google Inc.
@@ -7080,7 +7146,7 @@ var MDCTextFieldCharacterCounter = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7118,14 +7184,14 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(18);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -7588,14 +7654,14 @@ var MDCTextFieldFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldHelperText; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(19);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -7660,7 +7726,7 @@ var MDCTextFieldHelperText = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7702,14 +7768,14 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldIcon; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(47);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -7775,14 +7841,14 @@ var MDCTextFieldIcon = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextFieldIconFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(48);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -7897,7 +7963,7 @@ var MDCTextFieldIconFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7936,7 +8002,7 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8019,15 +8085,15 @@ var MDCFoundation = /** @class */ (function () {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLinearProgressFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_animation_util__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_base_foundation__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_animation_util__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_base_foundation__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(51);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -8169,7 +8235,7 @@ var MDCLinearProgressFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8209,14 +8275,394 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 51 */
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "announce", function() { return announce; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(4);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+var ARIA_LIVE_DELAY_MS = __WEBPACK_IMPORTED_MODULE_0__constants__["b" /* numbers */].ARIA_LIVE_DELAY_MS;
+var ARIA_LIVE_LABEL_TEXT_ATTR = __WEBPACK_IMPORTED_MODULE_0__constants__["c" /* strings */].ARIA_LIVE_LABEL_TEXT_ATTR;
+function announce(ariaEl, labelEl) {
+    if (labelEl === void 0) { labelEl = ariaEl; }
+    var priority = ariaEl.getAttribute('aria-live');
+    // Trim text to ignore `&nbsp;` (see below).
+    // textContent is only null if the node is a document, DOCTYPE, or notation.
+    var labelText = labelEl.textContent.trim();
+    if (!labelText || !priority) {
+        return;
+    }
+    // Temporarily disable `aria-live` to prevent JAWS+Firefox from announcing the message twice.
+    ariaEl.setAttribute('aria-live', 'off');
+    // Temporarily clear `textContent` to force a DOM mutation event that will be detected by screen readers.
+    // `aria-live` elements are only announced when the element's `textContent` *changes*, so snackbars
+    // sent to the browser in the initial HTML response won't be read unless we clear the element's `textContent` first.
+    // Similarly, displaying the same snackbar message twice in a row doesn't trigger a DOM mutation event,
+    // so screen readers won't announce the second message unless we first clear `textContent`.
+    //
+    // We have to clear the label text two different ways to make it work in all browsers and screen readers:
+    //
+    //   1. `textContent = ''` is required for IE11 + JAWS
+    //   2. `innerHTML = '&nbsp;'` is required for Chrome + JAWS and NVDA
+    //
+    // All other browser/screen reader combinations support both methods.
+    //
+    // The wrapper `<span>` visually hides the space character so that it doesn't cause jank when added/removed.
+    // N.B.: Setting `position: absolute`, `opacity: 0`, or `height: 0` prevents Chrome from detecting the DOM change.
+    //
+    // This technique has been tested in:
+    //
+    //   * JAWS 2019:
+    //       - Chrome 70
+    //       - Firefox 60 (ESR)
+    //       - IE 11
+    //   * NVDA 2018:
+    //       - Chrome 70
+    //       - Firefox 60 (ESR)
+    //       - IE 11
+    //   * ChromeVox 53
+    labelEl.textContent = '';
+    labelEl.innerHTML = '<span style="display: inline-block; width: 0; height: 1px;">&nbsp;</span>';
+    // Prevent visual jank by temporarily displaying the label text in the ::before pseudo-element.
+    // CSS generated content is normally announced by screen readers
+    // (except in IE 11; see https://tink.uk/accessibility-support-for-css-generated-content/);
+    // however, `aria-live` is turned off, so this DOM update will be ignored by screen readers.
+    labelEl.setAttribute(ARIA_LIVE_LABEL_TEXT_ATTR, labelText);
+    setTimeout(function () {
+        // Allow screen readers to announce changes to the DOM again.
+        ariaEl.setAttribute('aria-live', priority);
+        // Remove the message from the ::before pseudo-element.
+        labelEl.removeAttribute(ARIA_LIVE_LABEL_TEXT_ATTR);
+        // Restore the original label text, which will be announced by screen readers.
+        labelEl.textContent = labelText;
+    }, ARIA_LIVE_DELAY_MS);
+}
+
+//# sourceMappingURL=util.js.map
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFoundation; });
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+var MDCFoundation = /** @class */ (function () {
+    function MDCFoundation(adapter) {
+        if (adapter === void 0) { adapter = {}; }
+        this.adapter_ = adapter;
+    }
+    Object.defineProperty(MDCFoundation, "cssClasses", {
+        get: function () {
+            // Classes extending MDCFoundation should implement this method to return an object which exports every
+            // CSS class the foundation class needs as a property. e.g. {ACTIVE: 'mdc-component--active'}
+            return {};
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCFoundation, "strings", {
+        get: function () {
+            // Classes extending MDCFoundation should implement this method to return an object which exports all
+            // semantic strings as constants. e.g. {ARIA_ROLE: 'tablist'}
+            return {};
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCFoundation, "numbers", {
+        get: function () {
+            // Classes extending MDCFoundation should implement this method to return an object which exports all
+            // of its semantic numbers as constants. e.g. {ANIMATION_DELAY_MS: 350}
+            return {};
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCFoundation, "defaultAdapter", {
+        get: function () {
+            // Classes extending MDCFoundation may choose to implement this getter in order to provide a convenient
+            // way of viewing the necessary methods of an adapter. In the future, this could also be used for adapter
+            // validation.
+            return {};
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCFoundation.prototype.init = function () {
+        // Subclasses should override this method to perform initialization routines (registering events, etc.)
+    };
+    MDCFoundation.prototype.destroy = function () {
+        // Subclasses should override this method to perform de-initialization routines (de-registering events, etc.)
+    };
+    return MDCFoundation;
+}());
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCSnackbarFoundation; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(4);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+var OPENING = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING, OPEN = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPEN, CLOSING = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING;
+var REASON_ACTION = __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */].REASON_ACTION, REASON_DISMISS = __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */].REASON_DISMISS;
+var MDCSnackbarFoundation = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCSnackbarFoundation, _super);
+    function MDCSnackbarFoundation(adapter) {
+        var _this = _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCSnackbarFoundation.defaultAdapter, adapter)) || this;
+        _this.isOpen_ = false;
+        _this.animationFrame_ = 0;
+        _this.animationTimer_ = 0;
+        _this.autoDismissTimer_ = 0;
+        _this.autoDismissTimeoutMs_ = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].DEFAULT_AUTO_DISMISS_TIMEOUT_MS;
+        _this.closeOnEscape_ = true;
+        return _this;
+    }
+    Object.defineProperty(MDCSnackbarFoundation, "cssClasses", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbarFoundation, "strings", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbarFoundation, "numbers", {
+        get: function () {
+            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbarFoundation, "defaultAdapter", {
+        get: function () {
+            return {
+                addClass: function () { return undefined; },
+                announce: function () { return undefined; },
+                notifyClosed: function () { return undefined; },
+                notifyClosing: function () { return undefined; },
+                notifyOpened: function () { return undefined; },
+                notifyOpening: function () { return undefined; },
+                removeClass: function () { return undefined; },
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCSnackbarFoundation.prototype.destroy = function () {
+        this.clearAutoDismissTimer_();
+        cancelAnimationFrame(this.animationFrame_);
+        this.animationFrame_ = 0;
+        clearTimeout(this.animationTimer_);
+        this.animationTimer_ = 0;
+        this.adapter_.removeClass(OPENING);
+        this.adapter_.removeClass(OPEN);
+        this.adapter_.removeClass(CLOSING);
+    };
+    MDCSnackbarFoundation.prototype.open = function () {
+        var _this = this;
+        this.clearAutoDismissTimer_();
+        this.isOpen_ = true;
+        this.adapter_.notifyOpening();
+        this.adapter_.removeClass(CLOSING);
+        this.adapter_.addClass(OPENING);
+        this.adapter_.announce();
+        // Wait a frame once display is no longer "none", to establish basis for animation
+        this.runNextAnimationFrame_(function () {
+            _this.adapter_.addClass(OPEN);
+            _this.animationTimer_ = setTimeout(function () {
+                var timeoutMs = _this.getTimeoutMs();
+                _this.handleAnimationTimerEnd_();
+                _this.adapter_.notifyOpened();
+                if (timeoutMs !== __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE) {
+                    _this.autoDismissTimer_ = setTimeout(function () {
+                        _this.close(REASON_DISMISS);
+                    }, timeoutMs);
+                }
+            }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].SNACKBAR_ANIMATION_OPEN_TIME_MS);
+        });
+    };
+    /**
+     * @param reason Why the snackbar was closed. Value will be passed to CLOSING_EVENT and CLOSED_EVENT via the
+     *     `event.detail.reason` property. Standard values are REASON_ACTION and REASON_DISMISS, but custom
+     *     client-specific values may also be used if desired.
+     */
+    MDCSnackbarFoundation.prototype.close = function (reason) {
+        var _this = this;
+        if (reason === void 0) { reason = ''; }
+        if (!this.isOpen_) {
+            // Avoid redundant close calls (and events), e.g. repeated interactions as the snackbar is animating closed
+            return;
+        }
+        cancelAnimationFrame(this.animationFrame_);
+        this.animationFrame_ = 0;
+        this.clearAutoDismissTimer_();
+        this.isOpen_ = false;
+        this.adapter_.notifyClosing(reason);
+        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING);
+        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPEN);
+        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING);
+        clearTimeout(this.animationTimer_);
+        this.animationTimer_ = setTimeout(function () {
+            _this.handleAnimationTimerEnd_();
+            _this.adapter_.notifyClosed(reason);
+        }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].SNACKBAR_ANIMATION_CLOSE_TIME_MS);
+    };
+    MDCSnackbarFoundation.prototype.isOpen = function () {
+        return this.isOpen_;
+    };
+    MDCSnackbarFoundation.prototype.getTimeoutMs = function () {
+        return this.autoDismissTimeoutMs_;
+    };
+    MDCSnackbarFoundation.prototype.setTimeoutMs = function (timeoutMs) {
+        // Use shorter variable names to make the code more readable
+        var minValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].MIN_AUTO_DISMISS_TIMEOUT_MS;
+        var maxValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].MAX_AUTO_DISMISS_TIMEOUT_MS;
+        var indeterminateValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE;
+        if (timeoutMs === __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE || (timeoutMs <= maxValue && timeoutMs >= minValue)) {
+            this.autoDismissTimeoutMs_ = timeoutMs;
+        }
+        else {
+            throw new Error("\n        timeoutMs must be an integer in the range " + minValue + "\u2013" + maxValue + "\n        (or " + indeterminateValue + " to disable), but got '" + timeoutMs + "'");
+        }
+    };
+    MDCSnackbarFoundation.prototype.getCloseOnEscape = function () {
+        return this.closeOnEscape_;
+    };
+    MDCSnackbarFoundation.prototype.setCloseOnEscape = function (closeOnEscape) {
+        this.closeOnEscape_ = closeOnEscape;
+    };
+    MDCSnackbarFoundation.prototype.handleKeyDown = function (evt) {
+        var isEscapeKey = evt.key === 'Escape' || evt.keyCode === 27;
+        if (isEscapeKey && this.getCloseOnEscape()) {
+            this.close(REASON_DISMISS);
+        }
+    };
+    MDCSnackbarFoundation.prototype.handleActionButtonClick = function (_evt) {
+        this.close(REASON_ACTION);
+    };
+    MDCSnackbarFoundation.prototype.handleActionIconClick = function (_evt) {
+        this.close(REASON_DISMISS);
+    };
+    MDCSnackbarFoundation.prototype.clearAutoDismissTimer_ = function () {
+        clearTimeout(this.autoDismissTimer_);
+        this.autoDismissTimer_ = 0;
+    };
+    MDCSnackbarFoundation.prototype.handleAnimationTimerEnd_ = function () {
+        this.animationTimer_ = 0;
+        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING);
+        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING);
+    };
+    /**
+     * Runs the given logic on the next animation frame, using setTimeout to factor in Firefox reflow behavior.
+     */
+    MDCSnackbarFoundation.prototype.runNextAnimationFrame_ = function (callback) {
+        var _this = this;
+        cancelAnimationFrame(this.animationFrame_);
+        this.animationFrame_ = requestAnimationFrame(function () {
+            _this.animationFrame_ = 0;
+            clearTimeout(_this.animationTimer_);
+            _this.animationTimer_ = setTimeout(callback, 0);
+        });
+    };
+    return MDCSnackbarFoundation;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCSnackbarFoundation);
+//# sourceMappingURL=foundation.js.map
+
+/***/ }),
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCIconButtonToggleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(56);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -8302,7 +8748,7 @@ var MDCIconButtonToggleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8341,7 +8787,7 @@ var strings = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports) {
 
 var g;
@@ -8368,33 +8814,33 @@ module.exports = g;
 
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _dialog = __webpack_require__(55);
+var _dialog = __webpack_require__(59);
 
-var _list = __webpack_require__(63);
+var _list = __webpack_require__(67);
 
-var _drawer = __webpack_require__(64);
+var _drawer = __webpack_require__(68);
 
-var _topAppBar = __webpack_require__(67);
+var _topAppBar = __webpack_require__(71);
 
-var _textfield = __webpack_require__(74);
+var _textfield = __webpack_require__(78);
 
-var _linearProgress = __webpack_require__(86);
+var _linearProgress = __webpack_require__(90);
 
-var _snackbar = __webpack_require__(109);
+var _snackbar = __webpack_require__(94);
 
-var _iconButton = __webpack_require__(90);
+var _iconButton = __webpack_require__(98);
 
-var _ripple = __webpack_require__(92);
+var _ripple = __webpack_require__(100);
 
-var firebase = __webpack_require__(93);
-__webpack_require__(97);
-__webpack_require__(103);
+var firebase = __webpack_require__(101);
+__webpack_require__(105);
+__webpack_require__(111);
 // Initialize Firebase
 firebase.initializeApp({
     apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
@@ -8409,7 +8855,6 @@ firebase.initializeApp({
 var auth = firebase.auth();
 //const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
 var URL = "http://localhost:5001/gymproject-9f46b/us-central1";
-
 var snackbar = new _snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
 var dialog = new _dialog.MDCDialog(document.getElementById('mdc-logout-dialog'));
 var dialogSearch = new _dialog.MDCDialog(document.getElementById('dialog_search'));
@@ -8508,7 +8953,7 @@ function displayMusclesData(data) {
         var element = data[k];
         for (var exer in element) {
             var objData = element[exer];
-            $("#muscle_list").append("\n                <div class=\"col-sm-12 col-md-12 col-lg-4 col-xl-4\">\n                    <div class=\"mdc-card routine mdc-card--outlined col-12\">\n                        <div class=\"mdc-card__primary-action\" tabindex=\"0\">\n                            <div class=\"mdc-card__media mdc-card__media--square\" style=\"background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(" + objData.image + "); background-size: cover; \">\n                                <div class=\"mdc-card__media-content text mdc-typography--headline6\">" + objData.name + "</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            ");
+            $("#muscle_list").append("\n                <div class=\"col-sm-12 col-md-12 col-lg-4 col-xl-4\">\n                    <div class=\"mdc-card routine mdc-card--outlined col-12\">\n                        <div class=\"mdc-card__primary-action\" tabindex=\"0\">\n                            <div class=\"mdc-card_media mdc-card_media--square\" style=\"height:200px; background:linear-gradient( rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4)100%),url(" + objData.image + "); background-size: cover; \">\n                                <div class=\"mdc-card__media-content text mdc-typography--headline6\">" + objData.name + "</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            ");
         }
     }
 }
@@ -8560,7 +9005,8 @@ function callRoutines() {
                     console.log(responseJSON.status);
                     if (responseJSON.status === 200) {
                         console.log("Routines 200");
-                        displayroutineData(responseJSON.data, user.uid);
+                        console.log("PRUEBA", responseJSON.data.id);
+                        displayroutineData(responseJSON.data);
                         progressOne.close();
                     }
                 },
@@ -8579,22 +9025,96 @@ function displayroutineData(data, userid) {
         console.log("data id", element.id);
         var isVisible = void 0,
             isHiden = "";
-        if (!element.isPrivate) {
-            isVisible = "visibility";
-        } else {
+        if (element.isPrivate == "true") {
             isVisible = "visibility_off";
+        } else {
+            isVisible = "visibility";
         }
-        if (userid !== element.uid) {
-            isHiden = "hide";
-        }
-        $("#cardRoutine").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\" id=\"" + element.id + "\" index=\"" + count + "\" >\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\" >\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button " + isHiden + "\">  <span class=\"mdc-button_ripple\"></span>Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n              \n                     <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon favbtn\" title=\"Visible\">" + isVisible + "</button>\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
+
+        $("#cardRoutine").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\" id=\"" + element.id + "\" index=\"" + count + "\" >\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\" >\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button hide\">  <span class=\"mdc-button_ripple\"></span>Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon favbtn\" title=\"Visible\">" + isVisible + "</button>\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon deletebtn\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
         count++;
+    });
+}
+
+$("#cardRoutine").on('click', ".deletebtn", function (event) {
+    event.preventDefault();
+    console.log("cardRoutine");
+    //console.log("adentro del delete");
+    var padre = event.target.parentNode.parentNode.parentNode;
+    //console.log(padre);
+    var id = padre.getAttribute('id');
+    //console.log("id elemento;", id);
+    deleteRoutine(id);
+    snackbar.labelText = "Deleting...";
+    snackbar.open();
+});
+
+function deleteRoutine(id) {
+    console.log("deletelRoutine");
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "DELETE",
+                dataType: "json",
+                data: {
+                    id: id
+                },
+                success: function success(responseJSON) {
+                    console.log("Conexión eliminar rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+
+                        console.log("Routine delete 200");
+                        window.location.href = '/home.html';
+
+                        progressOne.close();
+                    }
+                },
+                error: function error(err) {
+                    console.log("Routines Error...");
+                    progressOne.close();
+                }
+            });
+        }
+    });
+}
+
+function setPublic(id, value) {
+    console.log("setPublic");
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            $.ajax({
+                url: URL + "/routines",
+                method: "PUT",
+                dataType: "json",
+                data: {
+                    id: id,
+                    value: value
+                },
+                success: function success(responseJSON) {
+                    console.log("Conexión setPublic rutina Exitosa");
+                    console.log(responseJSON.status);
+                    if (responseJSON.status === 200) {
+
+                        console.log("Routine setPublic 200");
+                        // window.location.href='/home.html';
+
+                        progressOne.close();
+                    }
+                },
+                error: function error(err) {
+                    console.log("Routines Error...");
+                    progressOne.close();
+                }
+            });
+        }
     });
 }
 
 function displaySearchRoutineData(data) {
     data.forEach(function (element) {
-        $("#cardSearchRoutines").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card__primary-action demo-card__primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card__action mdc-card__action--button\">  <span class=\"mdc-button__ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button__icon mdc-icon-button__icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card__action mdc-card__action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
+        $("#cardSearchRoutines").append("\n         <div class=\"col-sm-11 col-md-11 col-lg-4 col-xl-4\">\n            <div class=\"mdc-card routine mdc-card--outlined col-12\">\n            <div class=\"mdc-card_primary-action demo-card_primary-action my-card-content\" tabindex=\"0\">\n                <div class=\"demo-card__primary\">\n                    <h2 class=\"demo-card__title mdc-typography mdc-typography--headline6\">" + element.nameRoutine + "</h2>\n                    <h3 class=\"demo-card__subtitle mdc-typography mdc-typography--subtitle2\">" + element.email + "</h3>\n                </div>\n                <div class=\"demo-card__secondary mdc-typography mdc-typography--body2\">Numero de Ejersicios: " + element.excercises.length + "</div>\n            </div>\n            <div class=\"mdc-card__actions\">\n                <div class=\"mdc-card__action-buttons\">\n                    <button class=\"mdc-button mdc-card_action mdc-cardaction--button\">  <span class=\"mdc-button_ripple\"></span> Edit</button>\n                </div>\n                <div class=\"mdc-card__action-icons\">\n                    <button id=\"add-to-pubic\"\n                            class=\"mdc-icon-button\"\n                            aria-label=\"Add to public\"\n                            aria-hidden=\"true\"\n                            aria-pressed=\"false\">\n                        <i class=\"material-icons mdc-icon-button_icon mdc-icon-button_icon--on\">visibility</i>\n                        <i class=\"material-icons mdc-icon-button__icon\">visibility_off</i>\n                    </button>\n                    <button class=\"material-icons mdc-icon-button mdc-card_action mdc-card_action--icon\" title=\"Delete\">delete</button>\n                </div>\n            </div>\n            </div>\n        </div>\n        ");
     });
 }
 
@@ -8644,25 +9164,28 @@ function searchAction() {
     });
 }
 
-function setPublic(id) {}
-
 function enableFavClick() {
     $('#cardRoutine').on('click', ".favbtn", function (event) {
         event.preventDefault();
         console.log("click ...");
         var padre = event.target.parentNode.parentNode.parentNode;
         var onChild = padre.lastElementChild.lastElementChild.firstElementChild;
+        var id = padre.getAttribute('id');
+        var value = void 0;
+
         if (onChild.textContent === "visibility_off") {
             onChild.textContent = "visibility";
             snackbar.labelText = "Yout Routine is now PUBLIC to everyone!";
+            value = false;
             snackbar.open();
         } else {
             onChild.textContent = "visibility_off";
             snackbar.labelText = "Yout Routine is now HIDE to everyone!";
+            value = true;
             snackbar.open();
         }
-        var id = padre.getAttribute('id');
-        var index = padre.getAttribute('index');
+
+        setPublic(id, value);
     });
 }
 
@@ -8677,20 +9200,20 @@ searchButtonAction();
 enableFavClick();
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(21);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "util", function() { return __WEBPACK_IMPORTED_MODULE_0__util__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(62);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCDialog", function() { return __WEBPACK_IMPORTED_MODULE_1__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(27);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(26);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCDialogFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__foundation__["a"]; });
 /**
  * @license
@@ -8722,11 +9245,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var tabbable = __webpack_require__(57);
-var xtend = __webpack_require__(21);
+var tabbable = __webpack_require__(61);
+var xtend = __webpack_require__(22);
 
 var activeFocusDelay;
 
@@ -9065,7 +9588,7 @@ module.exports = focusTrap;
 
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports) {
 
 var candidateSelectors = [
@@ -9224,17 +9747,17 @@ module.exports = tabbable;
 
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_component__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_ripple_component__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(21);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -9421,17 +9944,17 @@ var MDCDialog = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(25);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -9546,7 +10069,7 @@ var MDCRipple = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9604,15 +10127,15 @@ function applyPassive(globalObj, forceRefresh) {
 //# sourceMappingURL=events.js.map
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRippleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(25);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -10083,7 +10606,7 @@ var MDCRippleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10140,18 +10663,18 @@ var numbers = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(28);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCList", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(8);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(9);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCListFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
 /**
  * @license
@@ -10181,21 +10704,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(29);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "util", function() { return __WEBPACK_IMPORTED_MODULE_0__util__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(70);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCDrawer", function() { return __WEBPACK_IMPORTED_MODULE_1__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(31);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dismissible_foundation__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dismissible_foundation__ = __webpack_require__(10);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCDismissibleDrawerFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__dismissible_foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_foundation__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_foundation__ = __webpack_require__(32);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCModalDrawerFoundation", function() { return __WEBPACK_IMPORTED_MODULE_4__modal_foundation__["a"]; });
 /**
  * @license
@@ -10228,7 +10751,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, exports) {
 
 var candidateSelectors = [
@@ -10387,20 +10910,20 @@ module.exports = tabbable;
 
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCDrawer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_list_component__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_list_foundation__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_focus_trap__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_list_component__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_list_foundation__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_focus_trap__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_focus_trap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_focus_trap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dismissible_foundation__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_foundation__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dismissible_foundation__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_foundation__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util__ = __webpack_require__(29);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -10557,24 +11080,24 @@ var MDCDrawer = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 67 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(72);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTopAppBar", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(3);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(13);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTopAppBarBaseFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fixed_foundation__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fixed_foundation__ = __webpack_require__(35);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCFixedTopAppBarFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__fixed_foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__short_foundation__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__short_foundation__ = __webpack_require__(36);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCShortTopAppBarFoundation", function() { return __WEBPACK_IMPORTED_MODULE_4__short_foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__standard_foundation__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__standard_foundation__ = __webpack_require__(12);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTopAppBarFoundation", function() { return __WEBPACK_IMPORTED_MODULE_5__standard_foundation__["a"]; });
 /**
  * @license
@@ -10607,18 +11130,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 68 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTopAppBar; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_component__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_component__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fixed_foundation__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__short_foundation__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__standard_foundation__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fixed_foundation__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__short_foundation__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__standard_foundation__ = __webpack_require__(12);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -10745,17 +11268,17 @@ var MDCTopAppBar = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 69 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRipple; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(34);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -10870,7 +11393,7 @@ var MDCRipple = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 70 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10928,7 +11451,7 @@ function applyPassive(globalObj, forceRefresh) {
 //# sourceMappingURL=events.js.map
 
 /***/ }),
-/* 71 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10982,15 +11505,15 @@ function matches(element, selector) {
 //# sourceMappingURL=ponyfill.js.map
 
 /***/ }),
-/* 72 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCRippleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util__ = __webpack_require__(34);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -11461,7 +11984,7 @@ var MDCRippleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 73 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11518,32 +12041,32 @@ var numbers = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 74 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(79);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextField", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(18);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["e"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["d"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "VALIDATION_ATTR_WHITELIST", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "ALWAYS_FLOAT_TYPES", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(43);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__character_counter_index__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__character_counter_index__ = __webpack_require__(87);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "characterCountCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "characterCountStrings", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["d"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldCharacterCounter", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldCharacterCounterFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__character_counter_index__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_text_index__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_text_index__ = __webpack_require__(88);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "helperTextCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "helperTextStrings", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["d"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldHelperText", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldHelperTextFoundation", function() { return __WEBPACK_IMPORTED_MODULE_4__helper_text_index__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon_index__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__icon_index__ = __webpack_require__(89);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "iconCssClasses", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "iconStrings", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["d"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCTextFieldIcon", function() { return __WEBPACK_IMPORTED_MODULE_5__icon_index__["a"]; });
@@ -11579,27 +12102,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 75 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCTextField; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__character_counter_component__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__foundation__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__helper_text_component__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__icon_component__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_events__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__material_dom_ponyfill__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_floating_label_component__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__material_line_ripple_component__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__material_notched_outline_component__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__material_ripple_component__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__material_ripple_foundation__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__character_counter_component__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__character_counter_foundation__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__foundation__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__helper_text_component__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__helper_text_foundation__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__icon_component__ = __webpack_require__(46);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -12055,14 +12578,14 @@ var MDCTextField = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 76 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFloatingLabel; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(38);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -12134,7 +12657,7 @@ var MDCFloatingLabel = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 77 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12169,14 +12692,14 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 78 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRipple; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(83);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -12251,14 +12774,14 @@ var MDCLineRipple = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 79 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLineRippleFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(84);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -12352,7 +12875,7 @@ var MDCLineRippleFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 80 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12387,16 +12910,16 @@ var cssClasses = {
 //# sourceMappingURL=constants.js.map
 
 /***/ }),
-/* 81 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutline; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_floating_label_foundation__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(86);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -12479,14 +13002,14 @@ var MDCNotchedOutline = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 82 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCNotchedOutlineFoundation; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(39);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -12582,15 +13105,15 @@ var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=foundation.js.map
 
 /***/ }),
-/* 83 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(41);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(17);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(42);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
 /**
@@ -12621,15 +13144,15 @@ var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 84 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(44);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(19);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(45);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
 /**
@@ -12660,15 +13183,15 @@ var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 85 */
+/* 89 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(46);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(47);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__foundation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(48);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
 /**
@@ -12699,17 +13222,17 @@ var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 86 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(91);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCLinearProgress", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(51);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(50);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCLinearProgressFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
 /**
  * @license
@@ -12739,14 +13262,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 87 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCLinearProgress; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(50);
 /**
  * @license
  * Copyright 2017 Google Inc.
@@ -12835,13 +13358,13 @@ var MDCLinearProgress = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 88 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(49);
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -12946,7 +13469,7 @@ var MDCComponent = /** @class */ (function () {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 89 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13034,17 +13557,402 @@ function getCorrectEventName(windowObj, eventType) {
 //# sourceMappingURL=util.js.map
 
 /***/ }),
-/* 90 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(52);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "util", function() { return __WEBPACK_IMPORTED_MODULE_0__util__; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(95);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCSnackbar", function() { return __WEBPACK_IMPORTED_MODULE_1__component__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(4);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["c"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(54);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCSnackbarFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__foundation__["a"]; });
+/**
+ * @license
+ * Copyright 2019 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCSnackbar; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(52);
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+
+
+
+
+var SURFACE_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].SURFACE_SELECTOR, LABEL_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].LABEL_SELECTOR, ACTION_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].ACTION_SELECTOR, DISMISS_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].DISMISS_SELECTOR, OPENING_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].OPENING_EVENT, OPENED_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].OPENED_EVENT, CLOSING_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].CLOSING_EVENT, CLOSED_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].CLOSED_EVENT;
+var MDCSnackbar = /** @class */ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCSnackbar, _super);
+    function MDCSnackbar() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    MDCSnackbar.attachTo = function (root) {
+        return new MDCSnackbar(root);
+    };
+    MDCSnackbar.prototype.initialize = function (announcerFactory) {
+        if (announcerFactory === void 0) { announcerFactory = function () { return __WEBPACK_IMPORTED_MODULE_5__util__["announce"]; }; }
+        this.announce_ = announcerFactory();
+    };
+    MDCSnackbar.prototype.initialSyncWithDOM = function () {
+        var _this = this;
+        this.surfaceEl_ = this.root_.querySelector(SURFACE_SELECTOR);
+        this.labelEl_ = this.root_.querySelector(LABEL_SELECTOR);
+        this.actionEl_ = this.root_.querySelector(ACTION_SELECTOR);
+        this.handleKeyDown_ = function (evt) { return _this.foundation_.handleKeyDown(evt); };
+        this.handleSurfaceClick_ = function (evt) {
+            var target = evt.target;
+            if (_this.isActionButton_(target)) {
+                _this.foundation_.handleActionButtonClick(evt);
+            }
+            else if (_this.isActionIcon_(target)) {
+                _this.foundation_.handleActionIconClick(evt);
+            }
+        };
+        this.registerKeyDownHandler_(this.handleKeyDown_);
+        this.registerSurfaceClickHandler_(this.handleSurfaceClick_);
+    };
+    MDCSnackbar.prototype.destroy = function () {
+        _super.prototype.destroy.call(this);
+        this.deregisterKeyDownHandler_(this.handleKeyDown_);
+        this.deregisterSurfaceClickHandler_(this.handleSurfaceClick_);
+    };
+    MDCSnackbar.prototype.open = function () {
+        this.foundation_.open();
+    };
+    /**
+     * @param reason Why the snackbar was closed. Value will be passed to CLOSING_EVENT and CLOSED_EVENT via the
+     *     `event.detail.reason` property. Standard values are REASON_ACTION and REASON_DISMISS, but custom
+     *     client-specific values may also be used if desired.
+     */
+    MDCSnackbar.prototype.close = function (reason) {
+        if (reason === void 0) { reason = ''; }
+        this.foundation_.close(reason);
+    };
+    MDCSnackbar.prototype.getDefaultFoundation = function () {
+        var _this = this;
+        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
+        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
+        var adapter = {
+            addClass: function (className) { return _this.root_.classList.add(className); },
+            announce: function () { return _this.announce_(_this.labelEl_); },
+            notifyClosed: function (reason) { return _this.emit(CLOSED_EVENT, reason ? { reason: reason } : {}); },
+            notifyClosing: function (reason) { return _this.emit(CLOSING_EVENT, reason ? { reason: reason } : {}); },
+            notifyOpened: function () { return _this.emit(OPENED_EVENT, {}); },
+            notifyOpening: function () { return _this.emit(OPENING_EVENT, {}); },
+            removeClass: function (className) { return _this.root_.classList.remove(className); },
+        };
+        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCSnackbarFoundation */](adapter);
+    };
+    Object.defineProperty(MDCSnackbar.prototype, "timeoutMs", {
+        get: function () {
+            return this.foundation_.getTimeoutMs();
+        },
+        set: function (timeoutMs) {
+            this.foundation_.setTimeoutMs(timeoutMs);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbar.prototype, "closeOnEscape", {
+        get: function () {
+            return this.foundation_.getCloseOnEscape();
+        },
+        set: function (closeOnEscape) {
+            this.foundation_.setCloseOnEscape(closeOnEscape);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbar.prototype, "isOpen", {
+        get: function () {
+            return this.foundation_.isOpen();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbar.prototype, "labelText", {
+        get: function () {
+            // This property only returns null if the node is a document, DOCTYPE, or notation.
+            // On Element nodes, it always returns a string.
+            return this.labelEl_.textContent;
+        },
+        set: function (labelText) {
+            this.labelEl_.textContent = labelText;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MDCSnackbar.prototype, "actionButtonText", {
+        get: function () {
+            return this.actionEl_.textContent;
+        },
+        set: function (actionButtonText) {
+            this.actionEl_.textContent = actionButtonText;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MDCSnackbar.prototype.registerKeyDownHandler_ = function (handler) {
+        this.listen('keydown', handler);
+    };
+    MDCSnackbar.prototype.deregisterKeyDownHandler_ = function (handler) {
+        this.unlisten('keydown', handler);
+    };
+    MDCSnackbar.prototype.registerSurfaceClickHandler_ = function (handler) {
+        this.surfaceEl_.addEventListener('click', handler);
+    };
+    MDCSnackbar.prototype.deregisterSurfaceClickHandler_ = function (handler) {
+        this.surfaceEl_.removeEventListener('click', handler);
+    };
+    MDCSnackbar.prototype.isActionButton_ = function (target) {
+        return Boolean(Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__["a" /* closest */])(target, ACTION_SELECTOR));
+    };
+    MDCSnackbar.prototype.isActionIcon_ = function (target) {
+        return Boolean(Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__["a" /* closest */])(target, DISMISS_SELECTOR));
+    };
+    return MDCSnackbar;
+}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
+
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 96 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(53);
+/**
+ * @license
+ * Copyright 2016 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+
+var MDCComponent = /** @class */ (function () {
+    function MDCComponent(root, foundation) {
+        var args = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+        }
+        this.root_ = root;
+        this.initialize.apply(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __spread */](args));
+        // Note that we initialize foundation here and not within the constructor's default param so that
+        // this.root_ is defined and can be used within the foundation class.
+        this.foundation_ = foundation === undefined ? this.getDefaultFoundation() : foundation;
+        this.foundation_.init();
+        this.initialSyncWithDOM();
+    }
+    MDCComponent.attachTo = function (root) {
+        // Subclasses which extend MDCBase should provide an attachTo() method that takes a root element and
+        // returns an instantiated component with its root set to that element. Also note that in the cases of
+        // subclasses, an explicit foundation class will not have to be passed in; it will simply be initialized
+        // from getDefaultFoundation().
+        return new MDCComponent(root, new __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* MDCFoundation */]({}));
+    };
+    /* istanbul ignore next: method param only exists for typing purposes; it does not need to be unit tested */
+    MDCComponent.prototype.initialize = function () {
+        var _args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            _args[_i] = arguments[_i];
+        }
+        // Subclasses can override this to do any additional setup work that would be considered part of a
+        // "constructor". Essentially, it is a hook into the parent constructor before the foundation is
+        // initialized. Any additional arguments besides root and foundation will be passed in here.
+    };
+    MDCComponent.prototype.getDefaultFoundation = function () {
+        // Subclasses must override this method to return a properly configured foundation class for the
+        // component.
+        throw new Error('Subclasses must override getDefaultFoundation to return a properly configured ' +
+            'foundation class');
+    };
+    MDCComponent.prototype.initialSyncWithDOM = function () {
+        // Subclasses should override this method if they need to perform work to synchronize with a host DOM
+        // object. An example of this would be a form control wrapper that needs to synchronize its internal state
+        // to some property or attribute of the host DOM. Please note: this is *not* the place to perform DOM
+        // reads/writes that would cause layout / paint, as this is called synchronously from within the constructor.
+    };
+    MDCComponent.prototype.destroy = function () {
+        // Subclasses may implement this method to release any resources / deregister any listeners they have
+        // attached. An example of this might be deregistering a resize event from the window object.
+        this.foundation_.destroy();
+    };
+    MDCComponent.prototype.listen = function (evtType, handler, options) {
+        this.root_.addEventListener(evtType, handler, options);
+    };
+    MDCComponent.prototype.unlisten = function (evtType, handler, options) {
+        this.root_.removeEventListener(evtType, handler, options);
+    };
+    /**
+     * Fires a cross-browser-compatible custom event from the component root of the given type, with the given data.
+     */
+    MDCComponent.prototype.emit = function (evtType, evtData, shouldBubble) {
+        if (shouldBubble === void 0) { shouldBubble = false; }
+        var evt;
+        if (typeof CustomEvent === 'function') {
+            evt = new CustomEvent(evtType, {
+                bubbles: shouldBubble,
+                detail: evtData,
+            });
+        }
+        else {
+            evt = document.createEvent('CustomEvent');
+            evt.initCustomEvent(evtType, shouldBubble, false, evtData);
+        }
+        this.root_.dispatchEvent(evt);
+    };
+    return MDCComponent;
+}());
+
+// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+/* unused harmony default export */ var _unused_webpack_default_export = (MDCComponent);
+//# sourceMappingURL=component.js.map
+
+/***/ }),
+/* 97 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = closest;
+/* unused harmony export matches */
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+/**
+ * @fileoverview A "ponyfill" is a polyfill that doesn't modify the global prototype chain.
+ * This makes ponyfills safer than traditional polyfills, especially for libraries like MDC.
+ */
+function closest(element, selector) {
+    if (element.closest) {
+        return element.closest(selector);
+    }
+    var el = element;
+    while (el) {
+        if (matches(el, selector)) {
+            return el;
+        }
+        el = el.parentElement;
+    }
+    return null;
+}
+function matches(element, selector) {
+    var nativeMatches = element.matches
+        || element.webkitMatchesSelector
+        || element.msMatchesSelector;
+    return nativeMatches.call(element, selector);
+}
+//# sourceMappingURL=ponyfill.js.map
+
+/***/ }),
+/* 98 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(99);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCIconButtonToggle", function() { return __WEBPACK_IMPORTED_MODULE_0__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(56);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_1__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__foundation__ = __webpack_require__(55);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCIconButtonToggleFoundation", function() { return __WEBPACK_IMPORTED_MODULE_2__foundation__["a"]; });
 /**
  * @license
@@ -13074,15 +13982,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 91 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCIconButtonToggle; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_component__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_ripple_component__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(55);
 /**
  * @license
  * Copyright 2018 Google Inc.
@@ -13171,20 +14079,20 @@ var MDCIconButtonToggle = /** @class */ (function (_super) {
 //# sourceMappingURL=component.js.map
 
 /***/ }),
-/* 92 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(16);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "util", function() { return __WEBPACK_IMPORTED_MODULE_0__util__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(14);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCRipple", function() { return __WEBPACK_IMPORTED_MODULE_1__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(40);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(15);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCRippleFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__foundation__["a"]; });
 /**
  * @license
@@ -13216,7 +14124,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 93 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13224,7 +14132,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var firebase = _interopDefault(__webpack_require__(4));
+var firebase = _interopDefault(__webpack_require__(5));
 
 /**
  * @license
@@ -13248,7 +14156,7 @@ module.exports = firebase;
 
 
 /***/ }),
-/* 94 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13472,7 +14380,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 95 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13696,7 +14604,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 96 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13927,18 +14835,18 @@ function setLogLevel(level) {
 
 
 /***/ }),
-/* 97 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_analytics__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_analytics__ = __webpack_require__(106);
 
 //# sourceMappingURL=index.esm.js.map
 
 
 /***/ }),
-/* 98 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13946,11 +14854,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* unused harmony export registerAnalytics */
 /* unused harmony export resetGlobalVars */
 /* unused harmony export settings */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_installations__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_installations__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__firebase_util__);
 
 
@@ -14494,7 +15402,7 @@ registerAnalytics(__WEBPACK_IMPORTED_MODULE_0__firebase_app___default.a);
 
 
 /***/ }),
-/* 99 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14717,17 +15625,17 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 100 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export registerInstallations */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tslib__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__firebase_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_idb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_idb__);
 
 
@@ -15888,7 +16796,7 @@ registerInstallations(__WEBPACK_IMPORTED_MODULE_0__firebase_app___default.a);
 
 
 /***/ }),
-/* 101 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16111,7 +17019,7 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 102 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (global, factory) {
@@ -16433,22 +17341,22 @@ function __importDefault(mod) {
 
 
 /***/ }),
-/* 103 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_auth__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_auth__ = __webpack_require__(112);
 
 //# sourceMappingURL=index.esm.js.map
 
 
 /***/ }),
-/* 104 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(4);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_app__);
 (function() {var k,aa="function"==typeof Object.defineProperties?Object.defineProperty:function(a,b,c){a!=Array.prototype&&a!=Object.prototype&&(a[b]=c.value)},ba="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this;function ca(a,b){if(b){var c=ba;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];e in c||(c[e]={});c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&null!=b&&aa(c,a,{configurable:!0,writable:!0,value:b})}}
 function da(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function ea(a){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];return b?b.call(a):{next:da(a)}}
@@ -16825,838 +17733,7 @@ wg,[V("providerId")]);Z(a,"PhoneAuthProvider",Tg,[Dn()]);Z(a,"RecaptchaVerifier"
 
 //# sourceMappingURL=auth.esm.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(53)))
-
-/***/ }),
-/* 105 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return cssClasses; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return strings; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return numbers; });
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var cssClasses = {
-    CLOSING: 'mdc-snackbar--closing',
-    OPEN: 'mdc-snackbar--open',
-    OPENING: 'mdc-snackbar--opening',
-};
-var strings = {
-    ACTION_SELECTOR: '.mdc-snackbar__action',
-    ARIA_LIVE_LABEL_TEXT_ATTR: 'data-mdc-snackbar-label-text',
-    CLOSED_EVENT: 'MDCSnackbar:closed',
-    CLOSING_EVENT: 'MDCSnackbar:closing',
-    DISMISS_SELECTOR: '.mdc-snackbar__dismiss',
-    LABEL_SELECTOR: '.mdc-snackbar__label',
-    OPENED_EVENT: 'MDCSnackbar:opened',
-    OPENING_EVENT: 'MDCSnackbar:opening',
-    REASON_ACTION: 'action',
-    REASON_DISMISS: 'dismiss',
-    SURFACE_SELECTOR: '.mdc-snackbar__surface',
-};
-var numbers = {
-    DEFAULT_AUTO_DISMISS_TIMEOUT_MS: 5000,
-    INDETERMINATE: -1,
-    MAX_AUTO_DISMISS_TIMEOUT_MS: 10000,
-    MIN_AUTO_DISMISS_TIMEOUT_MS: 4000,
-    // These variables need to be kept in sync with the values in _variables.scss.
-    SNACKBAR_ANIMATION_CLOSE_TIME_MS: 75,
-    SNACKBAR_ANIMATION_OPEN_TIME_MS: 150,
-    /**
-     * Number of milliseconds to wait between temporarily clearing the label text
-     * in the DOM and subsequently restoring it. This is necessary to force IE 11
-     * to pick up the `aria-live` content change and announce it to the user.
-     */
-    ARIA_LIVE_DELAY_MS: 1000,
-};
-
-//# sourceMappingURL=constants.js.map
-
-/***/ }),
-/* 106 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "announce", function() { return announce; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(105);
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-var ARIA_LIVE_DELAY_MS = __WEBPACK_IMPORTED_MODULE_0__constants__["b" /* numbers */].ARIA_LIVE_DELAY_MS;
-var ARIA_LIVE_LABEL_TEXT_ATTR = __WEBPACK_IMPORTED_MODULE_0__constants__["c" /* strings */].ARIA_LIVE_LABEL_TEXT_ATTR;
-function announce(ariaEl, labelEl) {
-    if (labelEl === void 0) { labelEl = ariaEl; }
-    var priority = ariaEl.getAttribute('aria-live');
-    // Trim text to ignore `&nbsp;` (see below).
-    // textContent is only null if the node is a document, DOCTYPE, or notation.
-    var labelText = labelEl.textContent.trim();
-    if (!labelText || !priority) {
-        return;
-    }
-    // Temporarily disable `aria-live` to prevent JAWS+Firefox from announcing the message twice.
-    ariaEl.setAttribute('aria-live', 'off');
-    // Temporarily clear `textContent` to force a DOM mutation event that will be detected by screen readers.
-    // `aria-live` elements are only announced when the element's `textContent` *changes*, so snackbars
-    // sent to the browser in the initial HTML response won't be read unless we clear the element's `textContent` first.
-    // Similarly, displaying the same snackbar message twice in a row doesn't trigger a DOM mutation event,
-    // so screen readers won't announce the second message unless we first clear `textContent`.
-    //
-    // We have to clear the label text two different ways to make it work in all browsers and screen readers:
-    //
-    //   1. `textContent = ''` is required for IE11 + JAWS
-    //   2. `innerHTML = '&nbsp;'` is required for Chrome + JAWS and NVDA
-    //
-    // All other browser/screen reader combinations support both methods.
-    //
-    // The wrapper `<span>` visually hides the space character so that it doesn't cause jank when added/removed.
-    // N.B.: Setting `position: absolute`, `opacity: 0`, or `height: 0` prevents Chrome from detecting the DOM change.
-    //
-    // This technique has been tested in:
-    //
-    //   * JAWS 2019:
-    //       - Chrome 70
-    //       - Firefox 60 (ESR)
-    //       - IE 11
-    //   * NVDA 2018:
-    //       - Chrome 70
-    //       - Firefox 60 (ESR)
-    //       - IE 11
-    //   * ChromeVox 53
-    labelEl.textContent = '';
-    labelEl.innerHTML = '<span style="display: inline-block; width: 0; height: 1px;">&nbsp;</span>';
-    // Prevent visual jank by temporarily displaying the label text in the ::before pseudo-element.
-    // CSS generated content is normally announced by screen readers
-    // (except in IE 11; see https://tink.uk/accessibility-support-for-css-generated-content/);
-    // however, `aria-live` is turned off, so this DOM update will be ignored by screen readers.
-    labelEl.setAttribute(ARIA_LIVE_LABEL_TEXT_ATTR, labelText);
-    setTimeout(function () {
-        // Allow screen readers to announce changes to the DOM again.
-        ariaEl.setAttribute('aria-live', priority);
-        // Remove the message from the ::before pseudo-element.
-        labelEl.removeAttribute(ARIA_LIVE_LABEL_TEXT_ATTR);
-        // Restore the original label text, which will be announced by screen readers.
-        labelEl.textContent = labelText;
-    }, ARIA_LIVE_DELAY_MS);
-}
-
-//# sourceMappingURL=util.js.map
-
-/***/ }),
-/* 107 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCFoundation; });
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-var MDCFoundation = /** @class */ (function () {
-    function MDCFoundation(adapter) {
-        if (adapter === void 0) { adapter = {}; }
-        this.adapter_ = adapter;
-    }
-    Object.defineProperty(MDCFoundation, "cssClasses", {
-        get: function () {
-            // Classes extending MDCFoundation should implement this method to return an object which exports every
-            // CSS class the foundation class needs as a property. e.g. {ACTIVE: 'mdc-component--active'}
-            return {};
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCFoundation, "strings", {
-        get: function () {
-            // Classes extending MDCFoundation should implement this method to return an object which exports all
-            // semantic strings as constants. e.g. {ARIA_ROLE: 'tablist'}
-            return {};
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCFoundation, "numbers", {
-        get: function () {
-            // Classes extending MDCFoundation should implement this method to return an object which exports all
-            // of its semantic numbers as constants. e.g. {ANIMATION_DELAY_MS: 350}
-            return {};
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCFoundation, "defaultAdapter", {
-        get: function () {
-            // Classes extending MDCFoundation may choose to implement this getter in order to provide a convenient
-            // way of viewing the necessary methods of an adapter. In the future, this could also be used for adapter
-            // validation.
-            return {};
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCFoundation.prototype.init = function () {
-        // Subclasses should override this method to perform initialization routines (registering events, etc.)
-    };
-    MDCFoundation.prototype.destroy = function () {
-        // Subclasses should override this method to perform de-initialization routines (de-registering events, etc.)
-    };
-    return MDCFoundation;
-}());
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCFoundation);
-//# sourceMappingURL=foundation.js.map
-
-/***/ }),
-/* 108 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCSnackbarFoundation; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_foundation__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(105);
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-var OPENING = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING, OPEN = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPEN, CLOSING = __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING;
-var REASON_ACTION = __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */].REASON_ACTION, REASON_DISMISS = __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */].REASON_DISMISS;
-var MDCSnackbarFoundation = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCSnackbarFoundation, _super);
-    function MDCSnackbarFoundation(adapter) {
-        var _this = _super.call(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, MDCSnackbarFoundation.defaultAdapter, adapter)) || this;
-        _this.isOpen_ = false;
-        _this.animationFrame_ = 0;
-        _this.animationTimer_ = 0;
-        _this.autoDismissTimer_ = 0;
-        _this.autoDismissTimeoutMs_ = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].DEFAULT_AUTO_DISMISS_TIMEOUT_MS;
-        _this.closeOnEscape_ = true;
-        return _this;
-    }
-    Object.defineProperty(MDCSnackbarFoundation, "cssClasses", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbarFoundation, "strings", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["c" /* strings */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbarFoundation, "numbers", {
-        get: function () {
-            return __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbarFoundation, "defaultAdapter", {
-        get: function () {
-            return {
-                addClass: function () { return undefined; },
-                announce: function () { return undefined; },
-                notifyClosed: function () { return undefined; },
-                notifyClosing: function () { return undefined; },
-                notifyOpened: function () { return undefined; },
-                notifyOpening: function () { return undefined; },
-                removeClass: function () { return undefined; },
-            };
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCSnackbarFoundation.prototype.destroy = function () {
-        this.clearAutoDismissTimer_();
-        cancelAnimationFrame(this.animationFrame_);
-        this.animationFrame_ = 0;
-        clearTimeout(this.animationTimer_);
-        this.animationTimer_ = 0;
-        this.adapter_.removeClass(OPENING);
-        this.adapter_.removeClass(OPEN);
-        this.adapter_.removeClass(CLOSING);
-    };
-    MDCSnackbarFoundation.prototype.open = function () {
-        var _this = this;
-        this.clearAutoDismissTimer_();
-        this.isOpen_ = true;
-        this.adapter_.notifyOpening();
-        this.adapter_.removeClass(CLOSING);
-        this.adapter_.addClass(OPENING);
-        this.adapter_.announce();
-        // Wait a frame once display is no longer "none", to establish basis for animation
-        this.runNextAnimationFrame_(function () {
-            _this.adapter_.addClass(OPEN);
-            _this.animationTimer_ = setTimeout(function () {
-                var timeoutMs = _this.getTimeoutMs();
-                _this.handleAnimationTimerEnd_();
-                _this.adapter_.notifyOpened();
-                if (timeoutMs !== __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE) {
-                    _this.autoDismissTimer_ = setTimeout(function () {
-                        _this.close(REASON_DISMISS);
-                    }, timeoutMs);
-                }
-            }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].SNACKBAR_ANIMATION_OPEN_TIME_MS);
-        });
-    };
-    /**
-     * @param reason Why the snackbar was closed. Value will be passed to CLOSING_EVENT and CLOSED_EVENT via the
-     *     `event.detail.reason` property. Standard values are REASON_ACTION and REASON_DISMISS, but custom
-     *     client-specific values may also be used if desired.
-     */
-    MDCSnackbarFoundation.prototype.close = function (reason) {
-        var _this = this;
-        if (reason === void 0) { reason = ''; }
-        if (!this.isOpen_) {
-            // Avoid redundant close calls (and events), e.g. repeated interactions as the snackbar is animating closed
-            return;
-        }
-        cancelAnimationFrame(this.animationFrame_);
-        this.animationFrame_ = 0;
-        this.clearAutoDismissTimer_();
-        this.isOpen_ = false;
-        this.adapter_.notifyClosing(reason);
-        this.adapter_.addClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING);
-        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPEN);
-        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING);
-        clearTimeout(this.animationTimer_);
-        this.animationTimer_ = setTimeout(function () {
-            _this.handleAnimationTimerEnd_();
-            _this.adapter_.notifyClosed(reason);
-        }, __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].SNACKBAR_ANIMATION_CLOSE_TIME_MS);
-    };
-    MDCSnackbarFoundation.prototype.isOpen = function () {
-        return this.isOpen_;
-    };
-    MDCSnackbarFoundation.prototype.getTimeoutMs = function () {
-        return this.autoDismissTimeoutMs_;
-    };
-    MDCSnackbarFoundation.prototype.setTimeoutMs = function (timeoutMs) {
-        // Use shorter variable names to make the code more readable
-        var minValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].MIN_AUTO_DISMISS_TIMEOUT_MS;
-        var maxValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].MAX_AUTO_DISMISS_TIMEOUT_MS;
-        var indeterminateValue = __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE;
-        if (timeoutMs === __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* numbers */].INDETERMINATE || (timeoutMs <= maxValue && timeoutMs >= minValue)) {
-            this.autoDismissTimeoutMs_ = timeoutMs;
-        }
-        else {
-            throw new Error("\n        timeoutMs must be an integer in the range " + minValue + "\u2013" + maxValue + "\n        (or " + indeterminateValue + " to disable), but got '" + timeoutMs + "'");
-        }
-    };
-    MDCSnackbarFoundation.prototype.getCloseOnEscape = function () {
-        return this.closeOnEscape_;
-    };
-    MDCSnackbarFoundation.prototype.setCloseOnEscape = function (closeOnEscape) {
-        this.closeOnEscape_ = closeOnEscape;
-    };
-    MDCSnackbarFoundation.prototype.handleKeyDown = function (evt) {
-        var isEscapeKey = evt.key === 'Escape' || evt.keyCode === 27;
-        if (isEscapeKey && this.getCloseOnEscape()) {
-            this.close(REASON_DISMISS);
-        }
-    };
-    MDCSnackbarFoundation.prototype.handleActionButtonClick = function (_evt) {
-        this.close(REASON_ACTION);
-    };
-    MDCSnackbarFoundation.prototype.handleActionIconClick = function (_evt) {
-        this.close(REASON_DISMISS);
-    };
-    MDCSnackbarFoundation.prototype.clearAutoDismissTimer_ = function () {
-        clearTimeout(this.autoDismissTimer_);
-        this.autoDismissTimer_ = 0;
-    };
-    MDCSnackbarFoundation.prototype.handleAnimationTimerEnd_ = function () {
-        this.animationTimer_ = 0;
-        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].OPENING);
-        this.adapter_.removeClass(__WEBPACK_IMPORTED_MODULE_2__constants__["a" /* cssClasses */].CLOSING);
-    };
-    /**
-     * Runs the given logic on the next animation frame, using setTimeout to factor in Firefox reflow behavior.
-     */
-    MDCSnackbarFoundation.prototype.runNextAnimationFrame_ = function (callback) {
-        var _this = this;
-        cancelAnimationFrame(this.animationFrame_);
-        this.animationFrame_ = requestAnimationFrame(function () {
-            _this.animationFrame_ = 0;
-            clearTimeout(_this.animationTimer_);
-            _this.animationTimer_ = setTimeout(callback, 0);
-        });
-    };
-    return MDCSnackbarFoundation;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_foundation__["a" /* MDCFoundation */]));
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCSnackbarFoundation);
-//# sourceMappingURL=foundation.js.map
-
-/***/ }),
-/* 109 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(106);
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "util", function() { return __WEBPACK_IMPORTED_MODULE_0__util__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(110);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCSnackbar", function() { return __WEBPACK_IMPORTED_MODULE_1__component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(105);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "cssClasses", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "strings", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "numbers", function() { return __WEBPACK_IMPORTED_MODULE_2__constants__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__foundation__ = __webpack_require__(108);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MDCSnackbarFoundation", function() { return __WEBPACK_IMPORTED_MODULE_3__foundation__["a"]; });
-/**
- * @license
- * Copyright 2019 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 110 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCSnackbar; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__material_base_component__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__foundation__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util__ = __webpack_require__(106);
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-
-
-
-
-var SURFACE_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].SURFACE_SELECTOR, LABEL_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].LABEL_SELECTOR, ACTION_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].ACTION_SELECTOR, DISMISS_SELECTOR = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].DISMISS_SELECTOR, OPENING_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].OPENING_EVENT, OPENED_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].OPENED_EVENT, CLOSING_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].CLOSING_EVENT, CLOSED_EVENT = __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* strings */].CLOSED_EVENT;
-var MDCSnackbar = /** @class */ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](MDCSnackbar, _super);
-    function MDCSnackbar() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MDCSnackbar.attachTo = function (root) {
-        return new MDCSnackbar(root);
-    };
-    MDCSnackbar.prototype.initialize = function (announcerFactory) {
-        if (announcerFactory === void 0) { announcerFactory = function () { return __WEBPACK_IMPORTED_MODULE_5__util__["announce"]; }; }
-        this.announce_ = announcerFactory();
-    };
-    MDCSnackbar.prototype.initialSyncWithDOM = function () {
-        var _this = this;
-        this.surfaceEl_ = this.root_.querySelector(SURFACE_SELECTOR);
-        this.labelEl_ = this.root_.querySelector(LABEL_SELECTOR);
-        this.actionEl_ = this.root_.querySelector(ACTION_SELECTOR);
-        this.handleKeyDown_ = function (evt) { return _this.foundation_.handleKeyDown(evt); };
-        this.handleSurfaceClick_ = function (evt) {
-            var target = evt.target;
-            if (_this.isActionButton_(target)) {
-                _this.foundation_.handleActionButtonClick(evt);
-            }
-            else if (_this.isActionIcon_(target)) {
-                _this.foundation_.handleActionIconClick(evt);
-            }
-        };
-        this.registerKeyDownHandler_(this.handleKeyDown_);
-        this.registerSurfaceClickHandler_(this.handleSurfaceClick_);
-    };
-    MDCSnackbar.prototype.destroy = function () {
-        _super.prototype.destroy.call(this);
-        this.deregisterKeyDownHandler_(this.handleKeyDown_);
-        this.deregisterSurfaceClickHandler_(this.handleSurfaceClick_);
-    };
-    MDCSnackbar.prototype.open = function () {
-        this.foundation_.open();
-    };
-    /**
-     * @param reason Why the snackbar was closed. Value will be passed to CLOSING_EVENT and CLOSED_EVENT via the
-     *     `event.detail.reason` property. Standard values are REASON_ACTION and REASON_DISMISS, but custom
-     *     client-specific values may also be used if desired.
-     */
-    MDCSnackbar.prototype.close = function (reason) {
-        if (reason === void 0) { reason = ''; }
-        this.foundation_.close(reason);
-    };
-    MDCSnackbar.prototype.getDefaultFoundation = function () {
-        var _this = this;
-        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
-        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-        var adapter = {
-            addClass: function (className) { return _this.root_.classList.add(className); },
-            announce: function () { return _this.announce_(_this.labelEl_); },
-            notifyClosed: function (reason) { return _this.emit(CLOSED_EVENT, reason ? { reason: reason } : {}); },
-            notifyClosing: function (reason) { return _this.emit(CLOSING_EVENT, reason ? { reason: reason } : {}); },
-            notifyOpened: function () { return _this.emit(OPENED_EVENT, {}); },
-            notifyOpening: function () { return _this.emit(OPENING_EVENT, {}); },
-            removeClass: function (className) { return _this.root_.classList.remove(className); },
-        };
-        return new __WEBPACK_IMPORTED_MODULE_4__foundation__["a" /* MDCSnackbarFoundation */](adapter);
-    };
-    Object.defineProperty(MDCSnackbar.prototype, "timeoutMs", {
-        get: function () {
-            return this.foundation_.getTimeoutMs();
-        },
-        set: function (timeoutMs) {
-            this.foundation_.setTimeoutMs(timeoutMs);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbar.prototype, "closeOnEscape", {
-        get: function () {
-            return this.foundation_.getCloseOnEscape();
-        },
-        set: function (closeOnEscape) {
-            this.foundation_.setCloseOnEscape(closeOnEscape);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbar.prototype, "isOpen", {
-        get: function () {
-            return this.foundation_.isOpen();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbar.prototype, "labelText", {
-        get: function () {
-            // This property only returns null if the node is a document, DOCTYPE, or notation.
-            // On Element nodes, it always returns a string.
-            return this.labelEl_.textContent;
-        },
-        set: function (labelText) {
-            this.labelEl_.textContent = labelText;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MDCSnackbar.prototype, "actionButtonText", {
-        get: function () {
-            return this.actionEl_.textContent;
-        },
-        set: function (actionButtonText) {
-            this.actionEl_.textContent = actionButtonText;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MDCSnackbar.prototype.registerKeyDownHandler_ = function (handler) {
-        this.listen('keydown', handler);
-    };
-    MDCSnackbar.prototype.deregisterKeyDownHandler_ = function (handler) {
-        this.unlisten('keydown', handler);
-    };
-    MDCSnackbar.prototype.registerSurfaceClickHandler_ = function (handler) {
-        this.surfaceEl_.addEventListener('click', handler);
-    };
-    MDCSnackbar.prototype.deregisterSurfaceClickHandler_ = function (handler) {
-        this.surfaceEl_.removeEventListener('click', handler);
-    };
-    MDCSnackbar.prototype.isActionButton_ = function (target) {
-        return Boolean(Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__["a" /* closest */])(target, ACTION_SELECTOR));
-    };
-    MDCSnackbar.prototype.isActionIcon_ = function (target) {
-        return Boolean(Object(__WEBPACK_IMPORTED_MODULE_2__material_dom_ponyfill__["a" /* closest */])(target, DISMISS_SELECTOR));
-    };
-    return MDCSnackbar;
-}(__WEBPACK_IMPORTED_MODULE_1__material_base_component__["a" /* MDCComponent */]));
-
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 111 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MDCComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__foundation__ = __webpack_require__(107);
-/**
- * @license
- * Copyright 2016 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-
-var MDCComponent = /** @class */ (function () {
-    function MDCComponent(root, foundation) {
-        var args = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            args[_i - 2] = arguments[_i];
-        }
-        this.root_ = root;
-        this.initialize.apply(this, __WEBPACK_IMPORTED_MODULE_0_tslib__["c" /* __spread */](args));
-        // Note that we initialize foundation here and not within the constructor's default param so that
-        // this.root_ is defined and can be used within the foundation class.
-        this.foundation_ = foundation === undefined ? this.getDefaultFoundation() : foundation;
-        this.foundation_.init();
-        this.initialSyncWithDOM();
-    }
-    MDCComponent.attachTo = function (root) {
-        // Subclasses which extend MDCBase should provide an attachTo() method that takes a root element and
-        // returns an instantiated component with its root set to that element. Also note that in the cases of
-        // subclasses, an explicit foundation class will not have to be passed in; it will simply be initialized
-        // from getDefaultFoundation().
-        return new MDCComponent(root, new __WEBPACK_IMPORTED_MODULE_1__foundation__["a" /* MDCFoundation */]({}));
-    };
-    /* istanbul ignore next: method param only exists for typing purposes; it does not need to be unit tested */
-    MDCComponent.prototype.initialize = function () {
-        var _args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            _args[_i] = arguments[_i];
-        }
-        // Subclasses can override this to do any additional setup work that would be considered part of a
-        // "constructor". Essentially, it is a hook into the parent constructor before the foundation is
-        // initialized. Any additional arguments besides root and foundation will be passed in here.
-    };
-    MDCComponent.prototype.getDefaultFoundation = function () {
-        // Subclasses must override this method to return a properly configured foundation class for the
-        // component.
-        throw new Error('Subclasses must override getDefaultFoundation to return a properly configured ' +
-            'foundation class');
-    };
-    MDCComponent.prototype.initialSyncWithDOM = function () {
-        // Subclasses should override this method if they need to perform work to synchronize with a host DOM
-        // object. An example of this would be a form control wrapper that needs to synchronize its internal state
-        // to some property or attribute of the host DOM. Please note: this is *not* the place to perform DOM
-        // reads/writes that would cause layout / paint, as this is called synchronously from within the constructor.
-    };
-    MDCComponent.prototype.destroy = function () {
-        // Subclasses may implement this method to release any resources / deregister any listeners they have
-        // attached. An example of this might be deregistering a resize event from the window object.
-        this.foundation_.destroy();
-    };
-    MDCComponent.prototype.listen = function (evtType, handler, options) {
-        this.root_.addEventListener(evtType, handler, options);
-    };
-    MDCComponent.prototype.unlisten = function (evtType, handler, options) {
-        this.root_.removeEventListener(evtType, handler, options);
-    };
-    /**
-     * Fires a cross-browser-compatible custom event from the component root of the given type, with the given data.
-     */
-    MDCComponent.prototype.emit = function (evtType, evtData, shouldBubble) {
-        if (shouldBubble === void 0) { shouldBubble = false; }
-        var evt;
-        if (typeof CustomEvent === 'function') {
-            evt = new CustomEvent(evtType, {
-                bubbles: shouldBubble,
-                detail: evtData,
-            });
-        }
-        else {
-            evt = document.createEvent('CustomEvent');
-            evt.initCustomEvent(evtType, shouldBubble, false, evtData);
-        }
-        this.root_.dispatchEvent(evt);
-    };
-    return MDCComponent;
-}());
-
-// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
-/* unused harmony default export */ var _unused_webpack_default_export = (MDCComponent);
-//# sourceMappingURL=component.js.map
-
-/***/ }),
-/* 112 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = closest;
-/* unused harmony export matches */
-/**
- * @license
- * Copyright 2018 Google Inc.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-/**
- * @fileoverview A "ponyfill" is a polyfill that doesn't modify the global prototype chain.
- * This makes ponyfills safer than traditional polyfills, especially for libraries like MDC.
- */
-function closest(element, selector) {
-    if (element.closest) {
-        return element.closest(selector);
-    }
-    var el = element;
-    while (el) {
-        if (matches(el, selector)) {
-            return el;
-        }
-        el = el.parentElement;
-    }
-    return null;
-}
-function matches(element, selector) {
-    var nativeMatches = element.matches
-        || element.webkitMatchesSelector
-        || element.msMatchesSelector;
-    return nativeMatches.call(element, selector);
-}
-//# sourceMappingURL=ponyfill.js.map
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(57)))
 
 /***/ })
 /******/ ]);

@@ -13,8 +13,13 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 const auth  = firebase.auth();
-
 const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+
+auth.onAuthStateChanged(function (user) {
+    if (!user) {
+        window.location.href = '/';
+    }
+});
 
 import {MDCTextField} from "@material/textfield";
 let excChecked = [];
