@@ -1,4 +1,3 @@
-import {MDCLinearProgress} from "@material/linear-progress";
 
 const firebase = require('firebase/app');
 require('firebase/analytics');
@@ -22,7 +21,7 @@ import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
 import {MDCTextField} from "@material/textfield";
-
+import {MDCLinearProgress} from "@material/linear-progress";
 
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
@@ -34,7 +33,18 @@ const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
 
-const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+
+
+const progressOne = new MDCLinearProgress(document.getElementById('first-progress'));
+const progressTwo = new MDCLinearProgress(document.getElementById('second-progress'));
+const progressThird = new MDCLinearProgress(document.getElementById('third-progress'));
+progressOne.determinate = false;
+progressTwo.determinate = false;
+progressThird.determinate = false;
+
+
+
+
 
 
 auth.onAuthStateChanged(function (user) {
