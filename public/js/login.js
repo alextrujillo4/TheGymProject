@@ -51,14 +51,12 @@ function loginAction(){
             const errorMessage = error.message;
             if (errorCode === 'auth/wrong-password') {
                 snackbar.labelText = "Incorrect password. Please try again.";
-                linearProgress.close();
                 snackbar.open();
             } else {
                 snackbar.labelText = "Error. Please try again.";
-                linearProgress.close();
                 snackbar.open();
             }
-            console.log(error);
+            linearProgress.close();
         });
     });
 }
