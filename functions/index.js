@@ -161,11 +161,11 @@ function processDataRequest(request, response, method) {
 
 function processRoutinesRequest(request, response,method) {
 
-    if (method == "DELETE"){
+    if (method === "DELETE"){
         let data = request.body.id;
         console.log("delete INDEX", data);
         deleteRoutine(response, data);
-    } else if (method == "PUT"){
+    } else if (method === "PUT"){
         let data = request.body.id;
         let value = request.body.value;
         console.log("PUT id",data, "PUT value",value);

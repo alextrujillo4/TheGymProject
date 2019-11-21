@@ -1,6 +1,9 @@
 const firebase = require('firebase/app');
 require('firebase/analytics');
 require('firebase/auth');
+import {MDCDialog} from '@material/dialog';
+import {MDCTextField} from "@material/textfield";
+import {MDCLinearProgress} from "@material/linear-progress";
 // Initialize Firebase
 firebase.initializeApp({
     apiKey: "AIzaSyCMQfCVoDb2eiuXHACCUX66TO_6v4XFTF0",
@@ -24,7 +27,6 @@ window.onload = function verifyUser() {
 };
 
 const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
-import { MDCLinearProgress } from '@material/linear-progress';
 const username = new MDCTextField(document.querySelector('.username'));
 const email = new MDCTextField(document.querySelector('.email'));
 const password = new MDCTextField(document.querySelector('.password'));

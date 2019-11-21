@@ -4774,8 +4774,13 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 var auth = firebase.auth();
-
 var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+
+auth.onAuthStateChanged(function (user) {
+    if (!user) {
+        window.location.href = '/';
+    }
+});
 
 var excChecked = [];
 

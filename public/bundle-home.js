@@ -8853,8 +8853,8 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 var auth = firebase.auth();
-//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-var URL = "http://localhost:5001/gymproject-9f46b/us-central1";
+var URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "http://localhost:5001/gymproject-9f46b/us-central1";
 var snackbar = new _snackbar.MDCSnackbar(document.querySelector('.mdc-snackbar'));
 var dialog = new _dialog.MDCDialog(document.getElementById('mdc-logout-dialog'));
 var dialogSearch = new _dialog.MDCDialog(document.getElementById('dialog_search'));

@@ -22,8 +22,8 @@ firebase.initializeApp({
     measurementId: "G-TSWB8RLHM9"
 });
 const auth  = firebase.auth();
-//const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
-const URL = "http://localhost:5001/gymproject-9f46b/us-central1";
+const URL = "https://us-central1-gymproject-9f46b.cloudfunctions.net";
+//const URL = "http://localhost:5001/gymproject-9f46b/us-central1";
 const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
