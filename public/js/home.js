@@ -1,3 +1,5 @@
+import {MDCLinearProgress} from "@material/linear-progress";
+
 const firebase = require('firebase/app');
 require('firebase/analytics');
 require('firebase/auth');
@@ -20,17 +22,25 @@ import {MDCList} from "@material/list";
 import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
 import {MDCTextField} from "@material/textfield";
+import {MDCLinearProgress} from "@material/linear-progress";
+
 
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
 const querieField = new MDCTextField(document.getElementById('search_field'));
-
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
 const menu = document.getElementById("menu");
 const list = new MDCList(document.getElementById('my-list'));
 list.singleSelection = true;
 const mainContentEl = document.querySelector('.main-content');
+
+const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+const linearProgress = new MDCLinearProgress(document.querySelector('.mdc-linear-progress'));
+
+linearProgress.close();
+
 auth.onAuthStateChanged(function (user) {
     if (!user) {
         window.location.href = '/';

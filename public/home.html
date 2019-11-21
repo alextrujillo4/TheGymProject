@@ -3,10 +3,10 @@
 <head>
     <!-- Config -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
     <title>Home</title>
     <!-- Google -->
     <link href="https://material.io/favicon.ico" rel="shortcut icon">
@@ -21,11 +21,13 @@
 <header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-            <a id="menu" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+            <a class="demo-menu material-icons mdc-top-app-bar__navigation-icon" id="menu">menu</a>
             <span class="mdc-top-app-bar__title">Energy GYM</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button id="search_icon" class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+            <button aria-label="Search" class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
+                    id="search_icon">search
+            </button>
         </section>
     </div>
 </header>
@@ -45,7 +47,7 @@
            </svg>
     </div>
     <div class="mdc-drawer__content">
-        <ul id="my-list" class="mdc-list" role="listbox">
+        <ul class="mdc-list" id="my-list" role="listbox">
             <li class="mdc-list-item" role="option" tabindex="0">
                 <span class="mdc-list-item__text">Routines</span>
             </li>
@@ -61,19 +63,32 @@
 <!-- END  DRAWER -->
 <!-- APP CONTENT -->
 <div class="mdc-drawer-app-content">
-    <main class="main-content" id="main-content">
+    <div class="main-content" id="main-content">
         <div class="mdc-top-app-bar--fixed-adjust shrine-body">
             <!-- OPTION CERO SELECTED -->
-            <div id="first" >
+            <section id="first">
                 <!-- LIST OF ROUTINES -->
                 <div class="container">
-                        <div class="row" id="cardRoutine">
+                    <div class="button-container progress-section" id="first-progress">
+                        <div class="mdc-linear-progress" role="progressbar">
+                            <div class="mdc-linear-progress__buffering-dots"></div>
+                            <div class="mdc-linear-progress__buffer"></div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row" id="cardRoutine">
+
+                    </div>
                 </div>
-            </div>
+            </section>
             <!--END OPTION CERO SELECTED -->
             <!-- OPTION ONE SELECTED -->
-            <div  id="second" class="hide secondary-content">
+            <section class="hide secondary-content" id="second">
                 <section class="mbr-section">
                     <div class="profile-header">
                     </div>
@@ -82,26 +97,53 @@
                             <div class="title col-12">
                                 <h1>Hello!</h1>
                                 <h5 id="user_name">Hello! Username</h5>
-                                <p class="mbr-section-subtitle" >
+                                <p class="mbr-section-subtitle">
                                     Total of Excertices: 17
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="mbr-section">
-
+                <div class="mbr-section">
+                    <div class="button-container progress-section" id="second-progress">
+                        <div class="mdc-linear-progress" role="progressbar">
+                            <div class="mdc-linear-progress__buffering-dots"></div>
+                            <div class="mdc-linear-progress__buffer"></div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                                <span class="mdc-linear-progress__bar-inner"></span>
+                            </div>
+                        </div>
+                    </div>
                     <h1 class="text mdc-typography--headline3">My Excersices</h1>
                     <div class="container">
                         <div class="row" id="muscle_list">
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+            <!--END OPTION TREE SELECTED -->
+            <section class="hide third-content" id="third">
+                <div class="">Busqueda</div>
+                <div class="button-container progress-section" id="third-progress">
+                    <div class="mdc-linear-progress" role="progressbar">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                </div>
 
-            </div>
-            <!--END OPTION TWO SELECTED -->
+            </section>
+            <!--END OPTION TREE SELECTED -->
         </div>
-    </main>
+    </div>
 </div>
 <!-- END APP CONTENT -->
 <!-- DIALOG SECTION FOR LOGOUT -->
@@ -130,27 +172,28 @@
 </div>
 <!-- END  DIALOG SECTION FOR LOGOUT -->
 
-<div id="dialog_search"
-        class="mdc-dialog"
-     role="alertdialog"
-     aria-modal="true"
+<div aria-describedby="my-dialog-content"
      aria-labelledby="my-dialog-title"
-     aria-describedby="my-dialog-content">
+     aria-modal="true"
+     class="mdc-dialog"
+     id="dialog_search"
+     role="alertdialog">
     <div class="mdc-dialog__container">
         <div class="mdc-dialog__surface">
             <h2 class="mdc-dialog__title">
                 Search a Routine
             </h2>
             <div class="mdc-dialog__content">
-                <div id="search_field" class="mdc-text-field mdc-text-field--fullwidth" >
-                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                <div class="mdc-text-field mdc-text-field--fullwidth" id="search_field">
+                    <input class="mdc-text-field__input" id="my-text-field" type="text">
                     <label class="mdc-floating-label" for="my-text-field">Querie</label>
                     <div class="mdc-line-ripple"></div>
                 </div>
             </div>
             <footer class="mdc-dialog__actions">
-                <button id="search_button_q" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">
-                    <span   class="mdc-button__label" >Search</span>
+                <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept" id="search_button_q"
+                        type="button">
+                    <span class="mdc-button__label">Search</span>
                 </button>
             </footer>
         </div>
@@ -166,10 +209,17 @@
 <!-- END FAB BUTTON -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+<script crossorigin="anonymous"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script async src="bundle-home.js"></script>
-<script type="text/javascript" src="bundle-home.js?c0bb933a110393ae70b9"></script><script type="text/javascript" src="bundle-home.js?affa91c4eabf2fdd9396"></script><script type="text/javascript" src="bundle-home.js?f6ddc732b62bc51dcc71"></script><script type="text/javascript" src="bundle-home.js?8320e0d8f92d64ae18c6"></script><script type="text/javascript" src="bundle-home.js?ef6bdb990c3a397707b8"></script><script type="text/javascript" src="bundle-home.js?05802cf8e0614f1fa15f"></script><script type="text/javascript" src="bundle-home.js?676b3bce39a49dd669e1"></script></body>
+<script src="bundle-home.js?c0bb933a110393ae70b9" type="text/javascript"></script>
+<script src="bundle-home.js?affa91c4eabf2fdd9396" type="text/javascript"></script>
+<script src="bundle-home.js?f6ddc732b62bc51dcc71" type="text/javascript"></script>
+<script src="bundle-home.js?8320e0d8f92d64ae18c6" type="text/javascript"></script>
+<script src="bundle-home.js?ef6bdb990c3a397707b8" type="text/javascript"></script>
+<script src="bundle-home.js?05802cf8e0614f1fa15f" type="text/javascript"></script>
+<script src="bundle-home.js?676b3bce39a49dd669e1" type="text/javascript"></script>
+</body>
 </html>
