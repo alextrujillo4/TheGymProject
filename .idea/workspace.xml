@@ -9,6 +9,8 @@
       <change beforePath="$PROJECT_DIR$/public/bundle-home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle-home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scss/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/scss/home.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,24 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="65" />
+            <state relative-caret-position="359">
+              <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
                 <element signature="e#1882#2004#0" />
                 <element signature="e#2123#2158#0" />
                 <element signature="n#!!block;n#closeIfDevice#0" />
                 <element signature="e#2427#2488#0" />
-                <element signature="n#!!block;n#addRoutine#0" />
                 <element signature="n#!!block;n#getSelectedTab#0" />
                 <element signature="n#!!block;n#logoutAction#0" />
-                <element signature="n#!!block;n#displayData#0" />
+                <element signature="e#4384#5461#0" />
+                <element signature="n#!!block;n#callExcersicesAction#0" />
                 <element signature="n#!!block;n#callRoutines#0" />
                 <element signature="n#!!block;n#displayroutineData#0" />
                 <element signature="e#8682#8690#0" />
+                <element signature="n#!!block;n#searchButtonAction#0" />
                 <element signature="e#11024#11829#0" />
               </folding>
             </state>
@@ -49,17 +52,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
+            <state relative-caret-position="293">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/home.html">
+        <entry file="file://$PROJECT_DIR$/public/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1223">
-              <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
+            <state relative-caret-position="106">
+              <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/create.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="167" selection-start-line="167" selection-end-line="177" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -67,22 +79,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="147">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1206">
+              <caret line="217" selection-start-line="217" selection-end-line="217" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="384" column="14" selection-start-line="384" selection-start-column="14" selection-end-line="384" selection-end-column="14" />
+            <state relative-caret-position="392">
+              <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
               <folding>
                 <element signature="n#!!block;n#processRequest#0" />
                 <element signature="n#!!block;n#processQueryRequest#0" />
                 <element signature="n#!!block;n#processDataRequest#0" />
-                <element signature="n#!!block;n#processRoutinesRequest#0" />
                 <element signature="n#!!block;n#createRoutine#0" />
                 <element signature="n#!!block;n#getUpperBody#0" />
                 <element signature="n#!!block;n#getLowerBody#0" />
@@ -90,6 +110,7 @@
                 <element signature="n#!!block;n#setUpperBody#0" />
                 <element signature="n#!!block;n#setLowerBody#0" />
                 <element signature="n#!!block;n#setCore#0" />
+                <element signature="n#!!block;n#processSearchRequest#0" />
               </folding>
             </state>
           </provider>
@@ -99,36 +120,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>./js/create.js</find>
-      <find>./js/firebase.js</find>
-      <find>URLt</find>
-      <find>URL</find>
-      <find>firestore</find>
-      <find>create.html</find>
-      <find>linearProgress</find>
-      <find>forEa</find>
-      <find>element</find>
-      <find>console.log</find>
-      <find>dis</find>
-      <find>progressOne</find>
-      <find>pro</find>
-      <find>prog</find>
-      <find>MDCLinearProgress</find>
-      <find>search</find>
-      <find>displayData</find>
       <find>processRoutinesRequest</find>
       <find>routinesRef</find>
-      <find>displayMusclesData</find>
       <find>search_field</find>
       <find>requi</find>
-      <find>querieField</find>
-      <find>displayroutineData</find>
       <find>/sea</find>
       <find>processSearchRequest</find>
       <find>succe</find>
       <find>succes query</find>
       <find>Query</find>
+      <find>querieField</find>
+      <find>text</find>
       <find>routine</find>
+      <find>/search</find>
+      <find>mdc-icon-button</find>
+      <find>import</find>
+      <find>button</find>
+      <find>Busque</find>
+      <find>butt</find>
+      <find>@import &quot;@material/icon-button/mdc-icon-button&quot;;</find>
+      <find>iconToggle</find>
+      <find>MDCIconButtonToggle</find>
+      <find>displa</find>
+      <find>displayMusclesData</find>
+      <find>mdc-checkbox</find>
+      <find>MDC</find>
+      <find>cardRoutine</find>
+      <find>contains</find>
+      <find>datass</find>
+      <find>selector</find>
+      <find>displayroutineData</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/.firebase</dir>
@@ -181,8 +202,8 @@
         <option value="$PROJECT_DIR$/public/js/login.js" />
         <option value="$PROJECT_DIR$/public/scss/home.scss" />
         <option value="$PROJECT_DIR$/public/home.html" />
-        <option value="$PROJECT_DIR$/public/js/home.js" />
         <option value="$PROJECT_DIR$/functions/index.js" />
+        <option value="$PROJECT_DIR$/public/js/home.js" />
       </list>
     </option>
   </component>
@@ -296,12 +317,12 @@
       <workItem from="1574215701312" duration="33660000" />
       <workItem from="1574271045530" duration="3774000" />
       <workItem from="1574275651364" duration="1434000" />
-      <workItem from="1574299270355" duration="9175000" />
+      <workItem from="1574299270355" duration="17021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146662000" />
+    <option name="totallyTimeSpent" value="154508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,7 +349,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32913166" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3697479" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" weight="0.3697479" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.60504204" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -364,7 +385,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/functions/index.js</url>
-          <line>230</line>
+          <line>241</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -375,9 +396,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/functions/index.js</url>
-          <line>195</line>
+          <line>206</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/home.js</url>
+          <line>121</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/home.js</url>
+          <line>202</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -499,18 +532,6 @@
         <state relative-caret-position="-1696" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/create.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-372">
-          <caret column="14" selection-start-column="6" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!block;n#getUpperBody#0" />
-            <element signature="n#!!block;n#getLowerBody#0" />
-            <element signature="n#!!block;n#getCore#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -531,13 +552,6 @@
     <entry file="file://$PROJECT_DIR$/public/bundle-register.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-639">
-          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/register.html">
@@ -604,56 +618,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="147">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/create.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="167" selection-start-line="167" selection-end-line="177" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1223">
-          <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#1882#2004#0" />
-            <element signature="e#2123#2158#0" />
-            <element signature="n#!!block;n#closeIfDevice#0" />
-            <element signature="e#2427#2488#0" />
-            <element signature="n#!!block;n#addRoutine#0" />
-            <element signature="n#!!block;n#getSelectedTab#0" />
-            <element signature="n#!!block;n#logoutAction#0" />
-            <element signature="n#!!block;n#displayData#0" />
-            <element signature="n#!!block;n#callRoutines#0" />
-            <element signature="n#!!block;n#displayroutineData#0" />
-            <element signature="e#8682#8690#0" />
-            <element signature="e#11024#11829#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        <state relative-caret-position="1206">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="384" column="14" selection-start-line="384" selection-start-column="14" selection-end-line="384" selection-end-column="14" />
+        <state relative-caret-position="392">
+          <caret line="176" column="34" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="34" />
           <folding>
             <element signature="n#!!block;n#processRequest#0" />
             <element signature="n#!!block;n#processQueryRequest#0" />
             <element signature="n#!!block;n#processDataRequest#0" />
-            <element signature="n#!!block;n#processRoutinesRequest#0" />
             <element signature="n#!!block;n#createRoutine#0" />
             <element signature="n#!!block;n#getUpperBody#0" />
             <element signature="n#!!block;n#getLowerBody#0" />
@@ -661,6 +659,37 @@
             <element signature="n#!!block;n#setUpperBody#0" />
             <element signature="n#!!block;n#setLowerBody#0" />
             <element signature="n#!!block;n#setCore#0" />
+            <element signature="n#!!block;n#processSearchRequest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#1882#2004#0" />
+            <element signature="e#2123#2158#0" />
+            <element signature="n#!!block;n#closeIfDevice#0" />
+            <element signature="e#2427#2488#0" />
+            <element signature="n#!!block;n#getSelectedTab#0" />
+            <element signature="n#!!block;n#logoutAction#0" />
+            <element signature="e#4384#5461#0" />
+            <element signature="n#!!block;n#callExcersicesAction#0" />
+            <element signature="n#!!block;n#callRoutines#0" />
+            <element signature="n#!!block;n#displayroutineData#0" />
+            <element signature="e#8682#8690#0" />
+            <element signature="n#!!block;n#searchButtonAction#0" />
+            <element signature="e#11024#11829#0" />
           </folding>
         </state>
       </provider>

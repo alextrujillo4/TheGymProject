@@ -4,6 +4,8 @@ import {MDCDrawer} from "@material/drawer";
 import {MDCTopAppBar} from "@material/top-app-bar";
 import {MDCTextField} from "@material/textfield";
 import {MDCLinearProgress} from "@material/linear-progress";
+import {MDCIconButtonToggle} from '@material/icon-button';
+import {MDCRipple} from '@material/ripple';
 const firebase = require('firebase/app');
 require('firebase/analytics');
 require('firebase/auth');
@@ -23,7 +25,6 @@ const auth  = firebase.auth();
 const URL = "http://localhost:5001/gymproject-9f46b/us-central1";
 
 
-
 const dialog = new MDCDialog(document.getElementById('mdc-logout-dialog'));
 const dialogSearch = new MDCDialog(document.getElementById('dialog_search'));
 const querieField = new MDCTextField(document.getElementById('search_field'));
@@ -35,6 +36,11 @@ const mainContentEl = document.querySelector('.main-content');
 const progressOne = new MDCLinearProgress(document.getElementById('first-progress'));
 const progressTwo = new MDCLinearProgress(document.getElementById('second-progress'));
 const progressThird = new MDCLinearProgress(document.getElementById('third-progress'));
+
+const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
+iconButtonRipple.disable = false;
+const selector = '.favbtn';
+
 
 progressOne.determinate = false;
 progressTwo.determinate = false;
@@ -165,6 +171,8 @@ function callExcersicesAction() {
 
 function callRoutines() {
     console.log("callRoutines");
+    progressOne.open();
+    $("#cardRoutine").html("");
     auth.onAuthStateChanged((user) => {
         if (user) {
             $.ajax({
@@ -194,10 +202,11 @@ function callRoutines() {
 
 function displayroutineData(data) {
     data.forEach(element => {
+        console.log("data id",element.id);
         $("#cardRoutine").append(`
          <div class="col-sm-11 col-md-11 col-lg-4 col-xl-4">
-            <div class="mdc-card routine mdc-card--outlined col-12">
-            <div class="mdc-card__primary-action demo-card__primary-action my-card-content" tabindex="0">
+            <div class="mdc-card routine mdc-card--outlined col-12" id="${element.id}">
+            <div class="mdc-card_primary-action demo-card_primary-action my-card-content" tabindex="0">
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">${element.nameRoutine}</h2>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">${element.email}</h3>
@@ -206,16 +215,16 @@ function displayroutineData(data) {
             </div>
             <div class="mdc-card__actions">
                 <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Edit</button>
+                    <button class="mdc-button mdc-card_action mdc-cardaction--button">  <span class="mdc-button_ripple"></span> Edit</button>
                 </div>
                 <div class="mdc-card__action-icons">
-                    <button id="add-to-pubic"
-                            class="mdc-icon-button"
-                            aria-label="Add to public"
-                            aria-hidden="true"
-                            aria-pressed="false">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">visibility</i>
-                        <i class="material-icons mdc-icon-button__icon">visibility_off</i>
+                   <button id="add-to-favorites"
+                       class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon favbtn"
+                       aria-label="Add to favorites"
+                       aria-hidden="true"
+                       aria-pressed="false">
+                       <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                       <i class="material-icons mdc-icon-button__icon">favorite_border</i>
                     </button>
                     <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Delete">delete</button>
                 </div>
@@ -263,7 +272,6 @@ function displaySearchRoutineData(data){
     });
 }
 
-
 function searchButtonAction(){
     $("#search_button_q").on("click", event => {
         if(querieField.valid){
@@ -286,7 +294,8 @@ function searchButtonAction(){
                     console.log(responseJSON.data);
                     if (responseJSON.status === 200) {
                         displaySearchRoutineData(responseJSON.data);
-                        progressOne.close()
+                        progressThird.close();
+                        querieField.value = "";
                     }
                 },
                 error: function (err) {
@@ -311,6 +320,24 @@ function searchAction() {
     })
 }
 
+function enableIconAnimation() {
+
+    $('#cardRoutine').on('click', function (event) {
+        event.preventDefault();
+        console.log("Clicked");
+        const datass = [].map.call(document.querySelectorAll(selector), function(el) {
+            return new MDCIconButtonToggle(el);
+        });
+        let padre = event.target.parentNode.parentNode.parentNode;
+        console.log(padre);
+        let id = padre.getAttribute('id');
+
+
+        console.log("id elemento;", id);        console.log(datass[0].on)
+
+    });
+
+}
 
 logoutAction();
 addRoutine();
@@ -320,3 +347,4 @@ callExcersicesAction();
 closeIfDevice();
 searchAction();
 searchButtonAction();
+enableIconAnimation();

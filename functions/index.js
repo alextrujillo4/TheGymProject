@@ -165,15 +165,26 @@ function processRoutinesRequest(request, response,) {
             .then(snapshot => {
                 let array = []
                 snapshot.forEach(doc => {
+                    console.log("DOCUMENTO ID",doc.id);
 
-                    array.push(doc.data());
+                    let routineWithId= {
+                        nameRoutine: doc.data().nameRoutine,
+                        email: doc.data().email,
+                        excercises: doc.data().excercises,
+                        isPrivate: doc.data().isPrivate,
+                        query: doc.data().query,
+                        uid: doc.data().uid,
+                        id: doc.id
+                    }
+                    console.log("ROUTINEID", routineWithId);
+                    array.push(routineWithId);
                 });
                 return response.status(200).send({
                     statusMessage: 'Muscle type, UpperBody',
                     status: 200,
                     data : array
                 });
-        }).catch(error => {
+            }).catch(error => {
             console.error("Error writing document: ", error);
             return response.status(400).send({
                 statusMessage: 'No Routines mached!',
