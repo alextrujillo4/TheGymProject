@@ -40,12 +40,12 @@
   <img src="https://firebasestorage.googleapis.com/v0/b/gymproject-9f46b.appspot.com/o/screenshots%2Fgym_new.png?alt=media&token=c728effc-6333-493e-bfd1-e67f1f2289fb" width="600" alt="Create Image">
 </p>
 
-### Profile
+### Search Routine
 <p align="left">
   <img src="https://firebasestorage.googleapis.com/v0/b/gymproject-9f46b.appspot.com/o/screenshots%2Fgym_search.png?alt=media&token=074dcd6c-7327-4024-8b06-f69bdc830db2" width="600" alt="Search Image">
 </p>
 
-### Search Routine
+### Profile
 <p align="left">
   <img src="https://firebasestorage.googleapis.com/v0/b/gymproject-9f46b.appspot.com/o/screenshots%2Fgym_ex.png?alt=media&token=c54d0dea-6653-41cf-a87a-e05f9746d619" width="600" alt="Search Image">
 </p>
