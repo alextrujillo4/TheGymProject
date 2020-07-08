@@ -29,7 +29,7 @@
     "sass-loader": "^7.1.0",
     "webpack": "^3.0.0",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^2.11.5",
+    "webpack-dev-server": "^3.1.11",
     "webpack-node-externals": "^1.7.2",
     "babel-eslint": "^7.2.3",
     "babel-polyfill": "^6.23.0",
@@ -101,7 +101,7 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^2.11.5",
+    "webpack-dev-server": "^3.1.11",
     "webpack-jquery-ui": "^1.0.0",
     "webpack-node-externals": "^1.7.2"
   }
